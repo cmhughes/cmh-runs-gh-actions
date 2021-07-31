@@ -10,22 +10,28 @@ jobs:
     runs-on: 'windows-latest'
     name: 'Strawberry Perl 5.32 on Windows'
     steps:
-      - uses: actions/checkout@v2
-      - uses: shogo82148/actions-setup-perl@v1
+      - name: Loading the base actions/checkout
+        uses: actions/checkout@v2
+      - name: Installing Perl
+        uses: shogo82148/actions-setup-perl@v1
         with:
           perl-version: '5.32'
           distribution: strawberry
-      - run: |
+      - name: creating latexindent.exe
+        run: |
           cpanm -f PAR::Packer
-          pp -o cmh.exe hello-world.pl
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+          cpanm Unicode::GCString
+          perl ppp.pl -u -o latexindent.exe hello-world.pl
           mkdir -p target/release
-          mv cmh.exe target/release
-      - name: Upload cmh.exe to release
+          mv latexindent.exe target/release
+      - name: Upload latexindent.exe to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: target/release/cmh.exe
-          asset_name: cmh.exe
+          file: target/release/latexindent.exe
+          asset_name: latexindent.exe
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
