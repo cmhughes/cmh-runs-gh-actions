@@ -1,0 +1,135 @@
+name: Create (pdf) documentation for latexindent
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # https://github.com/zauguin/install-texlive
+  texlive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Generate unique ID
+        id: get-id
+        run: |
+          echo -n ::set-output name=id::
+          cat /proc/sys/kernel/random/uuid
+      - name: Load cache
+        uses: actions/cache@v2
+        with:
+          path: ~/texlive
+          key: texlive-v0-${{ steps.get-id.outputs.id }}
+          restore-keys: texlive-v0-
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v1
+        with:
+          packages: |
+            # The test framework itself
+            l3build
+            #
+            # Required to build formats
+            latex-bin
+            latex-bin-dev
+            tex
+            xetex
+            full
+            #
+            # Assuming a 'basic' font set up, metafont is required to avoid
+            # warnings with some packages and errors with others
+            metafont
+            mfware
+            # Dependencies for siunitx
+            amsmath
+            graphics
+            l3packages
+            tools
+            # Dependencies for tests and typesetting
+            alphalph
+            amsfonts
+            atveryend
+            babel-catalan
+            babel-english
+            babel-french
+            babel-german
+            babel-spanish
+            bidi
+            booktabs
+            cancel
+            caption
+            carlisle
+            cellspace
+            cjk
+            cjk-ko
+            collcell
+            colortbl
+            csquotes
+            datatool
+            dvips
+            ec
+            enumitem
+            epstopdf-pkg
+            fancyvrb
+            fourier
+            hologo
+            hycolor
+            hyperref
+            koma-script
+            kvoptions
+            libertine
+            listings
+            lualatex-math
+            luatexbase
+            luatexko
+            makeindex
+            mathpazo
+            mptopdf
+            multirow
+            natbib
+            opensans
+            pdftexcmds
+            pgfplots
+            psnfss
+            revtex
+            sansmath
+            soulpos
+            soulutf8
+            stringenc
+            textcase
+            threeparttable
+            translations
+            underscore
+            unicode-math
+            was
+            xcolor
+            xetexko
+            xtab
+            zref
+            geometry
+            lmodern
+            parskip
+            titlesec
+            titletoc
+            multicol
+            changepage
+            fancyhdr
+            wrapfig
+            fontawesome
+            biblatex
+            tcolorbox
+            tikz
+            xparse
+            microtype
+            longtable
+            array
+            totalcount
+            standalone
+            gitinfo2
+            varioref
+            cleveref
+      - name: pdflatex --shell-escape latexindent.tex
+        run: |
+          cd documentation
+          pdflatex --shell-escape latexindent.tex
