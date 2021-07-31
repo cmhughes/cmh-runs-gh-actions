@@ -6,6 +6,43 @@ on:
       - '*'
 
 jobs:
+  build-linux-executable:
+    name: 'latexindent creation using Perl 5.32 on Linux'
+    runs-on: 'ubuntu-latest'
+    steps:
+      # checkout github.com/cmhughes/latexindent.pl
+      #
+      # https://github.com/actions/checkout
+      - name: Loading the base actions/checkout so as to access latexindent.pl
+        uses: actions/checkout@v2
+      # install Strawberry Perl
+      #
+      # https://github.com/marketplace/actions/setup-perl-environment
+      - name: Installing Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+      - run: |
+          cpanm --installdeps
+          cpanm PAR::Packer
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+          cpanm Unicode::GCString
+          perl ppp.pl -u -o latexindent latexindent.pl
+          mkdir -p target/release
+          mv latexindent target/release
+      # copy latexindent to the release
+      #
+      # https://github.com/marketplace/actions/upload-files-to-a-github-release
+      - name: Upload latexindent (Linux) to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/release/latexindent
+          asset_name: latexindent
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "latexindent.pl release text"
   build-windows-exe:
     name: 'latexindent.exe creation using Strawberry Perl 5.32 on Windows'
     runs-on: 'windows-latest'
@@ -35,6 +72,7 @@ jobs:
           perl ppp.pl -u -o latexindent.exe latexindent.pl
           mkdir -p target/release
           mv latexindent.exe target/release
+          cp defaultSettings.yaml target/release/
       # copy latexindent.exe to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
@@ -42,8 +80,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: target/release/latexindent.exe
-          asset_name: latexindent.exe
+          file: target/release/*
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
