@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
+        os: ['ubuntu-latest']
         perl: [ '5.34' ]
     name: Perl ${{ matrix.perl }} on ${{ matrix.os }}
     steps:
@@ -19,5 +19,10 @@ jobs:
         uses: shogo82148/actions-setup-perl@v1
         with:
           perl-version: ${{ matrix.perl }}
-      - run: perl -V
-      - run: perl hello-world.pl
+      - run: |
+          perl -V
+          perl hello-world.pl
+          cpanm --installdeps
+          cpanm PAR::Packer
+          pp -o indent${{ matrix.os }} hello-world.pl
+          mkdir -p target/release

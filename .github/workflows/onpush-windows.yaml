@@ -1,0 +1,22 @@
+name: Windows executable
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ['windows-latest']
+        perl: [ '5.34' ]
+    name: Perl ${{ matrix.perl }} on ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+          distribution: strawberry
+      - run: cpanm -f PAR::Packer
