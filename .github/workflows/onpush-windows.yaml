@@ -2,13 +2,13 @@ name: Windows executable
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '*'
 
 jobs:
-  build:
+  build-windows-exe:
     runs-on: 'windows-latest'
-    name: 'Perl 5.32 on Windows'
+    name: 'Strawberry Perl 5.32 on Windows'
     steps:
       - uses: actions/checkout@v2
       - uses: shogo82148/actions-setup-perl@v1
@@ -18,3 +18,14 @@ jobs:
       - run: |
           cpanm -f PAR::Packer
           pp -o cmh.exe hello-world.pl
+          mkdir -p target/release
+          mv cmh.exe target/release
+      - name: Upload cmh.exe to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/release/cmh.exe
+          asset_name: cmh.exe
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "latexindent.pl release text"
