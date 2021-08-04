@@ -1,0 +1,20 @@
+name: build documentation
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Loading the "base actions/checkout" so as to access latexindent.pl
+        uses: actions/checkout@v2
+      - name: installing texlive full
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            apk add openjdk11
+            cd documentation
+            arara -v latexindent.tex
