@@ -1,0 +1,27 @@
+name: build documentation
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Loading the "base actions/checkout" so as to access latexindent.pl
+        uses: actions/checkout@v2
+      - name: installing texlive full
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            apk add openjdk11
+            cd documentation
+            echo $GITHUB_REF 
+            branch_name=$(echo $GITHUB_REF | cut -d'/' -f 3)
+            github_sha_short=$(echo $GITHUB_SHA | cut -c1-7)
+            sed -i.bak  s/usepackage\\[mark,grumpy\\]{gitinfo2}/usepackage[mark]{gitinfo2}/ latexindent.tex
+            sed -i.bak s/\\\\gitAbbrevHash/$github_sha_short/ latexindent.tex
+            sed -i.bak s/\\\\gitBranch/$branch_name/ latexindent.tex
+            cat latexindent.tex
+            arara -v latexindent.tex
