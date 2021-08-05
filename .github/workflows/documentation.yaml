@@ -11,23 +11,24 @@ jobs:
     steps:
       - name: Loading the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v2
-      - name: update Git information for gitinfo2 package
-        run: |
-          apk add openjdk11
-          cd documentation
-          # https://stackoverflow.com/questions/58886293/getting-current-branch-and-commit-hash-in-github-action
-          github_sha_short=$(echo $GITHUB_SHA | cut -c1-7)
-          github_branch="main"
-          github_release=$(echo ${{ github.ref }}|cut -d'/' -f 3)
-          release_date=$(date --rfc-3339=date)
-          sed -i.bak  s/usepackage\\[mark,grumpy\\]{gitinfo2}/usepackage[mark]{gitinfo2}/ latexindent.tex
-          sed -i.bak s/\\\\gitAbbrevHash/$github_sha_short/ latexindent.tex
-          sed -i.bak s/\\\\gitBranch/main/ latexindent.tex
-          sed -i.bak s/\\\\gitRel/$github_release/ latexindent.tex
-          sed -i.bak s/\\\\gitAuthorDate/$release_date/ latexindent.tex
-          cat latexindent.tex
-          arara -v latexindent.tex
-          mv latexindent.pdf target/release
+      - name: installing texlive full
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            apk add openjdk11
+            cp documentation/* ./
+            github_sha_short=$(echo $GITHUB_SHA | cut -c1-7)
+            github_branch="main"
+            github_release=$(echo ${{ github.ref }}|cut -d'/' -f 3)
+            sed -i.bak  s/usepackage\\[mark,grumpy\\]{gitinfo2}/usepackage[mark]{gitinfo2}/ latexindent.tex
+            sed -i.bak s/\\\\gitAbbrevHash/$github_sha_short/ latexindent.tex
+            sed -i.bak s/\\\\gitBranch/main/ latexindent.tex
+            sed -i.bak s/\\\\gitRel/$github_release/ latexindent.tex
+            cat latexindent.tex
+            arara -v latexindent.tex
+            ls *.pdf
+            pwd
+            mv latexindent.pdf target/release
       # copy latexindent.pdf to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
