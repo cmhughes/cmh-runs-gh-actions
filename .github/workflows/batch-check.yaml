@@ -38,9 +38,9 @@ jobs:
           done
   latexindent-batch-check-windows:
     name: latexindent.pl --check on test-cases/check-switch-tests/*.tex (WINDOWS, Perl ${{ matrix.perl }})
+    runs-on: 'windows-latest'
     strategy:
       matrix:
-        platform: [windows-latest]
         perl: ['5.32', '5.30' ]
     steps:
       # checkout github.com/cmhughes/latexindent.pl
