@@ -3,29 +3,10 @@ on:
   push:
 
 jobs:
-  list_tex_files:
-    # list all .tex files in this repo and save them in a variable that can be used by other jobs as input for their matrix (so they run one job on each tex file)
-    outputs:
-      matrix: ${{ steps.list-files.outputs.matrix }}
-    runs-on: [ubuntu-latest]
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: list .tex files in test-cases/check-switch-tests
-        id: list-files
-        # print each filename (relative path) as an element of a JSON list, github can parse this into setting output variable "matrix"
-        run: |
-          cd test-cases/check-switch-tests
-          printf "::set-output name=matrix::{\"include\":["
-          find . -name "*.tex" -exec printf "{\"file\":\"{}\"}," \;
-          printf "]}\n"
-  check_formatting:
+  latexindent.pl-batch-check:
     # run latexindent on each tex file and diff the result with committed file. Produces failure of the formatting is not applied properly.
-    needs: [list_tex_files]
+    name: running latexindent.pl --check on files in test-cases/check-switch-tests/
     runs-on: [ubuntu-latest]
-    strategy:
-      matrix: ${{fromJson(needs.list_tex_files.outputs.matrix)}}
-      fail-fast: false
     steps:
       # checkout github.com/cmhughes/latexindent.pl
       #
@@ -41,5 +22,9 @@ jobs:
           cpanm YAML::Tiny
           cpanm File::HomeDir
           cpanm Unicode::GCString
-      - name: running latexindent.pl --check ${{ matrix.file }}
-        run: perl latexindent.pl --check test-cases/check-switch-tests/${{ matrix.file }}
+      - name: the loop for running latexindent.pl --check on files in test-cases/check-switch-tests/
+        run: |
+          for file in test-cases/check-switch-tests/*.tex
+          do
+             perl latexindent.pl --check $file
+          done
