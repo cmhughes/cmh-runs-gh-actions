@@ -25,4 +25,4 @@ jobs:
           cpanm File::HomeDir
           cpanm Unicode::GCString
       - name: running a check
-        run: latexindent.pl -k ${{ matrix.file }}
+        run: perl latexindent.pl -k ${{ matrix.file }}
