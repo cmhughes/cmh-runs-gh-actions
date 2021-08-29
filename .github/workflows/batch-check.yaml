@@ -1,0 +1,27 @@
+name: Batch check of latexindent.pl
+on:
+  push:
+
+jobs:
+  check_formatting:
+    # run latexindent on each tex file and diff the result with committed file. Produces failure of the formatting is not applied properly.
+    runs-on: [ubuntu-latest]
+    strategy:
+      matrix: 
+        file: [ check-switch-tests/test1.tex ]
+    steps:
+      # checkout github.com/cmhughes/latexindent.pl
+      #
+      # https://github.com/actions/checkout
+      - name: installing Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+      - name: installing perl modules for latexindent.pl
+        run: |
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+          cpanm Unicode::GCString
+      - name: Loading the "base actions/checkout" so as to access latexindent.pl
+        uses: actions/checkout@v2
+        run: latexindent.pl -k ${{ matrix.file }}
