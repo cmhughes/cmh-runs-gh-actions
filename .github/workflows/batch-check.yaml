@@ -4,8 +4,12 @@ on:
 
 jobs:
   latexindent-batch-check:
-    # run latexindent on each tex file and diff the result with committed file. Produces failure of the formatting is not applied properly.
-    name: running latexindent.pl --check on files in test-cases/check-switch-tests/
+    # run 
+    #   latexindent --check 
+    # on each .tex file within test-cases/check-switch-tests
+    #
+    # Process will fail if indented text is different from file
+    name: latexindent.pl --check on test-cases/check-switch-tests/*.tex (${{ matrix.platform }}, Perl: ${{ matrix.perl }})
     strategy:
       matrix:
         platform: [ubuntu-latest, macos-latest]
@@ -26,7 +30,7 @@ jobs:
           cpanm YAML::Tiny
           cpanm File::HomeDir
           cpanm Unicode::GCString
-      - name: the loop for running latexindent.pl --check on files in test-cases/check-switch-tests/
+      - name: loop for running latexindent.pl --check test-cases/check-switch-tests/*.tex
         run: |
           for file in test-cases/check-switch-tests/*.tex
           do
