@@ -59,4 +59,8 @@ jobs:
           cpanm File::HomeDir
           cpanm Unicode::GCString
       - name: loop for running latexindent.pl --check test-cases/check-switch-tests/*.tex
-        run: for %%f in (directory\path\*) do perl latexindent.pl --check -s %%f
+        run: |
+          for %%f in (test-cases\check-switch-tests\*tex) do (
+             echo "latexindent.pl --check -s %%f"
+             perl latexindent.pl --check -s %%f
+          )
