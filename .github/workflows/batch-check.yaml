@@ -13,6 +13,8 @@ jobs:
       # checkout github.com/cmhughes/latexindent.pl
       #
       # https://github.com/actions/checkout
+      - name: Loading the "base actions/checkout" so as to access latexindent.pl
+        uses: actions/checkout@v2
       - name: installing Perl
         uses: shogo82148/actions-setup-perl@v1
         with:
@@ -22,6 +24,5 @@ jobs:
           cpanm YAML::Tiny
           cpanm File::HomeDir
           cpanm Unicode::GCString
-      - name: Loading the "base actions/checkout" so as to access latexindent.pl
-        uses: actions/checkout@v2
+      - name: running a check
         run: latexindent.pl -k ${{ matrix.file }}
