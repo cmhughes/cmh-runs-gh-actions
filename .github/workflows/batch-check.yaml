@@ -26,5 +26,5 @@ jobs:
         run: |
           for file in test-cases/check-switch-tests/*.tex
           do
-             perl latexindent.pl --check -s $file && echo "latexindent.pl check passed for $file"
+             perl latexindent.pl --check -s $file && echo "latexindent.pl check passed for $file (file unchanged by latexindent.pl)"
           done
