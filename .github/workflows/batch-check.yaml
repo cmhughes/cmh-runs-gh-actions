@@ -3,7 +3,7 @@ on:
   push:
 
 jobs:
-  latexindent.pl-batch-check:
+  latexindent-batch-check:
     # run latexindent on each tex file and diff the result with committed file. Produces failure of the formatting is not applied properly.
     name: running latexindent.pl --check on files in test-cases/check-switch-tests/
     runs-on: [ubuntu-latest]
