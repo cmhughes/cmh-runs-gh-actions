@@ -60,7 +60,5 @@ jobs:
           cpanm Unicode::GCString
       - name: loop for running latexindent.pl --check test-cases/check-switch-tests/*.tex
         run: |
-          for %%f in (test-cases\check-switch-tests\*tex) do (
-             echo "latexindent.pl --check -s %%f"
-             perl latexindent.pl --check -s %%f
-          )
+          $files = Get-ChildItem test-cases\check-switch-tests\*tex
+          foreach ($file in $files) {perl latexindent.pl --check -s $file}
