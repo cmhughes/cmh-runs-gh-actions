@@ -42,6 +42,4 @@ jobs:
           cpanm File::HomeDir
           cpanm Unicode::GCString
       - name: running latexindent.pl --check ${{ matrix.file }}
-        run: |
-          cd test-cases/check-switch-tests
-          perl latexindent.pl --check ${{ matrix.file }}
+        run: perl latexindent.pl --check test-cases/check-switch-tests/${{ matrix.file }}
