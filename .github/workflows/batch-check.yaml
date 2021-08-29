@@ -9,7 +9,7 @@ jobs:
     # on each .tex file within test-cases/check-switch-tests
     #
     # Process will fail if indented text is different from file
-    name: latexindent.pl --check on test-cases/check-switch-tests/*.tex (${{ matrix.platform }}, Perl: ${{ matrix.perl }})
+    name: latexindent.pl --check on test-cases/check-switch-tests/*.tex (${{ matrix.platform }}, Perl ${{ matrix.perl }})
     strategy:
       matrix:
         platform: [ubuntu-latest, macos-latest]
