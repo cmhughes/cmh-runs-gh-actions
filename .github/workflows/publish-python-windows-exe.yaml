@@ -27,11 +27,8 @@ jobs:
           python hello-world.py -a info myfile
           pip install pyinstaller
           pyinstaller --onefile hello-world.py
-          mv dist/hello-world.exe ./
-          hello-world.exe myfile
-          hello-world.exe -a info myfile
           mkdir -p target/release
-          mv latexindent.exe target/release
+          mv dist/hello-world.exe target/release
       # copy hello-world.exe to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
