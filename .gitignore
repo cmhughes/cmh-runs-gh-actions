@@ -1,2 +1,6 @@
 *.log
 *.bak*
+__pycache*
+build/*
+dist/*
+*.spec

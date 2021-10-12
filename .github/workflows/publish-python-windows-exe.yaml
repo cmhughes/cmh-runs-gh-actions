@@ -14,7 +14,8 @@ jobs:
       # https://github.com/actions/setup-python
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.x' 
+          python-version: '3.7' 
+      # https://hynek.me/articles/python-github-actions/
       - name: "Install dependencies"
         run: |
           python -VV
