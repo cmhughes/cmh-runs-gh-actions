@@ -1,0 +1,25 @@
+name: Create and publish latexindent.exe to releases
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build-windows-exe:
+    name: 'hello-world.exe creation using Strawberry Perl 5.32 on Windows'
+    runs-on: 'windows-latest'
+    steps:
+      - uses: actions/checkout@v2
+      # https://github.com/actions/setup-python
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' 
+      - name: "Install dependencies"
+        run: |
+          set -xe
+          python -VV
+          python -m site
+          python -m pip install --upgrade pip setuptools wheel
+          pip install yaml
+      - run: python hello-world.py
