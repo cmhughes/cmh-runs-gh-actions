@@ -22,4 +22,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyyaml
           pip install argparse
-          python hello-world.py
+          python hello-world.py myfile
+          python hello-world.py -a info myfile
+          pip install pyinstaller
+          pyinstaller --onefile hello-world.py
+          hello-world.exe myfile
+          hello-world.exe -a info myfile
