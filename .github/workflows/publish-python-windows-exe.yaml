@@ -27,5 +27,19 @@ jobs:
           python hello-world.py -a info myfile
           pip install pyinstaller
           pyinstaller --onefile hello-world.py
+          mv dist/hello-world.exe ./
           hello-world.exe myfile
           hello-world.exe -a info myfile
+          mkdir -p target/release
+          mv latexindent.exe target/release
+      # copy hello-world.exe to the release
+      #
+      # https://github.com/marketplace/actions/upload-files-to-a-github-release
+      - name: upload latexindent.exe to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/release/hello-world.exe
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "hello-world release text"
