@@ -16,7 +16,7 @@ jobs:
         with:
           run: |
             apk add openjdk11
-            cp documentation/* ./
+            cp -r documentation/* ./
             github_sha_short=$(echo $GITHUB_SHA | cut -c1-7)
             github_branch="main"
             github_release=$(echo ${{ github.ref }}|cut -d'/' -f 3)
