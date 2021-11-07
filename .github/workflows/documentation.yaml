@@ -24,6 +24,7 @@ jobs:
             sed -i.bak s/\\\\gitAbbrevHash/$github_sha_short/ latexindent.tex
             sed -i.bak s/\\\\gitBranch/main/ latexindent.tex
             sed -i.bak s/\\\\gitRel/$github_release/ latexindent.tex
+            sed -i.bak "s|\\\\gitAuthorDate|$(date +'%Y-%m-%d')|g" latexindent.tex
             cat latexindent.tex
             arara -v latexindent.tex
             mkdir -p target/release
