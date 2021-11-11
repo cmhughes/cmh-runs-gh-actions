@@ -33,14 +33,10 @@ jobs:
       # copy latexindent.pdf to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
-      - name: upload latexindent.pdf to release
-        uses: svenstaro/upload-release-action@v2
+      - uses: actions/upload-artifact@master
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: target/release/latexindent.pdf
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "latexindent.pl release text"
+          name: latexindent.pdf
+          path: target/release
   build-windows-exe:
     name: 'latexindent.exe creation using Strawberry Perl 5.32 on Windows'
     runs-on: 'windows-latest'
@@ -53,19 +49,19 @@ jobs:
       # install Strawberry Perl
       #
       # https://github.com/marketplace/actions/setup-perl-environment
-      - name: installing Perl
-        uses: shogo82148/actions-setup-perl@v1
-        with:
-          perl-version: '5.32'
-          distribution: strawberry
+      ###### - name: installing Perl
+      ######   uses: shogo82148/actions-setup-perl@v1
+      ######   with:
+      ######     perl-version: '5.32'
+      ######     distribution: strawberry
       # create latexindent.exe using Par::Packer
       #
       - name: creating latexindent.exe
         run: |
-          cpanm -f PAR::Packer
-          cpanm YAML::Tiny
-          cpanm File::HomeDir
-          cpanm Unicode::GCString
+          ####### cpanm -f PAR::Packer
+          ####### cpanm YAML::Tiny
+          ####### cpanm File::HomeDir
+          ####### cpanm Unicode::GCString
           copy helper-scripts/ppp.pl ./
           ####### perl ppp.pl -o latexindent.exe latexindent.pl
           cp latexindent.pl latexindent.exe
@@ -74,19 +70,24 @@ jobs:
       # copy latexindent.exe to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
-      - name: upload latexindent.exe to release
-        uses: svenstaro/upload-release-action@v2
+      - uses: actions/upload-artifact@master
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: target/release/latexindent.exe
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "latexindent.pl release text"
+          name: latexindent.exe
+          path: target/release
   zip-files:
+    name: 'Creating ctan.zip and uploading to release'
     needs: [build-latexindent-doc-pdf, build-windows-exe]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/download-artifact@master
+        with:
+          name: latexindent.exe
+          path: target/release
+      - uses: actions/download-artifact@master
+        with:
+          name: latexindent.pdf
+          path: target/release
       - uses: papeloto/action-zip@v1
         with:
           files: LatexIndent/ target/release/latexindent.exe target/release/latexindent.pdf
