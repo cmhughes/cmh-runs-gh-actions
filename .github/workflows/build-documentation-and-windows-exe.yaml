@@ -29,9 +29,9 @@ jobs:
             cd ..
             mkdir -p target/release
             mv documentation/latexindent.pdf target/release
-      # copy latexindent.pdf to the release
+      # upload latexindent.pdf to the artifact
       #
-      # https://github.com/marketplace/actions/upload-files-to-a-github-release
+      # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       - name: uploading latexindent.pdf
         uses: actions/upload-artifact@master
         with:
@@ -90,19 +90,19 @@ jobs:
     needs: [build-latexindent-doc-pdf, build-windows-exe]
     runs-on: ubuntu-latest
     steps:
-      - name: Copying latexindent repository files to target/release
+      - name: Loading the "base actions/checkout" so as to access the repository latexindent.pl
         uses: actions/checkout@v2
-        with:
-          run: |
-            mkdir latexindent
-            cp latexindent.pl latexindent/
-            cp defaultSettings.yaml latexindent/
-            cp -r LatexIndent latexindent/
-            cp helper-scripts/latexindent-module-installer.pl latexindent/
-            mkdir latexindent/documentation/
-            cp documentation/*.tex latexindent/documentation/
-            cp documentation/*.png latexindent/documentation/
-            cp documentation/readme.txt latexindent/README
+      - name: copying files from repository into temporary folder
+        run: |
+          mkdir latexindent
+          cp latexindent.pl latexindent/
+          cp defaultSettings.yaml latexindent/
+          cp -r LatexIndent latexindent/
+          cp helper-scripts/latexindent-module-installer.pl latexindent/
+          mkdir latexindent/documentation/
+          cp documentation/*.tex latexindent/documentation/
+          cp documentation/*.png latexindent/documentation/
+          cp documentation/readme.txt latexindent/README
       - name: downloading latexindent.exe
         uses: actions/download-artifact@master
         with:
