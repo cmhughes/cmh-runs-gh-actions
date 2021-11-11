@@ -67,30 +67,50 @@ jobs:
           cp latexindent.pl latexindent.exe
           mkdir -p target/release
           mv latexindent.exe target/release
-      # copy latexindent.exe to the release
+      # upload latexindent.exe to the artifact
       #
-      # https://github.com/marketplace/actions/upload-files-to-a-github-release
+      # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       - uses: actions/upload-artifact@master
         with:
           name: latexindent.exe
           path: target/release
+      # copy latexindent.exe to the release
+      #
+      # https://github.com/marketplace/actions/upload-files-to-a-github-release
+      - name: upload latexindent.exe to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/release/latexindent.exe
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "latexindent.pl release text"
   zip-files:
     name: 'Creating ctan.zip and uploading to release'
     needs: [build-latexindent-doc-pdf, build-windows-exe]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Copying latexindent repository files to target/release
+        run: |
+          mkdir latexindent
+          cp latexindent.pl latexindent/
+          cp defaultSettings latexindent/
+          cp -r LatexIndent latexindent/
+          cp documentation/*.tex latexindent/documentation/
+          cp documentation/*.png latexindent/documentation/
+          cp documentation/readme.txt latexindent/README
       - uses: actions/download-artifact@master
         with:
           name: latexindent.exe
-          path: target/release
+          path: latexindent/
       - uses: actions/download-artifact@master
         with:
           name: latexindent.pdf
-          path: target/release
+          path: latexindent/
       - uses: papeloto/action-zip@v1
         with:
-          files: LatexIndent/ target/release/latexindent.exe target/release/latexindent.pdf
+          files: latexindent/
           dest: ctan.zip
       # copy latexindent.exe to the release
       #
