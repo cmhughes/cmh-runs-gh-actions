@@ -92,16 +92,17 @@ jobs:
     steps:
       - name: Copying latexindent repository files to target/release
         uses: actions/checkout@v2
-        run: |
-          mkdir latexindent
-          cp latexindent.pl latexindent/
-          cp defaultSettings.yaml latexindent/
-          cp -r LatexIndent latexindent/
-          cp helper-scripts/latexindent-module-installer.pl latexindent/
-          mkdir latexindent/documentation/
-          cp documentation/*.tex latexindent/documentation/
-          cp documentation/*.png latexindent/documentation/
-          cp documentation/readme.txt latexindent/README
+        with:
+          run: |
+            mkdir latexindent
+            cp latexindent.pl latexindent/
+            cp defaultSettings.yaml latexindent/
+            cp -r LatexIndent latexindent/
+            cp helper-scripts/latexindent-module-installer.pl latexindent/
+            mkdir latexindent/documentation/
+            cp documentation/*.tex latexindent/documentation/
+            cp documentation/*.png latexindent/documentation/
+            cp documentation/readme.txt latexindent/README
       - name: downloading latexindent.exe
         uses: actions/download-artifact@master
         with:
