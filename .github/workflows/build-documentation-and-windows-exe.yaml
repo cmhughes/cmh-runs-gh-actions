@@ -97,6 +97,7 @@ jobs:
           cp latexindent.pl latexindent/
           cp defaultSettings.yaml latexindent/
           cp -r LatexIndent latexindent/
+          cp helper-scripts/latexindent-module-installer.pl latexindent/
           mkdir latexindent/documentation/
           cp documentation/*.tex latexindent/documentation/
           cp documentation/*.png latexindent/documentation/
@@ -108,7 +109,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: latexindent.pdf
-          path: latexindent/
+          path: latexindent/documentation/
       - uses: papeloto/action-zip@v1
         with:
           files: latexindent/
