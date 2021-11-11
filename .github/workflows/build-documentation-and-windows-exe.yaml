@@ -97,6 +97,7 @@ jobs:
           cp latexindent.pl latexindent/
           cp defaultSettings.yaml latexindent/
           cp -r LatexIndent latexindent/
+          mkdir latexindent/documentation/
           cp documentation/*.tex latexindent/documentation/
           cp documentation/*.png latexindent/documentation/
           cp documentation/readme.txt latexindent/README
