@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: latexindent.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: latexindent-blx.bib
+Database file #2: latex-indent.bib
+Database file #3: contributors.bib
+Biblatex version: 3.16
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 3 entries,
+            6393 wiz_defined-function locations,
+            1210 strings with 9149 characters,
+and the built_in function-call counts, 9547 in all, are:
+= -- 475
+> -- 416
+< -- 56
++ -- 353
+- -- 287
+* -- 516
+:= -- 1131
+add.period$ -- 0
+call.type$ -- 3
+change.case$ -- 12
+chr.to.int$ -- 66
+cite$ -- 4
+duplicate$ -- 731
+empty$ -- 938
+format.name$ -- 47
+if$ -- 1874
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 0
+newline$ -- 52
+num.names$ -- 41
+pop$ -- 701
+preamble$ -- 1
+purify$ -- 13
+quote$ -- 0
+skip$ -- 322
+stack$ -- 0
+substring$ -- 949
+swap$ -- 215
+text.length$ -- 69
+text.prefix$ -- 2
+top$ -- 1
+type$ -- 90
+warning$ -- 0
+while$ -- 129
+width$ -- 0
+write$ -- 50

@@ -1,0 +1,33 @@
+.. label follows
+
+.. _sec:defuseloc:
+
+defaultSettings.yaml
+====================
+
+section text
+
+.. label follows
+
+.. _subsubsec:code-blocks:
+
+The code blocks known latexindent.pl
+------------------------------------
+
+As of Version 3.0, ``latexindent.pl`` processes documents using code blocks; each of these are shown in :numref:`tab:code-blocks`.
+
+.. table:: Code blocks known to ``latexindent.pl``
+
+   ============================= ================================================== ====================================================================================
+   Code block                    characters allowed in name                         example
+   ============================= ================================================== ====================================================================================
+   environments                                                                    
+   !                             ``\begin{myenv}body of myenv\end{myenv}``         
+   optionalArguments             *inherits* name from parent (e.g environment name) ``[opt arg text]``
+   mandatoryArguments            *inherits* name from parent (e.g environment name) ``{mand arg text}``
+   commands                      ``+a-zA-Z@\*0-9_\:``                               ``\mycommand``\ <arguments>
+   keyEqualsValuesBracesBrackets ``a-zA-Z@\*0-9_\/.\h\{\}:\#-``                     ``my key/.style=``\ <arguments>
+   namedGroupingBracesBrackets   ``0-9\.a-zA-Z@\*><``                               ``in``\ <arguments>
+   UnNamedGroupingBracesBrackets *No name!*                                         ``{`` or ``[`` or ``,`` or ``\&`` or ``)`` or ``(`` or ``$`` followed by <arguments>
+   \                                                                               
+   ============================= ================================================== ====================================================================================

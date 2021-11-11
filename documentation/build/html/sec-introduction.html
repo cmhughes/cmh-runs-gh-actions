@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1. Introduction &mdash; latexindent.pl 3.13 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/proof.css" type="text/css" />
+  <link rel="stylesheet" href="_static/latexindent.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/proof.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Demonstration: before and after" href="sec-demonstration.html" />
+    <link rel="prev" title="latexindent.pl documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> latexindent.pl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thanks">1.1. Thanks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">1.2. License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#about-this-documentation">1.3. About this documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">1.4. Quick start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-word-about-regular-expressions">1.5. A word about regular expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sec-demonstration.html">2. Demonstration: before and after</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-how-to-use.html">3. How to use the script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-indent-config-and-settings.html">4. indentconfig.yaml, local settings and the -y switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-default-user-local.html">5. defaultSettings.yaml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-m-switch.html">6. The -m (modifylinebreaks) switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-replacements.html">7. The -r, -rv and -rr switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-line-switch.html">8. The –lines switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-fine-tuning.html">9. Fine tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-conclusions-know-limitations.html">10. Conclusions and known limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">12. Appendices</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">latexindent.pl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>1. Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/sec-introduction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="thanks">
+<h2>1.1. Thanks<a class="headerlink" href="#thanks" title="Permalink to this headline">¶</a></h2>
+<p>I first created <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> to help me format chapter files in a big project. After I blogged about it on the TeX stack exchange (“A Perl Script for Indenting Tex Files” n.d.) I received some
+positive feedback and follow-up feature requests. A big thank you to Harish Kumar (Kumar 2013) who helped to develop and test the initial versions of the script.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">YAML</span></code>-based interface of <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> was inspired by the wonderful <code class="docutils literal notranslate"><span class="pre">arara</span></code> tool; any similarities are deliberate, and I hope that it is perceived as the compliment that it is. Thank
+you to Paulo Cereda and the team for releasing this awesome tool; I initially worried that I was going to have to make a GUI for <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code>, but the release of <code class="docutils literal notranslate"><span class="pre">arara</span></code> has meant there is no
+need.</p>
+<p>There have been several contributors to the project so far (and hopefully more in the future!); thank you very much to the people detailed in <a class="reference internal" href="references.html#sec-contributors"><span class="std std-numref">Section 11</span></a> for their valued
+contributions, and thank you to those who report bugs and request features at (“Home of Latexindent.pl” n.d.).</p>
+</div>
+<div class="section" id="license">
+<h2>1.2. License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> is free and open source, and it always will be; it is released under the GNU General Public License v3.0.</p>
+<p>Before you start using it on any important files, bear in mind that <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> has the option to overwrite your <code class="docutils literal notranslate"><span class="pre">.tex</span></code> files. It will always make at least one backup (you can choose how many
+it makes, see <a class="reference internal" href="sec-default-user-local.html#page-onlyonebackup"><span class="std std-ref">page page:onlyonebackup</span></a>) but you should still be careful when using it. The script has been tested on many files, but there are some known limitations (see
+<a class="reference internal" href="sec-conclusions-know-limitations.html#sec-knownlimitations"><span class="std std-numref">Section 10</span></a>). You, the user, are responsible for ensuring that you maintain backups of your files before running <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> on them. I think it is important at this stage
+to restate an important part of the license here:</p>
+<blockquote>
+<div><em>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.</em></div></blockquote>
+<p>There is certainly no malicious intent in releasing this script, and I do hope that it works as you expect it to; if it does not, please first of all make sure that you have the correct settings, and
+then feel free to let me know at (“Home of Latexindent.pl” n.d.) with a complete minimum working example as I would like to improve the code as much as possible.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Before you try the script on anything important (like your thesis), test it out on the sample files in the <code class="docutils literal notranslate"><span class="pre">test-case</span></code> directory (“Home of Latexindent.pl” n.d.).</p>
+</div>
+<p id="index-0"><em>If you have used any version 2.* of ``latexindent.pl``, there are a few changes to the interface; see :numref:`app:differences` and the comments throughout this document for details</em>.</p>
+</div>
+<div class="section" id="about-this-documentation">
+<h2>1.3. About this documentation<a class="headerlink" href="#about-this-documentation" title="Permalink to this headline">¶</a></h2>
+<p>As you read through this documentation, you will see many listings; in this version of the documentation, there are a total of 553. This may seem a lot, but I deem it necessary in presenting the
+various different options of <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> and the associated output that they are capable of producing.</p>
+<p>The different listings are presented using different styles:</p>
+<div class="literal-block-wrapper docutils container" id="lst-demo-tex">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">demo-tex.tex</span></code></span><a class="headerlink" href="#lst-demo-tex" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">demonstration</span> <span class="o">.</span><span class="n">tex</span> <span class="n">file</span>
+</pre></div>
+</div>
+</div>
+<p>This type of listing is a <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file.</p>
+<div class="literal-block-wrapper docutils container" id="lst-fileextensionpreference-demo">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fileExtensionPreference</span></code></span><a class="headerlink" href="#lst-fileextensionpreference-demo" title="Permalink to this code">¶</a></div>
+<div class="baseyaml highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>44
+45
+46
+47
+48</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">fileExtensionPreference</span><span class="p">:</span>
+    <span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="o">.</span><span class="n">sty</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="o">.</span><span class="n">cls</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="o">.</span><span class="n">bib</span><span class="p">:</span> <span class="mi">4</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>This type of listing is a <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file; when you see line numbers given (as here) it means that the snippet is taken directly from <code class="docutils literal notranslate"><span class="pre">defaultSettings.yaml</span></code>, discussed in detail in
+<a class="reference internal" href="sec-default-user-local.html#sec-defuseloc"><span class="std std-numref">Section 5</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-modifylinebreaks-demo">
+<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">modifyLineBreaks</span></code></span><a class="headerlink" href="#lst-modifylinebreaks-demo" title="Permalink to this code">¶</a></div>
+<div class="mlbyaml highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>486
+487
+488</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">modifyLineBreaks</span><span class="p">:</span>
+    <span class="n">preserveBlankLines</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">condenseMultipleBlankLinesInto</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>This type of listing is a <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file, but it will only be relevant when the <code class="docutils literal notranslate"><span class="pre">-m</span></code> switch is active; see <a class="reference internal" href="sec-the-m-switch.html#sec-modifylinebreaks"><span class="std std-numref">Section 6</span></a> for more details.</p>
+<div class="literal-block-wrapper docutils container" id="lst-replacements-demo">
+<div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">replacements</span></code></span><a class="headerlink" href="#lst-replacements-demo" title="Permalink to this code">¶</a></div>
+<div class="replaceyaml highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>618
+619
+620
+621
+622
+623
+624
+625
+626</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">replacements</span><span class="p">:</span>
+  <span class="o">-</span> 
+    <span class="n">amalgamate</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="o">-</span>
+    <span class="n">this</span><span class="p">:</span> <span class="s1">&#39;latexindent.pl&#39;</span>
+    <span class="n">that</span><span class="p">:</span> <span class="s1">&#39;pl.latexindent&#39;</span>
+    <span class="n">lookForThis</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">when</span><span class="p">:</span> <span class="n">before</span>
+
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>This type of listing is a <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file, but it will only be relevant when the <code class="docutils literal notranslate"><span class="pre">-r</span></code> switch is active; see <a class="reference internal" href="sec-replacements.html#sec-replacements"><span class="std std-numref">Section 7</span></a> for more details.</p>
+</div>
+<div class="section" id="quick-start">
+<span id="sec-quickstart"></span><h2>1.4. Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<p>If you’d like to get started with <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> then simply type</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl myfile.tex
+</pre></div>
+</div>
+<p>from the command line. If you receive an error message such as that given in <a class="reference internal" href="#lst-poss-errors"><span class="std std-numref">Listing 5</span></a>, then you need to install the missing perl modules.</p>
+<div class="literal-block-wrapper docutils container" id="lst-poss-errors">
+<div class="code-block-caption"><span class="caption-number">Listing 5 </span><span class="caption-text">Possible error messages</span><a class="headerlink" href="#lst-poss-errors" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>Can&#39;t locate File/HomeDir.pm in @INC (@INC contains: /Library/Perl/5.12/darwin-thread-multi-2level /Library/Perl/5.12 /Network/Library/Perl/5.12/darwin-thread-multi-2level /Network/Library/Perl/5.12 /Library/Perl/Updates/5.12.4/darwin-thread-multi-2level /Library/Perl/Updates/5.12.4 /System/Library/Perl/5.12/darwin-thread-multi-2level /System/Library/Perl/5.12 /System/Library/Perl/Extras/5.12/darwin-thread-multi-2level /System/Library/Perl/Extras/5.12 .) at helloworld.pl line 10.
+BEGIN failed--compilation aborted at helloworld.pl line 10.
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> ships with a script to help with this process; if you run the following script, you should be prompted to install the appropriate modules.</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>perl latexindent-module-installer.pl
+</pre></div>
+</div>
+<p>You might also like to see <a class="reference external" href="https://stackoverflow.com/questions/19590042/error-cant-locate-file-homedir-pm-in-inc">https://stackoverflow.com/questions/19590042/error-cant-locate-file-homedir-pm-in-inc</a>, for example, as well as <a class="reference internal" href="appendices.html#sec-requiredmodules"><span class="std std-numref">Section 12.1</span></a>.</p>
+</div>
+<div class="section" id="a-word-about-regular-expressions">
+<h2>1.5. A word about regular expressions<a class="headerlink" href="#a-word-about-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">As you read this documentation, you may encounter the term <em>regular expressions</em>. I’ve tried to write this documentation in such a way so as to allow you to engage with them or not, as you prefer.
+This documentation is not designed to be a guide to regular expressions, and if you’d like to read about them, I recommend (Friedl, n.d.).</p>
+<div class="references docutils container" id="refs">
+<div class="docutils container" id="ref-cmhblog">
+“A Perl Script for Indenting Tex Files.” n.d. Accessed January 23, 2017. <a class="reference external" href="http://tex.blogoverflow.com/2012/08/a-perl-script-for-indenting-tex-files/">http://tex.blogoverflow.com/2012/08/a-perl-script-for-indenting-tex-files/</a>.</div>
+<div class="docutils container" id="ref-masteringregexp">
+Friedl, Jeffrey E. F. n.d. <em>Mastering Regular Expressions</em>.</div>
+<div class="docutils container" id="ref-latexindent-home">
+“Home of Latexindent.pl.” n.d. Accessed January 23, 2017. <a class="reference external" href="https://github.com/cmhughes/latexindent.pl">https://github.com/cmhughes/latexindent.pl</a>.</div>
+<div class="docutils container" id="ref-harish">
+Kumar, Harish. 2013. “Early Version Testing.” November 10, 2013. <a class="reference external" href="https://github.com/harishkumarholla">https://github.com/harishkumarholla</a>.</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sec-demonstration.html" class="btn btn-neutral float-right" title="2. Demonstration: before and after" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="latexindent.pl documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Chris Hughes.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

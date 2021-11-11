@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2. Demonstration: before and after &mdash; latexindent.pl 3.13 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/proof.css" type="text/css" />
+  <link rel="stylesheet" href="_static/latexindent.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/proof.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. How to use the script" href="sec-how-to-use.html" />
+    <link rel="prev" title="1. Introduction" href="sec-introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> latexindent.pl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sec-introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Demonstration: before and after</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-how-to-use.html">3. How to use the script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-indent-config-and-settings.html">4. indentconfig.yaml, local settings and the -y switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-default-user-local.html">5. defaultSettings.yaml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-m-switch.html">6. The -m (modifylinebreaks) switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-replacements.html">7. The -r, -rv and -rr switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-line-switch.html">8. The –lines switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-fine-tuning.html">9. Fine tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-conclusions-know-limitations.html">10. Conclusions and known limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">12. Appendices</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">latexindent.pl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>2. Demonstration: before and after</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/sec-demonstration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="demonstration-before-and-after">
+<h1>2. Demonstration: before and after<a class="headerlink" href="#demonstration-before-and-after" title="Permalink to this headline">¶</a></h1>
+<p>Let’s give a demonstration of some before and after code – after all, you probably won’t want to try the script if you don’t much like the results. You might also like to watch the video demonstration
+I made on youtube (“Video Demonstration of Latexindent.pl on Youtube” n.d.)</p>
+<p>As you look at <a class="reference internal" href="#lst-filecontentsbefore"><span class="std std-numref">Listing 6</span></a> – <a class="reference internal" href="#lst-pstricksafter"><span class="std std-numref">Listing 11</span></a>, remember that <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> is just following its rules, and there is nothing particular about these code
+snippets. All of the rules can be modified so that you can personalise your indentation scheme.</p>
+<p>In each of the samples given in <a class="reference internal" href="#lst-filecontentsbefore"><span class="std std-numref">Listing 6</span></a> – <a class="reference internal" href="#lst-pstricksafter"><span class="std std-numref">Listing 11</span></a> the ‘before’ case is a ‘worst case scenario’ with no effort to make indentation. The ‘after’ result
+would be the same, regardless of the leading white space at the beginning of each line which is stripped by <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> (unless a <code class="docutils literal notranslate"><span class="pre">verbatim</span></code>-like environment or <code class="docutils literal notranslate"><span class="pre">noIndentBlock</span></code> is specified
+– more on this in <a class="reference internal" href="sec-default-user-local.html#sec-defuseloc"><span class="std std-numref">Section 5</span></a>).</p>
+<div class="literal-block-wrapper docutils container" id="lst-filecontentsbefore">
+<div class="code-block-caption"><span class="caption-number">Listing 6 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">filecontents1.tex</span></code></span><a class="headerlink" href="#lst-filecontentsbefore" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">filecontents</span><span class="p">}{</span><span class="n">mybib</span><span class="o">.</span><span class="n">bib</span><span class="p">}</span>
+<span class="nd">@online</span><span class="p">{</span><span class="n">strawberryperl</span><span class="p">,</span>
+<span class="n">title</span><span class="o">=</span><span class="s2">&quot;Strawberry Perl&quot;</span><span class="p">,</span>
+<span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://strawberryperl.com/&quot;</span><span class="p">}</span>
+<span class="nd">@online</span><span class="p">{</span><span class="n">cmhblog</span><span class="p">,</span>
+<span class="n">title</span><span class="o">=</span><span class="s2">&quot;A Perl script ...</span>
+<span class="n">url</span><span class="o">=</span><span class="s2">&quot;...</span>
+<span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">filecontents</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-filecontentsafter">
+<div class="code-block-caption"><span class="caption-number">Listing 7 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">filecontents1.tex</span></code> default output</span><a class="headerlink" href="#lst-filecontentsafter" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">filecontents</span><span class="p">}{</span><span class="n">mybib</span><span class="o">.</span><span class="n">bib</span><span class="p">}</span>
+	<span class="nd">@online</span><span class="p">{</span><span class="n">strawberryperl</span><span class="p">,</span>
+		<span class="n">title</span><span class="o">=</span><span class="s2">&quot;Strawberry Perl&quot;</span><span class="p">,</span>
+		<span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://strawberryperl.com/&quot;</span><span class="p">}</span>
+	<span class="nd">@online</span><span class="p">{</span><span class="n">cmhblog</span><span class="p">,</span>
+		<span class="n">title</span><span class="o">=</span><span class="s2">&quot;A Perl script ...</span>
+		<span class="n">url</span><span class="o">=</span><span class="s2">&quot;...</span>
+	<span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">filecontents</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-tikzsetbefore">
+<div class="code-block-caption"><span class="caption-number">Listing 8 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">tikzset.tex</span></code></span><a class="headerlink" href="#lst-tikzsetbefore" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">tikzset</span><span class="p">{</span>
+<span class="n">shrink</span> <span class="n">inner</span> <span class="n">sep</span><span class="o">/.</span><span class="n">code</span><span class="o">=</span><span class="p">{</span>
+\<span class="n">pgfkeysgetvalue</span><span class="o">...</span>
+\<span class="n">pgfkeysgetvalue</span><span class="o">...</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-tikzsetafter">
+<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">tikzset.tex</span></code> default output</span><a class="headerlink" href="#lst-tikzsetafter" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">tikzset</span><span class="p">{</span>
+	<span class="n">shrink</span> <span class="n">inner</span> <span class="n">sep</span><span class="o">/.</span><span class="n">code</span><span class="o">=</span><span class="p">{</span>
+			\<span class="n">pgfkeysgetvalue</span><span class="o">...</span>
+			\<span class="n">pgfkeysgetvalue</span><span class="o">...</span>
+		<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-pstricksbefore">
+<div class="code-block-caption"><span class="caption-number">Listing 10 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pstricks.tex</span></code></span><a class="headerlink" href="#lst-pstricksbefore" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">def</span>\<span class="n">Picture</span><span class="c1">#1{%</span>
+\<span class="n">def</span>\<span class="n">stripH</span><span class="p">{</span><span class="c1">#1}%</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">pspicture</span><span class="p">}[</span><span class="n">showgrid</span><span class="p">}</span>
+\<span class="n">psforeach</span><span class="p">{</span>\<span class="n">row</span><span class="p">}{</span><span class="o">%</span>
+<span class="p">{{</span><span class="mi">3</span><span class="p">,</span><span class="mf">2.8</span><span class="p">,</span><span class="mf">2.7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">3.1</span><span class="p">}},</span><span class="o">%</span>
+<span class="p">{</span><span class="mf">2.8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span><span class="o">%</span>
+<span class="o">...</span>
+<span class="p">}{</span><span class="o">%</span>
+\<span class="n">expandafter</span><span class="o">...</span>
+<span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">pspicture</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-pstricksafter">
+<div class="code-block-caption"><span class="caption-number">Listing 11 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pstricks.tex</span></code> default output</span><a class="headerlink" href="#lst-pstricksafter" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">def</span>\<span class="n">Picture</span><span class="c1">#1{%</span>
+	\<span class="n">def</span>\<span class="n">stripH</span><span class="p">{</span><span class="c1">#1}%</span>
+	\<span class="n">begin</span><span class="p">{</span><span class="n">pspicture</span><span class="p">}[</span><span class="n">showgrid</span><span class="p">}</span>
+		\<span class="n">psforeach</span><span class="p">{</span>\<span class="n">row</span><span class="p">}{</span><span class="o">%</span>
+			<span class="p">{{</span><span class="mi">3</span><span class="p">,</span><span class="mf">2.8</span><span class="p">,</span><span class="mf">2.7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">3.1</span><span class="p">}},</span><span class="o">%</span>
+			<span class="p">{</span><span class="mf">2.8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span><span class="o">%</span>
+			<span class="o">...</span>
+		<span class="p">}{</span><span class="o">%</span>
+			\<span class="n">expandafter</span><span class="o">...</span>
+		<span class="p">}</span>
+	\<span class="n">end</span><span class="p">{</span><span class="n">pspicture</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="references docutils container" id="refs">
+<div class="docutils container" id="ref-cmh-videodemo">
+“Video Demonstration of Latexindent.pl on Youtube.” n.d. Accessed February 21, 2017. <a class="reference external" href="https://www.youtube.com/watch?v=wo38aaH2F4E&amp;spfreload=10">https://www.youtube.com/watch?v=wo38aaH2F4E&amp;spfreload=10</a>.</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sec-how-to-use.html" class="btn btn-neutral float-right" title="3. How to use the script" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sec-introduction.html" class="btn btn-neutral float-left" title="1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Chris Hughes.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

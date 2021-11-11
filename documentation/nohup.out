@@ -1,0 +1,1524 @@
+
+(evince:2779): EvinceView-CRITICAL **: 16:50:06.991: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:56:07.435: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:56:07.435: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:56:07.435: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:56:07.435: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:49.128: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:49.128: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:49.128: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:49.128: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:49.128: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:49.128: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:54.456: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:54.456: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:54.458: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:54.458: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:54.458: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:54.458: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:54.458: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:57:54.458: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 16:58:48.261: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.784: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:11:22.802: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.010: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.010: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.010: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:12:01.011: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:14:05.974: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:14:05.974: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:14:05.974: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:14:05.974: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:15:35.761: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:17:06.746: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.539: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.539: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.539: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.539: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:24:32.548: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.497: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.498: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.498: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.498: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.504: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.504: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.504: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.504: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.504: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:27:49.504: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:29:41.815: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:29:41.815: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:29:41.815: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:29:41.815: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:29:41.815: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): EvinceView-CRITICAL **: 17:29:41.815: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.833: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.834: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2779): Gtk-CRITICAL **: 17:50:19.835: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2784): EvinceView-CRITICAL **: 19:13:47.552: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2784): Gtk-CRITICAL **: 19:18:23.809: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2784): Gtk-CRITICAL **: 19:18:23.809: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2784): Gtk-CRITICAL **: 19:18:23.809: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2784): Gtk-CRITICAL **: 19:18:23.809: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2784): Gtk-CRITICAL **: 19:18:23.809: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2784): Gtk-CRITICAL **: 19:18:23.809: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2784): Gtk-CRITICAL **: 19:18:23.809: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.815: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:03:54.845: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.431: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:10:49.432: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.034: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:12:05.035: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:12:05.035: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): EvinceView-CRITICAL **: 10:12:05.035: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.408: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2729): Gtk-CRITICAL **: 10:13:00.409: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+Gdk-Message: 10:32:01.268: evince: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(evince:4452): EvinceView-CRITICAL **: 15:20:50.633: ev_pixbuf_cache_set_page_range: assertion 'start_page >= 0 && start_page < ev_document_get_n_pages (pixbuf_cache->document)' failed
+
+(evince:4452): Atk-CRITICAL **: 15:20:50.655: atk_object_notify_state_change: assertion 'ATK_IS_OBJECT (accessible)' failed
+
+(evince:4452): Gtk-CRITICAL **: 15:20:50.656: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4452): EvinceView-CRITICAL **: 15:20:50.657: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4452): EvinceView-CRITICAL **: 15:20:50.657: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4452): Atk-CRITICAL **: 15:20:50.657: atk_object_notify_state_change: assertion 'ATK_IS_OBJECT (accessible)' failed
+
+(evince:4452): Poppler-CRITICAL **: 15:20:51.020: PopplerPage* poppler_document_get_page(PopplerDocument*, int): assertion '0 <= index && index < poppler_document_get_n_pages (document)' failed
+
+(evince:4452): GLib-GObject-CRITICAL **: 15:20:51.020: g_object_ref: assertion 'G_IS_OBJECT (object)' failed
+
+(evince:4452): GLib-GObject-CRITICAL **: 15:20:51.020: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+** (evince:4452): CRITICAL **: 15:20:51.020: cairo_region_t* pdf_document_text_get_text_mapping(EvDocumentText*, EvPage*): assertion 'POPPLER_IS_PAGE (page->backend_page)' failed
+
+** (evince:4452): CRITICAL **: 15:20:51.020: gchar* pdf_document_text_get_text(EvDocumentText*, EvPage*): assertion 'POPPLER_IS_PAGE (page->backend_page)' failed
+
+** (evince:4452): CRITICAL **: 15:20:51.020: gboolean pdf_document_text_get_text_layout(EvDocumentText*, EvPage*, EvRectangle**, guint*): assertion 'POPPLER_IS_PAGE (page->backend_page)' failed
+
+** (evince:4452): CRITICAL **: 15:20:51.020: PangoAttrList* pdf_document_text_get_text_attrs(EvDocumentText*, EvPage*): assertion 'POPPLER_IS_PAGE (page->backend_page)' failed
+
+** (evince:4452): CRITICAL **: 15:20:51.020: EvMappingList* pdf_document_forms_get_form_fields(EvDocumentForms*, EvPage*): assertion 'POPPLER_IS_PAGE (page->backend_page)' failed
+
+(evince:4452): Poppler-CRITICAL **: 15:20:51.020: GList* poppler_page_get_annot_mapping(PopplerPage*): assertion 'POPPLER_IS_PAGE (page)' failed
+
+(evince:4452): Poppler-CRITICAL **: 15:20:51.020: void poppler_page_get_size(PopplerPage*, double*, double*): assertion 'POPPLER_IS_PAGE (page)' failed
+
+(evince:4452): Poppler-CRITICAL **: 15:20:51.020: GList* poppler_page_get_annot_mapping(PopplerPage*): assertion 'POPPLER_IS_PAGE (page)' failed
+
+(evince:4452): Poppler-CRITICAL **: 15:20:51.020: void poppler_page_get_size(PopplerPage*, double*, double*): assertion 'POPPLER_IS_PAGE (page)' failed
+
+(evince:4452): GLib-GObject-CRITICAL **: 15:20:51.020: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(evince:4791): Gtk-CRITICAL **: 16:37:03.676: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4791): Gtk-CRITICAL **: 16:37:03.676: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4791): Gtk-CRITICAL **: 16:37:03.676: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4791): EvinceView-CRITICAL **: 16:37:03.677: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4686): EvinceView-CRITICAL **: 20:19:25.953: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4686): EvinceView-CRITICAL **: 20:19:25.989: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4686): EvinceView-CRITICAL **: 20:24:58.759: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4686): Gtk-CRITICAL **: 20:39:26.652: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+Gdk-Message: 21:05:58.134: evince: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(evince:2623): Gtk-CRITICAL **: 22:36:38.542: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 22:53:55.241: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 22:53:55.241: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 22:53:55.241: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 22:53:55.241: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 23:16:52.420: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 23:16:52.420: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 23:16:52.420: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 23:16:52.420: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 23:16:52.420: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2623): Gtk-CRITICAL **: 23:16:52.420: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 18:29:10.931: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 18:29:10.950: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 18:29:10.950: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 18:29:10.950: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): EvinceView-CRITICAL **: 18:29:10.951: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): EvinceView-CRITICAL **: 18:29:10.951: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): EvinceView-CRITICAL **: 18:29:10.951: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): EvinceView-CRITICAL **: 18:29:10.951: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): EvinceView-CRITICAL **: 18:29:10.951: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): Gtk-CRITICAL **: 18:29:38.305: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 18:29:38.305: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 18:29:38.305: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:27:15.554: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:27:15.554: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:27:15.554: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:27:15.554: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:27:15.555: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:28:06.365: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:28:06.365: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:28:06.365: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:28:06.365: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:28:06.365: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:28:06.365: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): EvinceView-CRITICAL **: 21:28:06.366: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): EvinceView-CRITICAL **: 21:28:06.366: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): EvinceView-CRITICAL **: 21:28:06.366: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): EvinceView-CRITICAL **: 21:28:06.366: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): EvinceView-CRITICAL **: 21:28:06.366: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:43:17.962: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:43:17.962: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:43:17.962: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:43:17.963: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:43:17.963: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:43:17.963: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:43:17.963: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2447): Gtk-CRITICAL **: 21:43:17.963: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+*** BUG ***
+In pixman_region32_init_rect: Invalid rectangle passed
+Set a breakpoint on '_pixman_log_error' to debug
+
+
+(evince:12429): Gtk-CRITICAL **: 07:41:55.664: gtk_widget_event: assertion 'WIDGET_REALIZED_FOR_EVENT (widget, event)' failed
+
+(evince:12429): Gtk-CRITICAL **: 07:41:56.185: gtk_widget_event: assertion 'WIDGET_REALIZED_FOR_EVENT (widget, event)' failed
+
+(evince:2972): Gtk-CRITICAL **: 08:02:01.145: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 08:08:20.785: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 08:08:20.785: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 08:08:20.785: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:11:51.237: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:11:51.237: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:11:51.237: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:11:51.237: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:11:51.237: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:11:51.237: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:11:51.237: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:11:51.237: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): EvinceView-CRITICAL **: 09:11:51.237: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:12:16.727: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:25:16.615: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2972): Gtk-CRITICAL **: 09:26:47.306: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3571): Gtk-CRITICAL **: 10:10:34.213: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3571): Gtk-CRITICAL **: 10:10:34.248: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 11:15:12.101: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 11:15:12.136: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 11:28:08.929: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 11:28:08.929: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 11:28:08.929: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 11:28:08.929: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.176: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:3111): Gtk-CRITICAL **: 12:14:19.177: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): EvinceView-CRITICAL **: 09:59:53.288: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 09:59:53.320: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 09:59:53.320: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 09:59:53.320: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:03:10.614: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:03:10.614: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:03:10.614: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:08:01.194: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:08:01.194: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:08:01.195: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:08:01.195: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:08:01.195: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:08:01.195: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:08:01.195: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:08:01.195: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:08:01.196: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.580: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.580: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.580: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:11:36.581: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.724: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.725: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.725: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.725: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.725: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:13:03.725: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:13:03.725: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:13:03.725: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:13:03.725: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:13:03.725: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:13:03.725: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:17:48.882: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): EvinceView-CRITICAL **: 10:17:48.883: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.564: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:4808): Gtk-CRITICAL **: 10:26:01.565: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2562): Gtk-CRITICAL **: 14:04:26.222: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2562): Gtk-CRITICAL **: 14:04:26.257: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2562): Gtk-CRITICAL **: 14:04:26.257: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.258: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.259: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): EvinceView-CRITICAL **: 14:04:26.260: ev_page_cache_get_annot_mapping: assertion 'page >= 0 && page < cache->n_pages' failed
+
+(evince:2562): Gtk-CRITICAL **: 14:04:34.422: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2562): Gtk-CRITICAL **: 14:04:34.423: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2562): Gtk-CRITICAL **: 14:04:34.423: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed
+
+(evince:2562): Gtk-CRITICAL **: 14:04:34.423: gtk_tree_view_expand_row: assertion 'tree_view->priv->model != NULL' failed

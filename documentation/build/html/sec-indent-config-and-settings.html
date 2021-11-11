@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4. indentconfig.yaml, local settings and the -y switch &mdash; latexindent.pl 3.13 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/proof.css" type="text/css" />
+  <link rel="stylesheet" href="_static/latexindent.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/proof.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. defaultSettings.yaml" href="sec-default-user-local.html" />
+    <link rel="prev" title="3. How to use the script" href="sec-how-to-use.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> latexindent.pl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sec-introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-demonstration.html">2. Demonstration: before and after</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-how-to-use.html">3. How to use the script</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. indentconfig.yaml, local settings and the -y switch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indentconfig-yaml-and-indentconfig-yaml">4.1. indentconfig.yaml and .indentconfig.yaml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#localsettings-yaml-and-friends">4.2. localSettings.yaml and friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-y-yaml-switch">4.3. The -y|yaml switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings-load-order">4.4. Settings load order</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sec-default-user-local.html">5. defaultSettings.yaml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-m-switch.html">6. The -m (modifylinebreaks) switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-replacements.html">7. The -r, -rv and -rr switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-line-switch.html">8. The –lines switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-fine-tuning.html">9. Fine tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-conclusions-know-limitations.html">10. Conclusions and known limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">12. Appendices</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">latexindent.pl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>4. indentconfig.yaml, local settings and the -y switch</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/sec-indent-config-and-settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="indentconfig-yaml-local-settings-and-the-y-switch">
+<span id="sec-indentconfig"></span><h1>4. indentconfig.yaml, local settings and the -y switch<a class="headerlink" href="#indentconfig-yaml-local-settings-and-the-y-switch" title="Permalink to this headline">¶</a></h1>
+<p>The behaviour of <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> is controlled from the settings specified in any of the YAML files that you tell it to load. By default, <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> will only load <code class="docutils literal notranslate"><span class="pre">defaultSettings.yaml</span></code>,
+but there are a few ways that you can tell it to load your own settings files.</p>
+<div class="section" id="indentconfig-yaml-and-indentconfig-yaml">
+<h2>4.1. indentconfig.yaml and .indentconfig.yaml<a class="headerlink" href="#indentconfig-yaml-and-indentconfig-yaml" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> will always check your home directory for <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">.indentconfig.yaml</span></code> (unless it is called with the <code class="docutils literal notranslate"><span class="pre">-d</span></code> switch), which is a plain text file you can create
+that contains the <em>absolute</em> paths for any settings files that you wish <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> to load. There is no difference between <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">.indentconfig.yaml</span></code>, other than the fact
+that <code class="docutils literal notranslate"><span class="pre">.indentconfig.yaml</span></code> is a ‘hidden’ file; thank you to (Diaz 2014) for providing this feature. In what follows, we will use <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code>, but it is understood that this could equally
+represent <code class="docutils literal notranslate"><span class="pre">.indentconfig.yaml</span></code>. If you have both files in existence then <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> takes priority.</p>
+<p>For Mac and Linux users, their home directory is ``&nbsp;/username`` while Windows (Vista onwards) is <code class="docutils literal notranslate"><span class="pre">C:\Users\username</span></code> <a class="footnote-reference" href="#id3" id="id1">[1]</a> <a class="reference internal" href="#lst-indentconfig"><span class="std std-numref">Listing 12</span></a> shows a sample <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> file.</p>
+<div class="literal-block-wrapper docutils container" id="lst-indentconfig">
+<div class="code-block-caption"><span class="caption-number">Listing 12 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> (sample)</span><a class="headerlink" href="#lst-indentconfig" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span># Paths to user settings for latexindent.pl
+#
+# Note that the settings will be read in the order you
+# specify here- each successive settings file will overwrite
+# the variables that you specify
+
+paths:
+- /home/cmhughes/Documents/yamlfiles/mysettings.yaml
+- /home/cmhughes/folder/othersettings.yaml
+- /some/other/folder/anynameyouwant.yaml
+- C:<span class="k">\Users\chughes\Documents\mysettings</span>.yaml
+- C:<span class="k">\Users\chughes\Desktop\test</span> spaces<span class="k">\more</span> spaces.yaml
+</pre></div>
+</div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> files you specify in <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> will be loaded in the order in which you write them. Each file doesn’t have to have every switch from <code class="docutils literal notranslate"><span class="pre">defaultSettings.yaml</span></code>; in
+fact, I recommend that you only keep the switches that you want to <em>change</em> in these settings files.</p>
+<p>To get started with your own settings file, you might like to save a copy of <code class="docutils literal notranslate"><span class="pre">defaultSettings.yaml</span></code> in another directory and call it, for example, <code class="docutils literal notranslate"><span class="pre">mysettings.yaml</span></code>. Once you have added the path
+to <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> you can change the switches and add more code-block names to it as you see fit – have a look at <a class="reference internal" href="#lst-mysettings"><span class="std std-numref">Listing 13</span></a> for an example that uses four tabs for the default
+indent, adds the <code class="docutils literal notranslate"><span class="pre">tabbing</span></code> environment/command to the list of environments that contains alignment delimiters; you might also like to refer to the many YAML files detailed throughout the rest of
+this documentation.</p>
+<div class="literal-block-wrapper docutils container" id="lst-mysettings">
+<span id="index-0"></span><div class="code-block-caption"><span class="caption-number">Listing 13 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">mysettings.yaml</span></code> (example)</span><a class="headerlink" href="#lst-mysettings" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span># Default value of indentation
+defaultIndent: &quot;<span class="k">\t\t\t\t</span>&quot;
+
+# environments that have tab delimiters, add more
+# as needed
+lookForAlignDelims:
+    tabbing: 1
+</pre></div>
+</div>
+</div>
+<p>You can make sure that your settings are loaded by checking <code class="docutils literal notranslate"><span class="pre">indent.log</span></code> for details – if you have specified a path that <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> doesn’t recognise then you’ll get a warning, otherwise
+you’ll get confirmation that <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> has read your settings file. <a class="footnote-reference" href="#id4" id="id2">[2]</a></p>
+<div class="admonition warning" id="index-1">
+<p class="first admonition-title">Warning</p>
+<p>When editing <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> files it is <em>extremely</em> important to remember how sensitive they are to spaces. I highly recommend copying and pasting from <code class="docutils literal notranslate"><span class="pre">defaultSettings.yaml</span></code> when you create your first
+<code class="docutils literal notranslate"><span class="pre">whatevernameyoulike.yaml</span></code> file.</p>
+<p class="last">If <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> can not read your <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file it will tell you so in <code class="docutils literal notranslate"><span class="pre">indent.log</span></code>.</p>
+</div>
+<p>If you find that <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> does not read your YAML file, then it might be as a result of the default commandline encoding not being UTF-8; normally this will only occcur for Windows users. In
+this case, you might like to explore the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> option for <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> as demonstrated in <a class="reference internal" href="#lst-indentconfig-encoding"><span class="std std-numref">Listing 14</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-indentconfig-encoding">
+<div class="code-block-caption"><span class="caption-number">Listing 14 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">encoding</span></code> option for <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code></span><a class="headerlink" href="#lst-indentconfig-encoding" title="Permalink to this code">¶</a></div>
+<div class="baseyaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">encoding</span><span class="p">:</span> <span class="n">GB2312</span>
+<span class="n">paths</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">D</span><span class="p">:</span>\<span class="n">cmh</span>\<span class="n">latexindent</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+</div>
+<p>Thank you to (qiancy98 2021) for this contribution; please see <a class="reference internal" href="appendices.html#app-encoding"><span class="std std-numref">Section 12.4</span></a> and details within (“Perldoc Encode::Supported” n.d.) for further information.</p>
+</div>
+<div class="section" id="localsettings-yaml-and-friends">
+<span id="sec-localsettings"></span><h2>4.2. localSettings.yaml and friends<a class="headerlink" href="#localsettings-yaml-and-friends" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">-l</span></code> switch tells <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> to look for <code class="docutils literal notranslate"><span class="pre">localSettings.yaml</span></code> and/or friends in the <em>same directory</em> as <code class="docutils literal notranslate"><span class="pre">myfile.tex</span></code>. For example, if you use the following command</p>
+<div class="commandshell highlight-latex notranslate" id="index-2"><div class="highlight"><pre><span></span>latexindent.pl -l myfile.tex
+</pre></div>
+</div>
+<p>then <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> will search for and then, assuming they exist, load each of the following files in the following order:</p>
+<ol class="arabic simple">
+<li>localSettings.yaml</li>
+<li>latexindent.yaml</li>
+<li>.localSettings.yaml</li>
+<li>.latexindent.yaml</li>
+</ol>
+<p>These files will be assumed to be in the same directory as <code class="docutils literal notranslate"><span class="pre">myfile.tex</span></code>, or otherwise in the current working directory. You do not need to have all of the above files, usually just one will be
+sufficient. In what follows, whenever we refer to <code class="docutils literal notranslate"><span class="pre">localSettings.yaml</span></code> it is assumed that it can mean any of the four named options listed above.</p>
+<p>If you’d prefer to name your <code class="docutils literal notranslate"><span class="pre">localSettings.yaml</span></code> file something different, (say, <code class="docutils literal notranslate"><span class="pre">mysettings.yaml</span></code> as in <a class="reference internal" href="#lst-mysettings"><span class="std std-numref">Listing 13</span></a>) then you can call <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> using, for example,</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl -l=mysettings.yaml myfile.tex
+</pre></div>
+</div>
+<p>Any settings file(s) specified using the <code class="docutils literal notranslate"><span class="pre">-l</span></code> switch will be read <em>after</em> <code class="docutils literal notranslate"><span class="pre">defaultSettings.yaml</span></code> and, assuming they exist, any user setting files specified in <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code>.</p>
+<p>Your settings file can contain any switches that you’d like to change; a sample is shown in <a class="reference internal" href="#lst-localsettings"><span class="std std-numref">Listing 15</span></a>, and you’ll find plenty of further examples throughout this manual.</p>
+<div class="literal-block-wrapper docutils container" id="lst-localsettings">
+<span id="index-3"></span><div class="code-block-caption"><span class="caption-number">Listing 15 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">localSettings.yaml</span></code> (example)</span><a class="headerlink" href="#lst-localsettings" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>#  verbatim environments - environments specified
+#  here will not be changed at all!
+verbatimEnvironments:
+    cmhenvironment: 0
+    myenv: 1
+</pre></div>
+</div>
+</div>
+<p>You can make sure that your settings file has been loaded by checking <code class="docutils literal notranslate"><span class="pre">indent.log</span></code> for details; if it can not be read then you receive a warning, otherwise you’ll get confirmation that
+<code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> has read your settings file.</p>
+</div>
+<div class="section" id="the-y-yaml-switch">
+<span id="sec-yamlswitch"></span><h2>4.3. The -y|yaml switch<a class="headerlink" href="#the-y-yaml-switch" title="Permalink to this headline">¶</a></h2>
+<p>You may use the <code class="docutils literal notranslate"><span class="pre">-y</span></code> switch to load your settings; for example, if you wished to specify the settings from <a class="reference internal" href="#lst-localsettings"><span class="std std-numref">Listing 15</span></a> using the <code class="docutils literal notranslate"><span class="pre">-y</span></code> switch, then you could use the following
+command:</p>
+<div class="commandshell highlight-latex notranslate" id="index-4"><div class="highlight"><pre><span></span>latexindent.pl -y=&quot;verbatimEnvironments:cmhenvironment:0;myenv:1&quot; myfile.tex
+</pre></div>
+</div>
+<p>Note the use of <code class="docutils literal notranslate"><span class="pre">;</span></code> to specify another field within <code class="docutils literal notranslate"><span class="pre">verbatimEnvironments</span></code>. This is shorthand, and equivalent, to using the following command:</p>
+<div class="commandshell highlight-latex notranslate" id="index-5"><div class="highlight"><pre><span></span>latexindent.pl -y=&quot;verbatimEnvironments:cmhenvironment:0,verbatimEnvironments:myenv:1&quot; myfile.tex
+</pre></div>
+</div>
+<p>You may, of course, specify settings using the <code class="docutils literal notranslate"><span class="pre">-y</span></code> switch as well as, for example, settings loaded using the <code class="docutils literal notranslate"><span class="pre">-l</span></code> switch; for example,</p>
+<span class="target" id="index-6"></span><div class="commandshell highlight-latex notranslate" id="index-7"><div class="highlight"><pre><span></span>latexindent.pl -l=mysettings.yaml -y=&quot;verbatimEnvironments:cmhenvironment:0;myenv:1&quot; myfile.tex
+</pre></div>
+</div>
+<p>Any settings specified using the <code class="docutils literal notranslate"><span class="pre">-y</span></code> switch will be loaded <em>after</em> any specified using <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> and the <code class="docutils literal notranslate"><span class="pre">-l</span></code> switch.</p>
+<p>If you wish to specify any regex-based settings using the <code class="docutils literal notranslate"><span class="pre">-y</span></code> switch,</p>
+<p id="index-8">it is important not to use quotes surrounding the regex; for example, with reference to the ‘one sentence per line’ feature (<a class="reference internal" href="sec-the-m-switch.html#sec-onesentenceperline"><span class="std std-numref">Section 6.5</span></a>) and the listings within
+<a class="reference internal" href="sec-the-m-switch.html#lst-sentencesendwith"><span class="std std-numref">Listing 341</span></a>, the following settings give the option to have sentences end with a semicolon</p>
+<div class="commandshell highlight-latex notranslate" id="index-9"><div class="highlight"><pre><span></span>latexindent.pl -m --yaml=&#39;modifyLineBreaks:oneSentencePerLine:sentencesEndWith:other:<span class="k">\;</span>&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="settings-load-order">
+<span id="sec-loadorder"></span><h2>4.4. Settings load order<a class="headerlink" href="#settings-load-order" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> loads the settings files in the following order:</p>
+<ol class="arabic simple" id="index-10">
+<li><code class="docutils literal notranslate"><span class="pre">defaultSettings.yaml</span></code> is always loaded, and can not be renamed;</li>
+<li><code class="docutils literal notranslate"><span class="pre">anyUserSettings.yaml</span></code> and any other arbitrarily-named files specified in <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code>;</li>
+<li><code class="docutils literal notranslate"><span class="pre">localSettings.yaml</span></code> but only if found in the same directory as <code class="docutils literal notranslate"><span class="pre">myfile.tex</span></code> and called with <code class="docutils literal notranslate"><span class="pre">-l</span></code> switch; this file can be renamed, provided that the call to <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> is adjusted
+accordingly (see <a class="reference internal" href="#sec-localsettings"><span class="std std-numref">Section 4.2</span></a>). You may specify both relative and absolute paths to other YAML files using the <code class="docutils literal notranslate"><span class="pre">-l</span></code> switch, separating multiple files using commas;</li>
+<li>any settings specified in the <code class="docutils literal notranslate"><span class="pre">-y</span></code> switch.</li>
+</ol>
+<p>A visual representation of this is given in <a class="reference internal" href="#fig-loadorder"><span class="std std-numref">Fig. 1</span></a>.</p>
+<div class="figure" id="id5">
+<span id="fig-loadorder"></span><img alt="_images/figure-schematic.png" src="_images/figure-schematic.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Schematic of the load order described in <a class="reference internal" href="#sec-loadorder"><span class="std std-numref">Section 4.4</span></a>; solid lines represent mandatory files, dotted lines represent optional files. <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code> can contain as many files as
+you like. The files will be loaded in order; if you specify settings for the same field in more than one file, the most recent takes priority.</span></p>
+</div>
+<div class="references docutils container" id="refs">
+<div class="docutils container" id="ref-jacobo-diaz-hidden-config">
+Diaz, Jacobo. 2014. “Hiddenconfig.” July 21, 2014. <a class="reference external" href="https://github.com/cmhughes/latexindent.pl/pull/18">https://github.com/cmhughes/latexindent.pl/pull/18</a>.</div>
+<div class="docutils container" id="ref-encoding">
+“Perldoc Encode::Supported.” n.d. Accessed May 6, 2021. https://perldoc.perl.org/Encode::Supported.</div>
+<div class="docutils container" id="ref-qiancy98">
+qiancy98. 2021. “Locale Encoding of File System.” May 6, 2021. <a class="reference external" href="https://github.com/cmhughes/latexindent.pl/pull/273">https://github.com/cmhughes/latexindent.pl/pull/273</a>.</div>
+</div>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>If you’re not sure where to put <code class="docutils literal notranslate"><span class="pre">indentconfig.yaml</span></code>, don’t worry <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> will tell you in the log file exactly where to put it assuming it doesn’t exist already.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Windows users may find that they have to end <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> files with a blank line</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sec-default-user-local.html" class="btn btn-neutral float-right" title="5. defaultSettings.yaml" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sec-how-to-use.html" class="btn btn-neutral float-left" title="3. How to use the script" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Chris Hughes.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

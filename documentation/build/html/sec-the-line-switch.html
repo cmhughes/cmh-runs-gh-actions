@@ -1,0 +1,628 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>8. The –lines switch &mdash; latexindent.pl 3.13 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/proof.css" type="text/css" />
+  <link rel="stylesheet" href="_static/latexindent.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/proof.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9. Fine tuning" href="sec-fine-tuning.html" />
+    <link rel="prev" title="7. The -r, -rv and -rr switches" href="sec-replacements.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> latexindent.pl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sec-introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-demonstration.html">2. Demonstration: before and after</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-how-to-use.html">3. How to use the script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-indent-config-and-settings.html">4. indentconfig.yaml, local settings and the -y switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-default-user-local.html">5. defaultSettings.yaml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-m-switch.html">6. The -m (modifylinebreaks) switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-replacements.html">7. The -r, -rv and -rr switches</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. The –lines switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-fine-tuning.html">9. Fine tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-conclusions-know-limitations.html">10. Conclusions and known limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">12. Appendices</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">latexindent.pl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>8. The –lines switch</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/sec-the-line-switch.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-lines-switch">
+<span id="sec-line-switch"></span><h1>8. The –lines switch<a class="headerlink" href="#the-lines-switch" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> can operate on a <em>selection</em> of lines of the file using the <code class="docutils literal notranslate"><span class="pre">–lines</span></code> or <code class="docutils literal notranslate"><span class="pre">-n</span></code> switch.</p>
+<p id="index-0">The basic syntax is <code class="docutils literal notranslate"><span class="pre">–lines</span> <span class="pre">MIN-MAX</span></code>, so for example</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 3-7 myfile.tex
+latexindent.pl -n 3-7 myfile.tex
+</pre></div>
+</div>
+<p>will only operate upon lines 3 to 7 in <code class="docutils literal notranslate"><span class="pre">myfile.tex</span></code>. All of the other lines will <em>not</em> be operated upon by <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code>.</p>
+<p>The options for the <code class="docutils literal notranslate"><span class="pre">lines</span></code> switch are:</p>
+<ul class="simple">
+<li>line range, as in <code class="docutils literal notranslate"><span class="pre">–lines</span> <span class="pre">3-7</span></code></li>
+<li>single line, as in <code class="docutils literal notranslate"><span class="pre">–lines</span> <span class="pre">5</span></code></li>
+<li>multiple line ranges separated by commas, as in <code class="docutils literal notranslate"><span class="pre">–lines</span> <span class="pre">3-5,8-10</span></code></li>
+<li>negated line ranges, as in <code class="docutils literal notranslate"><span class="pre">–lines</span> <span class="pre">!3-5</span></code> which translates to <code class="docutils literal notranslate"><span class="pre">–lines</span> <span class="pre">1-2,6-N</span></code>, where N is the number of lines in your file.</li>
+</ul>
+<p>We demonstrate this feature, and the available variations in what follows. We will use the file in <a class="reference internal" href="#lst-myfile"><span class="std std-numref">Listing 508</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile">
+<div class="code-block-caption"><span class="caption-number">Listing 508 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile.tex</span></code></span><a class="headerlink" href="#lst-myfile" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">fourth</span> <span class="n">line</span>
+	\<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="proof proof-type-example" id="id1">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 8</span>
+        
+    </div><div class="proof-content">
+<p>We demonstrate the basic usage using the command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 3-7 myfile.tex -o=+-mod1
+</pre></div>
+</div>
+<p>which instructs <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> to only operate on lines 3 to 7; the output is given in <a class="reference internal" href="#lst-myfile-mod1"><span class="std std-numref">Listing 509</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile-mod1">
+<div class="code-block-caption"><span class="caption-number">Listing 509 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile-mod1.tex</span></code></span><a class="headerlink" href="#lst-myfile-mod1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">fourth</span> <span class="n">line</span>
+	\<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The following two calls to <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> are equivalent</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 3-7 myfile.tex -o=+-mod1
+latexindent.pl --lines 7-3 myfile.tex -o=+-mod1
+</pre></div>
+</div>
+<p>as <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> performs a check to put the lowest number first.</p>
+</div></div><div class="proof proof-type-example" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 9</span>
+        
+    </div><div class="proof-content">
+<p>You can call the <code class="docutils literal notranslate"><span class="pre">lines</span></code> switch with only <em>one number</em> and in which case only that line will be operated upon. For example</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 5 myfile.tex -o=+-mod2
+</pre></div>
+</div>
+<p>instructs <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> to only operate on line 5; the output is given in <a class="reference internal" href="#lst-myfile-mod2"><span class="std std-numref">Listing 510</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile-mod2">
+<div class="code-block-caption"><span class="caption-number">Listing 510 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile-mod2.tex</span></code></span><a class="headerlink" href="#lst-myfile-mod2" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">fourth</span> <span class="n">line</span>
+	\<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The following two calls are equivalent:</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 5 myfile.tex
+latexindent.pl --lines 5-5 myfile.tex
+</pre></div>
+</div>
+</div></div><div class="proof proof-type-example" id="id3">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 10</span>
+        
+    </div><div class="proof-content">
+<p>If you specify a value outside of the line range of the file then <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> will ignore the <code class="docutils literal notranslate"><span class="pre">lines</span></code> argument, detail as such in the log file, and proceed to operate on the entire file.</p>
+<p>For example, in the following call</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 11-13 myfile.tex
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> will ignore the <code class="docutils literal notranslate"><span class="pre">lines</span></code> argument, and <em>operate on the entire file</em> because <a class="reference internal" href="#lst-myfile"><span class="std std-numref">Listing 508</span></a> only has 12 lines.</p>
+<p>Similarly, in the call</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines -1-3 myfile.tex
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> will ignore the <code class="docutils literal notranslate"><span class="pre">lines</span></code> argument, and <em>operate on the entire file</em> because we assume that negatively numbered lines in a file do not exist.</p>
+</div></div><div class="proof proof-type-example" id="id4">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 11</span>
+        
+    </div><div class="proof-content">
+<p>You can specify <em>multiple line ranges</em> as in the following</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 3-5,8-10 myfile.tex -o=+-mod3
+</pre></div>
+</div>
+<p>which instructs <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> to operate upon lines 3 to 5 and lines 8 to 10; the output is given in <a class="reference internal" href="#lst-myfile-mod3"><span class="std std-numref">Listing 511</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile-mod3">
+<div class="code-block-caption"><span class="caption-number">Listing 511 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile-mod3.tex</span></code></span><a class="headerlink" href="#lst-myfile-mod3" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">fourth</span> <span class="n">line</span>
+	\<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The following calls to <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> are all equivalent</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 3-5,8-10 myfile.tex
+latexindent.pl --lines 8-10,3-5 myfile.tex
+latexindent.pl --lines 10-8,3-5 myfile.tex
+latexindent.pl --lines 10-8,5-3 myfile.tex
+</pre></div>
+</div>
+<p>as <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> performs a check to put the lowest line ranges first, and within each line range, it puts the lowest number first.</p>
+</div></div><div class="proof proof-type-example" id="id5">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 12</span>
+        
+    </div><div class="proof-content">
+<p>There’s no limit to the number of line ranges that you can specify, they just need to be separated by commas. For example</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 1-2,4-5,9-10,12 myfile.tex -o=+-mod4
+</pre></div>
+</div>
+<p>has four line ranges: lines 1 to 2, lines 4 to 5, lines 9 to 10 and line 12. The output is given in <a class="reference internal" href="#lst-myfile-mod4"><span class="std std-numref">Listing 512</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile-mod4">
+<div class="code-block-caption"><span class="caption-number">Listing 512 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile-mod4.tex</span></code></span><a class="headerlink" href="#lst-myfile-mod4" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+	<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">fourth</span> <span class="n">line</span>
+	\<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>As previously, the ordering does not matter, and the following calls to <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> are all equivalent</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 1-2,4-5,9-10,12 myfile.tex
+latexindent.pl --lines 2-1,4-5,9-10,12 myfile.tex
+latexindent.pl --lines 4-5,1-2,9-10,12 myfile.tex
+latexindent.pl --lines 12,4-5,1-2,9-10 myfile.tex
+</pre></div>
+</div>
+<p>as <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> performs a check to put the lowest line ranges first, and within each line range, it puts the lowest number first.</p>
+</div></div><div class="proof proof-type-example" id="id6">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 13</span>
+        
+    </div><div class="proof-content">
+<p id="index-1">You can specify <em>negated line ranges</em> by using <code class="docutils literal notranslate"><span class="pre">!</span></code> as in</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines !5-7 myfile.tex -o=+-mod5
+</pre></div>
+</div>
+<p>which instructs <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> to operate upon all of the lines <em>except</em> lines 5 to 7.</p>
+<p>In other words, <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> <em>will</em> operate on lines 1 to 4, and 8 to 12, so the following two calls are equivalent:</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines !5-7 myfile.tex
+latexindent.pl --lines 1-4,8-12 myfile.tex
+</pre></div>
+</div>
+<p>The output is given in <a class="reference internal" href="#lst-myfile-mod5"><span class="std std-numref">Listing 513</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile-mod5">
+<div class="code-block-caption"><span class="caption-number">Listing 513 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile-mod5.tex</span></code></span><a class="headerlink" href="#lst-myfile-mod5" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+	<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">fourth</span> <span class="n">line</span>
+	\<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></div><div class="proof proof-type-example" id="id7">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 14</span>
+        
+    </div><div class="proof-content">
+<p id="index-2">You can specify <em>multiple negated line ranges</em> such as</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines !5-7,!9-10 myfile.tex -o=+-mod6
+</pre></div>
+</div>
+<p>which is equivalent to:</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 1-4,8,11-12 myfile.tex -o=+-mod6
+</pre></div>
+</div>
+<p>The output is given in <a class="reference internal" href="#lst-myfile-mod6"><span class="std std-numref">Listing 514</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile-mod6">
+<div class="code-block-caption"><span class="caption-number">Listing 514 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile-mod6.tex</span></code></span><a class="headerlink" href="#lst-myfile-mod6" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+		<span class="n">second</span> <span class="n">block</span><span class="p">,</span> <span class="n">fourth</span> <span class="n">line</span>
+	\<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></div><div class="proof proof-type-example" id="id8">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 15</span>
+        
+    </div><div class="proof-content">
+<p>If you specify a line range with anything other than an integer, then <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> will ignore the <code class="docutils literal notranslate"><span class="pre">lines</span></code> argument, and <em>operate on the entire file</em>.</p>
+<p>Sample calls that result in the <code class="docutils literal notranslate"><span class="pre">lines</span></code> argument being ignored include the following:</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 1-x myfile.tex
+latexindent.pl --lines !y-3 myfile.tex
+</pre></div>
+</div>
+</div></div><div class="proof proof-type-example" id="id9">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 16</span>
+        
+    </div><div class="proof-content">
+<p>We can, of course, use the <code class="docutils literal notranslate"><span class="pre">lines</span></code> switch in combination with other switches.</p>
+<p>For example, let’s use with the file in <a class="reference internal" href="#lst-myfile1"><span class="std std-numref">Listing 515</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile1">
+<div class="code-block-caption"><span class="caption-number">Listing 515 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile1.tex</span></code></span><a class="headerlink" href="#lst-myfile1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+	\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span> <span class="n">body</span> \<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>We can demonstrate interaction with the <code class="docutils literal notranslate"><span class="pre">-m</span></code> switch (see <a class="reference internal" href="sec-the-m-switch.html#sec-modifylinebreaks"><span class="std std-numref">Section 6</span></a>); in particular, if we use <a class="reference internal" href="sec-the-m-switch.html#lst-mlb2"><span class="std std-numref">Listing 410</span></a>, <a class="reference internal" href="sec-the-m-switch.html#lst-env-mlb7"><span class="std std-numref">Listing 394</span></a> and <a class="reference internal" href="sec-the-m-switch.html#lst-env-mlb8"><span class="std std-numref">Listing 395</span></a> and
+run</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl --lines 6 myfile1.tex -o=+-mod1 -m -l env-mlb2,env-mlb7,env-mlb8 -o=+-mod1
+</pre></div>
+</div>
+<p>then we receive the output in <a class="reference internal" href="#lst-myfile1-mod1"><span class="std std-numref">Listing 516</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-myfile1-mod1">
+<div class="code-block-caption"><span class="caption-number">Listing 516 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">myfile1-mod1.tex</span></code></span><a class="headerlink" href="#lst-myfile1-mod1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">the</span> <span class="n">environments</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">first</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">second</span> <span class="n">line</span>
+	<span class="n">first</span> <span class="n">block</span><span class="p">,</span> <span class="n">third</span> <span class="n">line</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+	<span class="n">body</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">two</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">one</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sec-fine-tuning.html" class="btn btn-neutral float-right" title="9. Fine tuning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sec-replacements.html" class="btn btn-neutral float-left" title="7. The -r, -rv and -rr switches" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Chris Hughes.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

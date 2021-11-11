@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>9. Fine tuning &mdash; latexindent.pl 3.13 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/proof.css" type="text/css" />
+  <link rel="stylesheet" href="_static/latexindent.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/proof.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="10. Conclusions and known limitations" href="sec-conclusions-know-limitations.html" />
+    <link rel="prev" title="8. The –lines switch" href="sec-the-line-switch.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> latexindent.pl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sec-introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-demonstration.html">2. Demonstration: before and after</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-how-to-use.html">3. How to use the script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-indent-config-and-settings.html">4. indentconfig.yaml, local settings and the -y switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-default-user-local.html">5. defaultSettings.yaml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-m-switch.html">6. The -m (modifylinebreaks) switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-replacements.html">7. The -r, -rv and -rr switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-the-line-switch.html">8. The –lines switch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Fine tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec-conclusions-know-limitations.html">10. Conclusions and known limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">12. Appendices</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">latexindent.pl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>9. Fine tuning</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/sec-fine-tuning.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fine-tuning">
+<span id="sec-finetuning"></span><h1>9. Fine tuning<a class="headerlink" href="#fine-tuning" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code> operates by looking for the code blocks detailed in <a class="reference internal" href="sec-default-user-local.html#tab-code-blocks"><span class="std std-numref">Table 2</span></a>. The fine tuning of the details of such code blocks is controlled by the <code class="docutils literal notranslate"><span class="pre">fineTuning</span></code> field,
+detailed in <a class="reference internal" href="#lst-finetuning"><span class="std std-numref">Listing 517</span></a>.</p>
+<p>This field is for those that would like to peek under the bonnet/hood and make some fine tuning to <code class="docutils literal notranslate"><span class="pre">latexindent.pl</span></code>’s operating.</p>
+<span class="target" id="index-0"></span><span class="target" id="index-1"></span><span class="target" id="index-2"></span><span class="target" id="index-3"></span><span class="target" id="index-4"></span><span class="target" id="index-5"></span><span class="target" id="index-6"></span><span class="target" id="index-7"></span><span class="target" id="index-8"></span><span class="target" id="index-9"></span><span class="target" id="index-10"></span><span class="target" id="index-11"></span><span class="target" id="index-12"></span><div class="admonition warning" id="index-13">
+<p class="first admonition-title">Warning</p>
+<p class="last">Making changes to the fine tuning may have significant consequences for your indentation scheme, proceed with caution!</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning">
+<div class="code-block-caption"><span class="caption-number">Listing 517 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fineTuning</span></code></span><a class="headerlink" href="#lst-finetuning" title="Permalink to this code">¶</a></div>
+<div class="baseyaml highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">fineTuning</span><span class="p">:</span>
+    <span class="n">environments</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;[a-zA-Z@\*0-9_</span><span class="se">\\</span><span class="s1">]+&#39;</span> 
+    <span class="n">ifElseFi</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;(?!@?if[a-zA-Z@]*?\{)@?if[a-zA-Z@]*?&#39;</span>
+    <span class="n">commands</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;[+a-zA-Z@\*0-9_\:]+?&#39;</span>
+    <span class="n">keyEqualsValuesBracesBrackets</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;[a-zA-Z@\*0-9_\/.:\#-]+[a-zA-Z@\*0-9_\/.\h\{\}:\#-]*?&#39;</span>
+      <span class="n">follow</span><span class="p">:</span> <span class="s1">&#39;(?:(?&lt;!</span><span class="se">\\</span><span class="s1">)\{)|,|(?:(?&lt;!</span><span class="se">\\</span><span class="s1">)\[)&#39;</span>
+    <span class="n">namedGroupingBracesBrackets</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;[0-9\.a-zA-Z@\*&gt;&lt;]+?&#39;</span>
+      <span class="n">follow</span><span class="p">:</span> <span class="s1">&#39;\h|\R|\{|\[|\$|\)|\(&#39;</span>
+    <span class="n">UnNamedGroupingBracesBrackets</span><span class="p">:</span> 
+      <span class="n">follow</span><span class="p">:</span> <span class="s1">&#39;\{|\[|,|&amp;|\)|\(|\$&#39;</span>
+    <span class="n">arguments</span><span class="p">:</span>
+      <span class="n">before</span><span class="p">:</span> <span class="s1">&#39;(?:#\d\h*;?,?\/?)+|\&lt;.*?\&gt;&#39;</span>
+      <span class="n">between</span><span class="p">:</span> <span class="s1">&#39;_|\^|\*&#39;</span>
+    <span class="n">trailingComments</span><span class="p">:</span>
+      <span class="n">notPreceededBy</span><span class="p">:</span> <span class="s1">&#39;(?&lt;!</span><span class="se">\\</span><span class="s1">)&#39;</span>
+    <span class="n">modifyLineBreaks</span><span class="p">:</span>
+      <span class="n">betterFullStop</span><span class="p">:</span> <span class="s1">&#39;(?:\.\)(?!\h*[a-z]))|(?:(?&lt;!(?:(?:e\.g)|(?:i\.e)|(?:etc))))\.(?!(?:[a-z]|[A-Z]|\-|~|\,|[0-9]))&#39;</span>
+      <span class="n">doubleBackSlash</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">(?:\h*\[\h*\d+\h*[a-zA-Z]+\h*\])?&#39;</span>
+      <span class="n">comma</span><span class="p">:</span> <span class="s1">&#39;,&#39;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The fields given in <a class="reference internal" href="#lst-finetuning"><span class="std std-numref">Listing 517</span></a> are all <em>regular expressions</em>. This manual is not intended to be a tutorial on regular expressions; you might like to read, for example, (Friedl, n.d.)
+for a detailed covering of the topic.</p>
+<p>We make the following comments with reference to <a class="reference internal" href="#lst-finetuning"><span class="std std-numref">Listing 517</span></a>:</p>
+<ol class="arabic">
+<li><p class="first">the <code class="docutils literal notranslate"><span class="pre">environments:name</span></code> field details that the <em>name</em> of an environment can contain:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">a-z</span></code> lower case letters</li>
+<li><code class="docutils literal notranslate"><span class="pre">A-Z</span></code> upper case letters</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> ’letter’</li>
+<li><code class="docutils literal notranslate"><span class="pre">\*</span></code> stars</li>
+<li><code class="docutils literal notranslate"><span class="pre">0-9</span></code> numbers</li>
+<li><code class="docutils literal notranslate"><span class="pre">_</span></code> underscores</li>
+<li><code class="docutils literal notranslate"><span class="pre">\</span></code> backslashes</li>
+</ol>
+<p id="index-14">The <code class="docutils literal notranslate"><span class="pre">+</span></code> at the end means <em>at least one</em> of the above characters.</p>
+</li>
+<li><p class="first">the <code class="docutils literal notranslate"><span class="pre">ifElseFi:name</span></code> field:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&#64;?</span></code> means that it <em>can possibly</em> begin with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code></li>
+<li>followed by <code class="docutils literal notranslate"><span class="pre">if</span></code></li>
+<li>followed by 0 or more characters from <code class="docutils literal notranslate"><span class="pre">a-z</span></code>, <code class="docutils literal notranslate"><span class="pre">A-Z</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;</span></code></li>
+<li>the <code class="docutils literal notranslate"><span class="pre">?</span></code> the end means <em>non-greedy</em>, which means ‘stop the match as soon as possible’</li>
+</ol>
+</li>
+<li><p class="first">the <code class="docutils literal notranslate"><span class="pre">keyEqualsValuesBracesBrackets</span></code> contains some interesting syntax:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">|</span></code> means ‘or’</li>
+<li><code class="docutils literal notranslate"><span class="pre">(?:(?&lt;!\\)\{)</span></code> the <code class="docutils literal notranslate"><span class="pre">(?:...)</span></code> uses a <em>non-capturing</em> group – you don’t necessarily need to worry about what this means, but just know that for the <code class="docutils literal notranslate"><span class="pre">fineTuning</span></code> feature you should only ever
+use <em>non</em>-capturing groups, and <em>not</em> capturing groups, which are simply <code class="docutils literal notranslate"><span class="pre">(...)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">(?&lt;!\\)\{)</span></code> means a <code class="docutils literal notranslate"><span class="pre">{</span></code> but it can <em>not</em> be immediately preceded by a <code class="docutils literal notranslate"><span class="pre">\</span></code></li>
+</ol>
+</li>
+<li><p class="first">in the <code class="docutils literal notranslate"><span class="pre">arguments:before</span></code> field</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">\d\h*</span></code> means a digit (i.e. a number), followed by 0 or more horizontal spaces</li>
+<li><code class="docutils literal notranslate"><span class="pre">;?,?</span></code> means <em>possibly</em> a semi-colon, and possibly a comma</li>
+<li><code class="docutils literal notranslate"><span class="pre">\&lt;.*?\&gt;</span></code> is designed for ’beamer’-type commands; the <code class="docutils literal notranslate"><span class="pre">.*?</span></code> means anything in between <code class="docutils literal notranslate"><span class="pre">&lt;...&gt;</span></code></li>
+</ol>
+</li>
+<li><p class="first">the <code class="docutils literal notranslate"><span class="pre">modifyLineBreaks</span></code> field refers to fine tuning settings detailed in <a class="reference internal" href="sec-the-m-switch.html#sec-modifylinebreaks"><span class="std std-numref">Section 6</span></a>. In particular:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">betterFullStop</span></code> is in relation to the one sentence per line routine, detailed in <a class="reference internal" href="sec-the-m-switch.html#sec-onesentenceperline"><span class="std std-numref">Section 6.5</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">doubleBackSlash</span></code> is in relation to the <code class="docutils literal notranslate"><span class="pre">DBSStartsOnOwnLine</span></code> and <code class="docutils literal notranslate"><span class="pre">DBSFinishesWithLineBreak</span></code> polyswitches surrounding double back slashes, see <a class="reference internal" href="sec-the-m-switch.html#subsec-dbs"><span class="std std-numref">Section 6.6.2</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">comma</span></code> is in relation to the <code class="docutils literal notranslate"><span class="pre">CommaStartsOnOwnLine</span></code> and <code class="docutils literal notranslate"><span class="pre">CommaFinishesWithLineBreak</span></code> polyswitches surrounding commas in optional and mandatory arguments; see
+<a class="reference internal" href="sec-the-m-switch.html#tab-poly-switch-mapping"><span class="std std-numref">Table 3</span></a></li>
+</ol>
+</li>
+</ol>
+<p>It is not obvious from <a class="reference internal" href="#lst-finetuning"><span class="std std-numref">Listing 517</span></a>, but each of the <code class="docutils literal notranslate"><span class="pre">follow</span></code>, <code class="docutils literal notranslate"><span class="pre">before</span></code> and <code class="docutils literal notranslate"><span class="pre">between</span></code> fields allow trailing comments, line breaks, and horizontal spaces between each character.</p>
+<div class="proof proof-type-example" id="id1">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 17</span>
+        
+    </div><div class="proof-content">
+<p>As a demonstration, consider the file given in <a class="reference internal" href="#lst-finetuning1"><span class="std std-numref">Listing 518</span></a>, together with its default output using the command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl finetuning1.tex
+</pre></div>
+</div>
+<p>is given in <a class="reference internal" href="#lst-finetuning1-default"><span class="std std-numref">Listing 519</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning1">
+<div class="code-block-caption"><span class="caption-number">Listing 518 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning1.tex</span></code></span><a class="headerlink" href="#lst-finetuning1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">mycommand</span><span class="p">{</span>
+    \<span class="n">rule</span><span class="p">{</span><span class="n">G</span> <span class="o">-&gt;</span> <span class="o">+</span><span class="n">H</span><span class="p">[</span><span class="o">-</span><span class="n">G</span><span class="p">]</span><span class="n">CL</span><span class="p">}</span>
+    \<span class="n">rule</span><span class="p">{</span><span class="n">H</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="n">G</span><span class="p">[</span><span class="o">+</span><span class="n">H</span><span class="p">]</span><span class="n">CL</span><span class="p">}</span>
+    \<span class="n">rule</span><span class="p">{</span><span class="n">g</span> <span class="o">-&gt;</span> <span class="o">+</span><span class="n">h</span><span class="p">[</span><span class="o">-</span><span class="n">g</span><span class="p">]</span><span class="n">cL</span><span class="p">}</span>
+    \<span class="n">rule</span><span class="p">{</span><span class="n">h</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="n">g</span><span class="p">[</span><span class="o">+</span><span class="n">h</span><span class="p">]</span><span class="n">cL</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning1-default">
+<div class="code-block-caption"><span class="caption-number">Listing 519 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning1.tex</span></code> default</span><a class="headerlink" href="#lst-finetuning1-default" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">mycommand</span><span class="p">{</span>
+\<span class="n">rule</span><span class="p">{</span><span class="n">G</span> <span class="o">-&gt;</span> <span class="o">+</span><span class="n">H</span><span class="p">[</span><span class="o">-</span><span class="n">G</span><span class="p">]</span><span class="n">CL</span><span class="p">}</span>
+\<span class="n">rule</span><span class="p">{</span><span class="n">H</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="n">G</span><span class="p">[</span><span class="o">+</span><span class="n">H</span><span class="p">]</span><span class="n">CL</span><span class="p">}</span>
+\<span class="n">rule</span><span class="p">{</span><span class="n">g</span> <span class="o">-&gt;</span> <span class="o">+</span><span class="n">h</span><span class="p">[</span><span class="o">-</span><span class="n">g</span><span class="p">]</span><span class="n">cL</span><span class="p">}</span>
+\<span class="n">rule</span><span class="p">{</span><span class="n">h</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="n">g</span><span class="p">[</span><span class="o">+</span><span class="n">h</span><span class="p">]</span><span class="n">cL</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>It’s clear from <a class="reference internal" href="#lst-finetuning1-default"><span class="std std-numref">Listing 519</span></a> that the indentation scheme has not worked as expected. We can <em>fine tune</em> the indentation scheme by employing the settings given in
+<a class="reference internal" href="#lst-fine-tuning1"><span class="std std-numref">Listing 521</span></a> and running the command</p>
+<div class="commandshell highlight-latex notranslate" id="index-15"><div class="highlight"><pre><span></span>latexindent.pl finetuning1.tex -l=fine-tuning1.yaml
+</pre></div>
+</div>
+<p>and the associated (desired) output is given in <a class="reference internal" href="#lst-finetuning1-mod1"><span class="std std-numref">Listing 520</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning1-mod1">
+<span id="index-16"></span><div class="code-block-caption"><span class="caption-number">Listing 520 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning1.tex</span></code> using <a class="reference internal" href="#lst-fine-tuning1"><span class="std std-numref">Listing 521</span></a></span><a class="headerlink" href="#lst-finetuning1-mod1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">mycommand</span><span class="p">{</span>
+	\<span class="n">rule</span><span class="p">{</span><span class="n">G</span> <span class="o">-&gt;</span> <span class="o">+</span><span class="n">H</span><span class="p">[</span><span class="o">-</span><span class="n">G</span><span class="p">]</span><span class="n">CL</span><span class="p">}</span>
+	\<span class="n">rule</span><span class="p">{</span><span class="n">H</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="n">G</span><span class="p">[</span><span class="o">+</span><span class="n">H</span><span class="p">]</span><span class="n">CL</span><span class="p">}</span>
+	\<span class="n">rule</span><span class="p">{</span><span class="n">g</span> <span class="o">-&gt;</span> <span class="o">+</span><span class="n">h</span><span class="p">[</span><span class="o">-</span><span class="n">g</span><span class="p">]</span><span class="n">cL</span><span class="p">}</span>
+	\<span class="n">rule</span><span class="p">{</span><span class="n">h</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="n">g</span><span class="p">[</span><span class="o">+</span><span class="n">h</span><span class="p">]</span><span class="n">cL</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-fine-tuning1">
+<div class="code-block-caption"><span class="caption-number">Listing 521 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning1.yaml</span></code></span><a class="headerlink" href="#lst-fine-tuning1" title="Permalink to this code">¶</a></div>
+<div class="baseyaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fineTuning</span><span class="p">:</span>
+    <span class="n">arguments</span><span class="p">:</span>
+      <span class="n">between</span><span class="p">:</span> <span class="s1">&#39;_|\^|\*|\-&gt;|\-|\+|h|H|g|G&#39;</span>
+</pre></div>
+</div>
+</div>
+</div></div><div class="proof proof-type-example" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 18</span>
+        
+    </div><div class="proof-content">
+<p>Let’s have another demonstration; consider the file given in <a class="reference internal" href="#lst-finetuning2"><span class="std std-numref">Listing 522</span></a>, together with its default output using the command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl finetuning2.tex
+</pre></div>
+</div>
+<p>is given in <a class="reference internal" href="#lst-finetuning2-default"><span class="std std-numref">Listing 523</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning2">
+<div class="code-block-caption"><span class="caption-number">Listing 522 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning2.tex</span></code></span><a class="headerlink" href="#lst-finetuning2" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@misc</span><span class="p">{</span> <span class="n">wikilatex</span><span class="p">,</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;{Wikipedia contributors}&quot;</span><span class="p">,</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;LaTeX --- </span><span class="si">{Wikipedia}</span><span class="s2">{,}&quot;</span><span class="p">,</span>
+<span class="n">note</span> <span class="o">=</span> <span class="s2">&quot;[Online; accessed 3-March-2020]&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning2-default">
+<div class="code-block-caption"><span class="caption-number">Listing 523 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning2.tex</span></code> default</span><a class="headerlink" href="#lst-finetuning2-default" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@misc</span><span class="p">{</span> <span class="n">wikilatex</span><span class="p">,</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;{Wikipedia contributors}&quot;</span><span class="p">,</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;LaTeX --- </span><span class="si">{Wikipedia}</span><span class="s2">{,}&quot;</span><span class="p">,</span>
+<span class="n">note</span> <span class="o">=</span> <span class="s2">&quot;[Online; accessed 3-March-2020]&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>It’s clear from <a class="reference internal" href="#lst-finetuning2-default"><span class="std std-numref">Listing 523</span></a> that the indentation scheme has not worked as expected. We can <em>fine tune</em> the indentation scheme by employing the settings given in
+<a class="reference internal" href="#lst-fine-tuning2"><span class="std std-numref">Listing 525</span></a> and running the command</p>
+<div class="commandshell highlight-latex notranslate" id="index-17"><div class="highlight"><pre><span></span>latexindent.pl finetuning2.tex -l=fine-tuning2.yaml
+</pre></div>
+</div>
+<p>and the associated (desired) output is given in <a class="reference internal" href="#lst-finetuning2-mod1"><span class="std std-numref">Listing 524</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning2-mod1">
+<div class="code-block-caption"><span class="caption-number">Listing 524 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning2.tex</span></code> using <a class="reference internal" href="#lst-fine-tuning2"><span class="std std-numref">Listing 525</span></a></span><a class="headerlink" href="#lst-finetuning2-mod1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@misc</span><span class="p">{</span> <span class="n">wikilatex</span><span class="p">,</span>
+	<span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;{Wikipedia contributors}&quot;</span><span class="p">,</span>
+	<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;LaTeX --- </span><span class="si">{Wikipedia}</span><span class="s2">{,}&quot;</span><span class="p">,</span>
+	<span class="n">note</span> <span class="o">=</span> <span class="s2">&quot;[Online; accessed 3-March-2020]&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-fine-tuning2">
+<div class="code-block-caption"><span class="caption-number">Listing 525 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning2.yaml</span></code></span><a class="headerlink" href="#lst-fine-tuning2" title="Permalink to this code">¶</a></div>
+<div class="baseyaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fineTuning</span><span class="p">:</span>
+    <span class="n">NamedGroupingBracesBrackets</span><span class="p">:</span>
+      <span class="n">follow</span><span class="p">:</span> <span class="s1">&#39;\h|\R|\{|\[|\$|\)|\(|&quot;&#39;</span>
+    <span class="n">UnNamedGroupingBracesBrackets</span><span class="p">:</span> 
+      <span class="n">follow</span><span class="p">:</span> <span class="s1">&#39;\{|\[|,|&amp;|\)|\(|\$|&quot;&#39;</span>
+    <span class="n">arguments</span><span class="p">:</span>
+      <span class="n">between</span><span class="p">:</span> <span class="s1">&#39;_|\^|\*|---&#39;</span>
+</pre></div>
+</div>
+</div>
+<p>In particular, note that the settings in <a class="reference internal" href="#lst-fine-tuning2"><span class="std std-numref">Listing 525</span></a> specify that <code class="docutils literal notranslate"><span class="pre">NamedGroupingBracesBrackets</span></code> and <code class="docutils literal notranslate"><span class="pre">UnNamedGroupingBracesBrackets</span></code> can follow <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and that we allow <code class="docutils literal notranslate"><span class="pre">---</span></code>
+between arguments.</p>
+</div></div><div class="proof proof-type-example" id="id3">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 19</span>
+        
+    </div><div class="proof-content">
+<p>You can tweak the <code class="docutils literal notranslate"><span class="pre">fineTuning</span></code> using the <code class="docutils literal notranslate"><span class="pre">-y</span></code> switch, but to be sure to use quotes appropriately. For example, starting with the code in <a class="reference internal" href="#lst-finetuning3"><span class="std std-numref">Listing 526</span></a> and running the following
+command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl -m -y=&#39;modifyLineBreaks:oneSentencePerLine:manipulateSentences: 1, modifyLineBreaks:oneSentencePerLine:sentencesBeginWith:a-z: 1, fineTuning:modifyLineBreaks:betterFullStop: &quot;(?:<span class="k">\.</span>|;|:(?![a-z]))|(?:(?&lt;!(?:(?:e<span class="k">\.</span>g)|(?:i<span class="k">\.</span>e)|(?:etc))))<span class="k">\.</span>(?!(?:[a-z]|[A-Z]|<span class="k">\-</span>|~|<span class="k">\,</span>|[0-9]))&quot;&#39; issue-243.tex -o=+-mod1
+</pre></div>
+</div>
+<p>gives the output shown in <a class="reference internal" href="#lst-finetuning3-mod1"><span class="std std-numref">Listing 527</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning3">
+<div class="code-block-caption"><span class="caption-number">Listing 526 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning3.tex</span></code></span><a class="headerlink" href="#lst-finetuning3" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">We</span> <span class="n">go</span><span class="p">;</span> <span class="n">you</span> <span class="n">see</span><span class="p">:</span> <span class="n">this</span> <span class="n">sentence</span> \<span class="n">cite</span><span class="p">{</span><span class="n">tex</span><span class="p">:</span><span class="n">stackexchange</span><span class="p">}</span> <span class="n">finishes</span> <span class="n">here</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning3-mod1">
+<div class="code-block-caption"><span class="caption-number">Listing 527 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning3.tex</span></code> using -y switch</span><a class="headerlink" href="#lst-finetuning3-mod1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">We</span> <span class="n">go</span><span class="p">;</span>
+<span class="n">you</span> <span class="n">see</span><span class="p">:</span>
+<span class="n">this</span> <span class="n">sentence</span> \<span class="n">cite</span><span class="p">{</span><span class="n">tex</span><span class="p">:</span><span class="n">stackexchange</span><span class="p">}</span> <span class="n">finishes</span> <span class="n">here</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div></div><div class="proof proof-type-example" id="id4">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 20</span>
+        
+    </div><div class="proof-content">
+<p>We can tweak the <code class="docutils literal notranslate"><span class="pre">fineTuning</span></code> for how trailing comments are classified. For motivation, let’s consider the code given in <a class="reference internal" href="#lst-finetuning4"><span class="std std-numref">Listing 528</span></a></p>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning4">
+<div class="code-block-caption"><span class="caption-number">Listing 528 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning4.tex</span></code></span><a class="headerlink" href="#lst-finetuning4" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">some</span> <span class="n">before</span> <span class="n">text</span>
+ \<span class="n">href</span><span class="p">{</span><span class="n">Handbook</span><span class="o">%</span><span class="mi">20</span><span class="k">for</span><span class="o">%</span><span class="mi">30</span><span class="n">Spoken</span><span class="o">%</span><span class="mi">40</span><span class="n">document</span><span class="o">.</span><span class="n">pdf</span><span class="p">}{</span><span class="n">my</span> <span class="n">document</span><span class="p">}</span>
+<span class="n">some</span> <span class="n">after</span> <span class="n">text</span> 
+</pre></div>
+</div>
+</div>
+<p>We will compare the settings given in <a class="reference internal" href="#lst-href1"><span class="std std-numref">Listing 529</span></a> and <a class="reference internal" href="#lst-href2"><span class="std std-numref">Listing 530</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-href1">
+<div class="code-block-caption"><span class="caption-number">Listing 529 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">href1.yaml</span></code></span><a class="headerlink" href="#lst-href1" title="Permalink to this code">¶</a></div>
+<div class="mlbyaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modifyLineBreaks</span><span class="p">:</span>
+    <span class="n">textWrapOptions</span><span class="p">:</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="mi">80</span>
+        <span class="nb">all</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="n">perCodeBlockBasis</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">removeParagraphLineBreaks</span><span class="p">:</span>
+        <span class="nb">all</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-href2">
+<div class="code-block-caption"><span class="caption-number">Listing 530 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">href2.yaml</span></code></span><a class="headerlink" href="#lst-href2" title="Permalink to this code">¶</a></div>
+<div class="mlbyaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modifyLineBreaks</span><span class="p">:</span>
+    <span class="n">textWrapOptions</span><span class="p">:</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="mi">80</span>
+        <span class="nb">all</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="n">perCodeBlockBasis</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">removeParagraphLineBreaks</span><span class="p">:</span>
+        <span class="nb">all</span><span class="p">:</span> <span class="mi">1</span>
+
+<span class="n">fineTuning</span><span class="p">:</span>
+    <span class="n">trailingComments</span><span class="p">:</span>
+      <span class="n">notPreceededBy</span><span class="p">:</span> <span class="s1">&#39;(?:(?&lt;!Handbook)(?&lt;!for)(?&lt;!Spoken))&#39;</span>
+</pre></div>
+</div>
+</div>
+<p>Upon running the following commands</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl -m finetuning4.tex -o=+-mod1 -l=href1
+latexindent.pl -m finetuning4.tex -o=+-mod2 -l=href2
+</pre></div>
+</div>
+<p>we receive the respective output in <a class="reference internal" href="#lst-finetuning4-mod1"><span class="std std-numref">Listing 531</span></a> and <a class="reference internal" href="#lst-finetuning4-mod2"><span class="std std-numref">Listing 532</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning4-mod1">
+<div class="code-block-caption"><span class="caption-number">Listing 531 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning4.tex</span></code> using <a class="reference internal" href="#lst-href1"><span class="std std-numref">Listing 529</span></a></span><a class="headerlink" href="#lst-finetuning4-mod1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">some</span> <span class="n">before</span> <span class="n">text</span> \<span class="n">href</span><span class="p">{</span><span class="n">Handbook</span> <span class="n">some</span> <span class="n">after</span> <span class="n">text</span><span class="o">%</span><span class="mi">20</span><span class="k">for</span><span class="o">%</span><span class="mi">30</span><span class="n">Spoken</span><span class="o">%</span><span class="mi">40</span><span class="n">document</span><span class="o">.</span><span class="n">pdf</span><span class="p">}{</span><span class="n">my</span> <span class="n">document</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-finetuning4-mod2">
+<div class="code-block-caption"><span class="caption-number">Listing 532 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">finetuning4.tex</span></code> using <a class="reference internal" href="#lst-href2"><span class="std std-numref">Listing 530</span></a></span><a class="headerlink" href="#lst-finetuning4-mod2" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">some</span> <span class="n">before</span> <span class="n">text</span> \<span class="n">href</span><span class="p">{</span><span class="n">Handbook</span><span class="o">%</span><span class="mi">20</span><span class="k">for</span><span class="o">%</span><span class="mi">30</span><span class="n">Spoken</span><span class="o">%</span><span class="mi">40</span><span class="n">document</span><span class="o">.</span><span class="n">pdf</span><span class="p">}{</span><span class="n">my</span> <span class="n">document</span><span class="p">}</span> <span class="n">some</span> <span class="n">after</span> <span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<p>We note that in:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#lst-finetuning4-mod1"><span class="std std-numref">Listing 531</span></a> the trailing comments are assumed to be everything following the first comment symbol, which has meant that everything following it has been moved to the end of the
+line; this is undesirable, clearly!</li>
+<li><a class="reference internal" href="#lst-finetuning4-mod2"><span class="std std-numref">Listing 532</span></a> has fine-tuned the trailing comment matching, and says that % cannot be immediately preceeded by the words ‘Handbook’, ‘for’ or ‘Spoken’, which means that none of
+the % symbols have been treated as trailing comments, and the output is desirable.</li>
+</ul>
+<p>Another approach to this situation, which does not use <code class="docutils literal notranslate"><span class="pre">fineTuning</span></code>, is to use <code class="docutils literal notranslate"><span class="pre">noIndentBlock</span></code> which we discussed in <a class="reference internal" href="sec-default-user-local.html#lst-noindentblock"><span class="std std-numref">Listing 24</span></a>; using the settings in <a class="reference internal" href="#lst-href3"><span class="std std-numref">Listing 533</span></a> and
+running the command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl -m finetuning4.tex -o=+-mod3 -l=href3
+</pre></div>
+</div>
+<p>then we receive the same output given in <a class="reference internal" href="#lst-finetuning4-mod2"><span class="std std-numref">Listing 532</span></a>; see also <code class="docutils literal notranslate"><span class="pre">paragraphsStopAt</span></code> in <a class="reference internal" href="sec-the-m-switch.html#lst-paragraphsstopat"><span class="std std-numref">Listing 315</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-href3">
+<div class="code-block-caption"><span class="caption-number">Listing 533 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">href3.yaml</span></code></span><a class="headerlink" href="#lst-href3" title="Permalink to this code">¶</a></div>
+<div class="mlbyaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modifyLineBreaks</span><span class="p">:</span>
+    <span class="n">textWrapOptions</span><span class="p">:</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="mi">80</span>
+        <span class="nb">all</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="n">perCodeBlockBasis</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">removeParagraphLineBreaks</span><span class="p">:</span>
+        <span class="nb">all</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="n">paragraphsStopAt</span><span class="p">:</span>
+            <span class="n">verbatim</span><span class="p">:</span> <span class="mi">0</span>
+
+<span class="n">noIndentBlock</span><span class="p">:</span>
+    <span class="n">href</span><span class="p">:</span>
+        <span class="n">begin</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">href\{[^}]*?\}\{&#39;</span>
+        <span class="n">body</span><span class="p">:</span> <span class="s1">&#39;[^}]*?&#39;</span>
+        <span class="n">end</span><span class="p">:</span> <span class="s1">&#39;\}&#39;</span>
+</pre></div>
+</div>
+</div>
+<p>With reference to the <code class="docutils literal notranslate"><span class="pre">body</span></code> field in <a class="reference internal" href="#lst-href3"><span class="std std-numref">Listing 533</span></a>, we note that the <code class="docutils literal notranslate"><span class="pre">body</span></code> field can be interpreted as: the fewest number of zero or more characters that are not right braces. This is an
+example of character class.</p>
+</div></div><div class="proof proof-type-example" id="id5">
+<span id="index-18"></span>
+    <div class="proof-title">
+        <span class="proof-type">Example 21</span>
+        
+    </div><div class="proof-content">
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">fineTuning</span></code> field to assist in the formatting of bibliography files.</p>
+<span class="target" id="index-19"></span><span class="target" id="index-20"></span><span class="target" id="index-21"></span><span class="target" id="index-22"></span><p id="index-23">Starting with the file in <a class="reference internal" href="#lst-bib1"><span class="std std-numref">Listing 534</span></a> and running the command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl bib1.tex -o=+-mod1
+</pre></div>
+</div>
+<p>gives the output in <a class="reference internal" href="#lst-bib1-mod1"><span class="std std-numref">Listing 535</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-bib1">
+<div class="code-block-caption"><span class="caption-number">Listing 534 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bib1.bib</span></code></span><a class="headerlink" href="#lst-bib1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@online</span><span class="p">{</span><span class="n">paulo</span><span class="p">,</span>
+<span class="n">title</span><span class="o">=</span><span class="s2">&quot;arararule,indent.yaml&quot;</span><span class="p">,</span>
+<span class="n">author</span><span class="o">=</span><span class="s2">&quot;PauloCereda&quot;</span><span class="p">,</span>
+<span class="n">date</span><span class="o">=</span><span class="p">{</span><span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span><span class="p">},</span>
+<span class="n">urldate</span><span class="o">=</span><span class="p">{</span><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span><span class="p">},</span>
+<span class="n">keywords</span><span class="o">=</span><span class="p">{</span><span class="n">contributor</span><span class="p">},}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-bib1-mod1">
+<div class="code-block-caption"><span class="caption-number">Listing 535 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bib1-mod1.bib</span></code></span><a class="headerlink" href="#lst-bib1-mod1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@online</span><span class="p">{</span><span class="n">paulo</span><span class="p">,</span>
+	<span class="n">title</span><span class="o">=</span><span class="s2">&quot;arararule,indent.yaml&quot;</span><span class="p">,</span>
+	<span class="n">author</span><span class="o">=</span><span class="s2">&quot;PauloCereda&quot;</span><span class="p">,</span>
+	<span class="n">date</span><span class="o">=</span><span class="p">{</span><span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span><span class="p">},</span>
+	<span class="n">urldate</span><span class="o">=</span><span class="p">{</span><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span><span class="p">},</span>
+	<span class="n">keywords</span><span class="o">=</span><span class="p">{</span><span class="n">contributor</span><span class="p">},}</span>
+</pre></div>
+</div>
+</div>
+<p>Let’s assume that we would like to format the output so as to align the <code class="docutils literal notranslate"><span class="pre">=</span></code> symbols. Using the settings in <a class="reference internal" href="#lst-bibsettings1"><span class="std std-numref">Listing 537</span></a> and running the command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl bib1.bib -l bibsettings1.yaml -o=+-mod2
+</pre></div>
+</div>
+<p>gives the output in <a class="reference internal" href="#lst-bib1-mod2"><span class="std std-numref">Listing 536</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-bib1-mod2">
+<div class="code-block-caption"><span class="caption-number">Listing 536 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bib1.bib</span></code> using <a class="reference internal" href="#lst-bibsettings1"><span class="std std-numref">Listing 537</span></a></span><a class="headerlink" href="#lst-bib1-mod2" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@online</span><span class="p">{</span><span class="n">paulo</span><span class="p">,</span>
+	<span class="n">title</span>    <span class="o">=</span> <span class="s2">&quot;arararule,indent.yaml&quot;</span><span class="p">,</span>
+	<span class="n">author</span>   <span class="o">=</span> <span class="s2">&quot;PauloCereda&quot;</span><span class="p">,</span>
+	<span class="n">date</span>     <span class="o">=</span> <span class="p">{</span><span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span><span class="p">},</span>
+	<span class="n">urldate</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span><span class="p">},</span>
+	<span class="n">keywords</span> <span class="o">=</span> <span class="p">{</span><span class="n">contributor</span><span class="p">},}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-bibsettings1">
+<div class="code-block-caption"><span class="caption-number">Listing 537 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bibsettings1.yaml</span></code></span><a class="headerlink" href="#lst-bibsettings1" title="Permalink to this code">¶</a></div>
+<div class="baseyaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lookForAlignDelims</span><span class="p">:</span>
+   <span class="n">online</span><span class="p">:</span> 
+      <span class="n">delimiterRegEx</span><span class="p">:</span> <span class="s1">&#39;(=)&#39;</span>
+
+<span class="n">fineTuning</span><span class="p">:</span>
+    <span class="n">keyEqualsValuesBracesBrackets</span><span class="p">:</span>
+      <span class="n">follow</span><span class="p">:</span> <span class="s1">&#39;(?:(?&lt;!</span><span class="se">\\</span><span class="s1">)\{)|(?:(?&lt;!</span><span class="se">\\</span><span class="s1">)\[)&#39;</span>
+    <span class="n">UnNamedGroupingBracesBrackets</span><span class="p">:</span> 
+      <span class="n">follow</span><span class="p">:</span> <span class="s1">&#39;\{|\[|,|&amp;|\)|\(|\$|=&#39;</span>
+</pre></div>
+</div>
+</div>
+<p>Some notes about <a class="reference internal" href="#lst-bibsettings1"><span class="std std-numref">Listing 537</span></a>:</p>
+<ul class="simple">
+<li>we have populated the <code class="docutils literal notranslate"><span class="pre">lookForAlignDelims</span></code> field with the <code class="docutils literal notranslate"><span class="pre">online</span></code> command, and have used the <code class="docutils literal notranslate"><span class="pre">delimiterRegEx</span></code>, discussed in <a class="reference internal" href="sec-default-user-local.html#sec-delimiter-reg-ex"><span class="std std-numref">Section 5.5.4</span></a>;</li>
+<li>we have tweaked the <code class="docutils literal notranslate"><span class="pre">keyEqualsValuesBracesBrackets</span></code> code block so that it will <em>not</em> be found following a comma; this means that, in contrast to the default behaviour, the lines such as
+<code class="docutils literal notranslate"><span class="pre">date={2013-05-23},</span></code> will <em>not</em> be treated as key-equals-value braces;</li>
+<li>the adjustment to <code class="docutils literal notranslate"><span class="pre">keyEqualsValuesBracesBrackets</span></code> necessitates the associated change to the <code class="docutils literal notranslate"><span class="pre">UnNamedGroupingBracesBrackets</span></code> field so that they will be searched for following <code class="docutils literal notranslate"><span class="pre">=</span></code> symbols.</li>
+</ul>
+</div></div><div class="proof proof-type-example" id="id6">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 22</span>
+        
+    </div><div class="proof-content">
+<p>We can build upon <a class="reference internal" href="#lst-bibsettings1"><span class="std std-numref">Listing 537</span></a> for slightly more complicated bibliography files.</p>
+<p>Starting with the file in <a class="reference internal" href="#lst-bib2"><span class="std std-numref">Listing 538</span></a> and running the command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl bib2.bib -l bibsettings1.yaml -o=+-mod1
+</pre></div>
+</div>
+<p>gives the output in <a class="reference internal" href="#lst-bib2-mod1"><span class="std std-numref">Listing 539</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-bib2">
+<div class="code-block-caption"><span class="caption-number">Listing 538 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bib2.bib</span></code></span><a class="headerlink" href="#lst-bib2" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@online</span><span class="p">{</span><span class="n">cmh</span><span class="p">:</span><span class="n">videodemo</span><span class="p">,</span>
+<span class="n">title</span><span class="o">=</span><span class="s2">&quot;Videodemonstrationofpl.latexindentonyoutube&quot;</span><span class="p">,</span>
+<span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/watch?v=wo38aaH2F4E&amp;spfreload=10&quot;</span><span class="p">,</span>
+<span class="n">urldate</span><span class="o">=</span><span class="p">{</span><span class="mi">2017</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">21</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="lst-bib2-mod1">
+<div class="code-block-caption"><span class="caption-number">Listing 539 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bib2-mod1.bib</span></code></span><a class="headerlink" href="#lst-bib2-mod1" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@online</span><span class="p">{</span><span class="n">cmh</span><span class="p">:</span><span class="n">videodemo</span><span class="p">,</span>
+	<span class="n">title</span>   <span class="o">=</span> <span class="s2">&quot;Videodemonstrationofpl.latexindentonyoutube&quot;</span><span class="p">,</span>
+	<span class="n">url</span>     <span class="o">=</span> <span class="s2">&quot;https://www.youtube.com/watch?v               = wo38aaH2F4E&amp;spfreload = 10&quot;</span><span class="p">,</span>
+	<span class="n">urldate</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2017</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">21</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>The output in <a class="reference internal" href="#lst-bib2-mod1"><span class="std std-numref">Listing 539</span></a> is not ideal, as the <code class="docutils literal notranslate"><span class="pre">=</span></code> symbol within the url field has been incorrectly used as an alignment delimiter.</p>
+<p>We address this by tweaking the <code class="docutils literal notranslate"><span class="pre">delimiterRegEx</span></code> field in <a class="reference internal" href="#lst-bibsettings2"><span class="std std-numref">Listing 540</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-bibsettings2">
+<div class="code-block-caption"><span class="caption-number">Listing 540 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bibsettings2.yaml</span></code></span><a class="headerlink" href="#lst-bibsettings2" title="Permalink to this code">¶</a></div>
+<div class="baseyaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lookForAlignDelims</span><span class="p">:</span>
+   <span class="n">online</span><span class="p">:</span> 
+      <span class="n">delimiterRegEx</span><span class="p">:</span> <span class="s1">&#39;(?&lt;!v)(?&lt;!spfreload)(=)&#39;</span>
+</pre></div>
+</div>
+</div>
+<p>Upon running the command</p>
+<div class="commandshell highlight-latex notranslate"><div class="highlight"><pre><span></span>latexindent.pl bib2.bib -l bibsettings1.yaml,bibsettings2.yaml -o=+-mod2
+</pre></div>
+</div>
+<p>we receive the <em>desired</em> output in <a class="reference internal" href="#lst-bib2-mod2"><span class="std std-numref">Listing 541</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="lst-bib2-mod2">
+<div class="code-block-caption"><span class="caption-number">Listing 541 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bib2-mod2.bib</span></code></span><a class="headerlink" href="#lst-bib2-mod2" title="Permalink to this code">¶</a></div>
+<div class="tex highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@online</span><span class="p">{</span><span class="n">cmh</span><span class="p">:</span><span class="n">videodemo</span><span class="p">,</span>
+	<span class="n">title</span>   <span class="o">=</span> <span class="s2">&quot;Videodemonstrationofpl.latexindentonyoutube&quot;</span><span class="p">,</span>
+	<span class="n">url</span>     <span class="o">=</span> <span class="s2">&quot;https://www.youtube.com/watch?v=wo38aaH2F4E&amp;spfreload=10&quot;</span><span class="p">,</span>
+	<span class="n">urldate</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2017</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">21</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>With reference to <a class="reference internal" href="#lst-bibsettings2"><span class="std std-numref">Listing 540</span></a> we note that the <code class="docutils literal notranslate"><span class="pre">delimiterRegEx</span></code> has been adjusted so that <code class="docutils literal notranslate"><span class="pre">=</span></code> symbols are used as the delimiter, but only when they are <em>not preceeded</em> by either
+<code class="docutils literal notranslate"><span class="pre">v</span></code> or <code class="docutils literal notranslate"><span class="pre">spfreload</span></code>.</p>
+</div></div><div class="references docutils container" id="refs">
+<div class="docutils container" id="ref-masteringregexp">
+Friedl, Jeffrey E. F. n.d. <em>Mastering Regular Expressions</em>.</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sec-conclusions-know-limitations.html" class="btn btn-neutral float-right" title="10. Conclusions and known limitations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sec-the-line-switch.html" class="btn btn-neutral float-left" title="8. The –lines switch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Chris Hughes.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
