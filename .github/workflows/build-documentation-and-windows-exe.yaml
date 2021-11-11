@@ -1,4 +1,4 @@
-name: build documentation
+name: Create and publish latexindent.exe and documentation latexindent.pdf to releases
 
 on:
   push:
@@ -6,7 +6,8 @@ on:
       - '*'
 
 jobs:
-  build_latex:
+  build-latexindent-doc-pdf:
+    name: 'latexindent.pdf documentation creation using arara on texlive'
     runs-on: ubuntu-latest
     steps:
       - name: Loading the "base actions/checkout" so as to access latexindent.pl
@@ -24,7 +25,8 @@ jobs:
             sed -i.bak s/\\\\gitRel/$github_release/ documentation/latexindent.tex
             sed -i.bak "s|\\\\gitAuthorDate|$(date +'%Y-%m-%d')|g" documentation/latexindent.tex
             cd documentation
-            arara -v latexindent.tex
+            #######  arara -v latexindent.tex
+            cp ../latexindent.pl latexindent.pdf
             cd ..
             mkdir -p target/release
             mv documentation/latexindent.pdf target/release
@@ -65,7 +67,8 @@ jobs:
           cpanm File::HomeDir
           cpanm Unicode::GCString
           copy helper-scripts/ppp.pl ./
-          perl ppp.pl -o latexindent.exe latexindent.pl
+          ####### perl ppp.pl -o latexindent.exe latexindent.pl
+          cp latexindent.pl latexindent.exe
           mkdir -p target/release
           mv latexindent.exe target/release
       # copy latexindent.exe to the release
@@ -76,6 +79,26 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: target/release/latexindent.exe
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "latexindent.pl release text"
+  zip-files:
+    needs: [build-latexindent-doc-pdf, build-windows-exe]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: papeloto/action-zip@v1
+        with:
+          files: LatexIndent/ target/release/latexindent.exe target/release/latexindent.pdf
+          dest: ctan.zip
+      # copy latexindent.exe to the release
+      #
+      # https://github.com/marketplace/actions/upload-files-to-a-github-release
+      - name: upload ctan.zip to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ctan.zip
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
