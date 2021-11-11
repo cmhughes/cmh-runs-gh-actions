@@ -32,8 +32,8 @@ jobs:
       # copy latexindent.pdf to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
-      - uses: actions/upload-artifact@master
       - name: uploading latexindent.pdf
+        uses: actions/upload-artifact@master
         with:
           name: latexindent.pdf
           path: target/release
@@ -69,8 +69,8 @@ jobs:
       # upload latexindent.exe to the artifact
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
-      - uses: actions/upload-artifact@master
       - name: uploading latexindent.exe
+        uses: actions/upload-artifact@master
         with:
           name: latexindent.exe
           path: target/release
