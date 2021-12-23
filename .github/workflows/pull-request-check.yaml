@@ -1,5 +1,9 @@
+# purpose:
+#    comment on pull requests to the main
+#    branch, asking them to be submitted 
+#    to develop. 
+  
 on:
-  # Trigger the workflow on pull request to main
   pull_request:
     branches:
       - main
