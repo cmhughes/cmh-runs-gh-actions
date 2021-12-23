@@ -16,12 +16,9 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: |-
-                    👋 Thank you for your contribution!
-
-                    Please can you change this pull request 
+              body: "👋 Thank you for your contribution!\n\n Please can you change this pull request 
                     so that it goes to the `develop` branch? 
 
                     Thank you! 
-                    Chris (cmhughes) cmh
+                    Chris (cmhughes) cmh" 
             })
