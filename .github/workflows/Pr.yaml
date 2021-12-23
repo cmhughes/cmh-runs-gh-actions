@@ -17,7 +17,6 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: |
-                |
                 Thank you for your contribution! \
                 Please can you change this pull request \ 
                 so that it goes to the `develop`? \
