@@ -1,5 +1,5 @@
 on:
-  # Trigger the workflow on push or pull request
+  # Trigger the workflow on pull request to main
   pull_request:
     branches:
       - main
@@ -16,5 +16,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Thank you for your contribution! Please can you change this pull request so that it goes to the `develop`? Thank you" 
+              body: "Thank you for your contribution! Please can you change this pull request so that it goes to the `develop` branch? Thank you" 
             })
