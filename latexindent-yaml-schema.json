@@ -1,13 +1,673 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/schema",
     "$id": "latexindent-yaml-schema.json",
     "title": "latexindent.pl YAML schema",
     "description": "latexindent.pl YAML schema helper, V3.14.4 2021-12-22",
     "type": "object",
     "properties": {
+      "fileExtensionPreference": {
+        "description": "calling latexindent.pl to operate on myfile (without extension) is fine, and in which case the file extensions from this field will be used in order",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "integer, specifying the order in which latexindent.pl will search for myfile ending with this extension",
+            "type": "integer"
+          }
+        }
+      },
+      "backupExtension": {
+        "description": "when the -w, --overwrite switch is active, a back-up file is created with this extension",
+        "type": "string"
+      },
+      "onlyOneBackUp": {
+        "description": "when the -w, --overwrite switch is active, the default is to create a back-up file for each call to latexindent.pl. Changing onlyOneBackUp to 1 means that only one back-up file is created.",
+        "type": "integer",
+        "enum": [0,1]
+      },
+      "maxNumberOfBackUps": {
+        "description": "when the -w, --overwrite switch is active, the default is to create a back-up file for each call to latexindent.pl. This field sets the maximum number of back-up files.",
+        "type": "integer",
+        "minimum": 0
+      },
+      "cycleThroughBackUps": {
+        "description": "when the -w, --overwrite switch is active, back-up files can be overwritten in order. See also maxNumberOfBackUps",
+        "type": "integer",
+        "enum": [0,1] 
+      },
+      "logFilePreferences": {
+        "description": "latexindent.pl will write logging information to indent.log; the appearance of some of the information can be customised",
+        "type": "object",
+        "properties": {
+          "showEveryYamlRead": {
+            "description": "0/1 to show every YAML file's settings in indent.log",
+            "type": "integer",
+            "enum": [0,1]     
+          },
+          "showAmalgamatedSettings": {
+            "description": "0/1 to show the overall/amalgamated settings in indent.log",
+            "type": "integer",
+            "enum": [0,1]     
+          },
+          "showDecorationStartCodeBlockTrace": {
+            "description": "0/1 to show decorations at *start* of code block in indent.log when -t, -tt switches active",
+            "type": "integer",
+            "enum": [0,1]     
+          },
+          "showDecorationFinishCodeBlockTrace": {
+            "description": "0/1 to show decorations at *finish* of code block in indent.log when -t, -tt switches active",
+            "type": "integer",
+            "enum": [0,1]     
+          },
+          "endLogFileWith": {
+            "description": "string decoration to finish indent.log",
+            "type": "string"   
+          },
+          "showGitHubInfoFooter": {
+            "description": "0/1 to show GitHub information in footer of indent.log",
+            "type": "integer",
+            "enum": [0,1] 
+          },
+          "Dumper": {
+            "description": "options to be passed to the Dumper module; most helpful when -t, -tt active.",
+            "type": "object",
+            "properties": {
+              "Terse":{
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "Indent":{
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "Useqq":{
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "Deparse":{
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "Quotekeys":{
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "Sortkeys":{
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "Pair":{
+                "type": "string"    
+              }
+            }
+          }
+        }
+      },
+      "verbatimEnvironments": {
+        "description": "specify the names of verbatim environments in this field",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1, binary switch to mean don't look for/look for this *environment*",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "verbatimCommands": {
+        "description": "specify the names of verbatim *commands* in this field",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1, binary switch to mean don't look for/look for this *command*",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "noIndentBlock": {
+        "description": "specify the names of *noIndentBlock* in this field",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1, binary switch to mean don't look for/look for this *noIndentBlock*",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "fileContentsEnvironments": {
+        "description": "specify the names of *filecontents* in this field",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1, binary switch to mean don't look for/look for this *filecontents* environment",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "indentPreamble": {
+        "description": "0/1, binary switch to instruct latexindent.pl to operate on preamble or not",
+        "type": "integer",
+        "enum": [0,1]
+      },
+      "lookForPreamble": {
+        "description": "list of extensions detailing which files latexindent.pl should look for preamble",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1, binary switch for preamble search for this file type",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "preambleCommandsBeforeEnvironments": {
+        "description": "0/1, binary switch to instruct latexindent.pl to search for commands before environments in preamble",
+        "type": "integer",
+        "enum": [0,1]
+      },
       "defaultIndent": {
         "description": "default indentation, needs to be specified as horizontal space",
         "type": "string"
+      },
+      "removeTrailingWhitespace": {
+        "description": "remove horizontal space at the *end* of lines",
+        "type": "object",
+        "properties": {
+          "beforeProcessing": {
+            "description": "0/1, binary switch to remove horizontal space *before* indenting",
+            "type": "integer",
+            "enum": [0,1]     
+          },
+          "afterProcessing": {
+            "description": "0/1, binary switch to remove horizontal space *after* indenting",
+            "type": "integer",
+            "enum": [0,1] 
+          }
+        }
+      },
+      "lookForAlignDelims": {
+        "description": "list of names of code blocks detailing that latexindent.pl should align at delimiters",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1 binary switch to detail if this code block has delimiters. Option to specify this field in 'advanced' form",
+            "type": ["integer","object"],
+            "properties": {
+              "delims": {
+                "description": "0/1, binary switch to look for delimiters or not",
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "alignDoubleBackSlash": {
+                "description": "0/1, binary switch to align the \\\\",
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "spacesBeforeDoubleBackSlash": {
+                "description": "integer detailing number of spaces *before* \\\\",
+                "type": "integer",
+                "minimum": 0     
+              },
+              "multiColumnGrouping": {
+                "description": "0/1, binary switch to group alignment under \\multicolumn command",
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "alignRowsWithoutMaxDelims": {
+                "description": "0/1, binary switch to align rows without the maximum number of delimiters",
+                "type": "integer",
+                "enum": [0,1]     
+              },
+              "spacesBeforeAmpersand": {
+                "description": "integer detailing number of spaces *before* delimiter",
+                "type": "integer",
+                "minimum": 0
+              },
+              "spacesAfterAmpersand": {
+                "description": "integer detailing number of spaces *after* delimiter",
+                "type": "integer",
+                "minimum": 0
+              },
+              "justification": {
+                "description": "justification of cell",
+                "type": "string",
+                "enum": ["left", "right"]
+              },
+              "alignFinalDoubleBackSlash": {
+                "description": "0/1, binary switch to align final \\\\",
+                "type": "integer",
+                "enum": [0,1]
+              },
+              "dontMeasure": {
+                "description": "entries not to be measured in the alignment routine",
+                "type": ["integer","string","array"],
+                "items": {
+                  "type": ["string","object"],
+                  "description": "entry not to be measured",
+                  "properties": {
+                    "this": {
+                      "type": "string",
+                      "description": "string containing the cell *not* to be measured"
+                    },
+                    "applyTo": {
+                      "type": "string",
+                      "enum": ["cell", "row"],
+                      "description": "detail cell or row"
+                    },
+                    "regex": {
+                      "type": "string",
+                      "description": "regular expression to match cell or row"
+                    }
+                  }
+               }
+              },
+              "delimiterRegEx": {
+                "description": "delimiter regex. NOTE: the capturing ()",
+                "type": "string"   
+              },
+              "delimiterJustification": {
+                "description": "delimiter justification",
+                "type": "string",
+                "enum": ["left", "right"]
+              },
+              "lookForChildCodeBlocks": {
+                "description": "0/1. binary switch to look for child code blocks or not",
+                "type": "integer",
+                "enum": [0,1]
+              }
+            }
+          }
+        }
+      },
+      "indentAfterItems": {
+        "description": "specify the names of environments that contain items",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1, binary switch to mean don't look for/look for items in this environment",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "itemNames": {
+        "description": "names of items",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1, binary switch to mean don't look for/look for items",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "specialBeginEnd": {
+        "description": "special code blocks have begin, end, and optionally 'middle' specified as regular expressions",
+        "type": "object",
+        "properties": {
+          "specialBeforeCommand": {
+            "description": "0/1, binary switch to look for commands before special code blocks or not",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        },
+        "patternProperties": {
+          ".*": {
+            "description": "name of special code block",
+            "type": "object",
+            "properties": {
+              "begin":{
+                "type": "string",
+                "description": "regular expression containing the *beginning* part"
+              },
+              "middle":{
+                "type": "string",
+                "description": "optional: regular expression containing the *middle* part"
+              },
+              "end":{
+                "type": "string",
+                "description": "regular expression containing the *ending* part"
+              },
+              "lookForThis":{
+                "type": "integer",
+                "description": "optional 0/1, binary switch detailing look for this or not. Default is 1 if not specified",
+                "enum": [0,1]     
+              }
+            }
+          }
+        }
+      },
+      "indentAfterHeadings": {
+        "description": "indentation after headings",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "name of heading",
+            "type": "object",
+            "properties": {
+              "indentAfterThisHeading":{
+                "type": "integer",
+                "description": "0/1, binary switch to look for heading or not",
+                "enum": [0,1]
+              },
+              "level":{
+                "type": "integer",
+                "description": "level of the heading (minimum is 1)",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      },
+      "maximumIndentation": {
+        "description": "maximum value of indentation; specify as horizontal space",
+        "type": ["string","integer"]
+      },
+      "noAdditionalIndent": {
+        "description": "names of code blocks to not have additional indentation",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "0/1, binary switch to mean code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "indentRules": {
+        "description": "per-code block indentation rule",
+        "type": "object",
+        "patternProperties": {
+          ".*": {
+            "description": "indentation/horizontal space per-code block",
+            "type": "string"
+          }
+        }
+      },
+      "noAdditionalIndentGlobal": {
+        "description": "*types* of code blocks to not have additional indentation",
+        "type": "object",
+        "properties": {
+          "environments": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "commands": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "optionalArguments": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "mandatoryArguments": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "ifElseFi": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "items": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "keyEqualsValuesBracesBrackets": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "namedGroupingBracesBrackets": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "UnNamedGroupingBracesBrackets": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "specialBeginEnd": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "afterHeading": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "filecontents": {
+            "description": "0/1, binary switch to mean *type* of code block does not have/has additional indentation",
+            "type": "integer",
+            "enum": [0,1]
+          }
+        }
+      },
+      "indentRulesGlobal": {
+        "description": "*types* of code blocks to not have additional indentation",
+        "type": "object",
+        "properties": {
+          "environments": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "commands": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "optionalArguments": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "mandatoryArguments": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "ifElseFi": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "items": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "keyEqualsValuesBracesBrackets": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "namedGroupingBracesBrackets": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "UnNamedGroupingBracesBrackets": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "specialBeginEnd": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "afterHeading": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          },
+          "filecontents": {
+            "description": "indentation rules per *type* of code block",
+            "type": ["integer","string"]
+          }
+        }
+      },
+      "commandCodeBlocks": {
+        "description": "command code blocks need some particular attention",
+        "type": "object",
+        "properties": {
+          "roundParenthesesAllowed": {
+            "description": "0/1, binary switch to not allow/allow round parenthesis () between arguments",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "stringsAllowedBetweenArguments": {
+            "description": "strings allowed between arguments",
+            "type": ["integer","array"],
+            "items": {
+              "type": ["string" ,"object"],
+              "description": "entry to be allowed between arguments"
+            }
+          },
+          "commandNameSpecial": {
+            "description": "there are some particular commands that need individual attention",
+            "type": ["integer","array"],
+            "items": {
+              "type": ["string" ,"object"],
+              "description": "entry for particular attention"
+            }
+          }
+        }
+      },
+      "dos2unixlinebreaks": {
+        "description": "0/1, binary switch to convert dos line breaks to unix line breaks",
+        "type": "integer",
+        "enum": [0,1]
+      },
+      "modifyLineBreaks": {
+        "description": "when -m switch active, latexindent.pl has ability to modify line breaks",
+        "type": "object",
+        "properties": {
+          "preserveBlankLines": {
+            "description": "0/1, binary switch to preserve blank lines or not",
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "condenseMultipleBlankLinesInto": {
+            "description": "condense multiple blank lines into this many blank lines",
+            "type": "integer",
+            "minimum": 0
+          },
+          "oneSentencePerLine": {
+            "properties": {
+              "manipulateSentences": {
+                "description": "0/1, binary switch to perform one sentence per line routine or not",
+                "type": "integer",
+                "enum": [0,1]
+              },
+              "removeSentenceLineBreaks": {
+                "description": "0/1, binary switch to remove line breaks from within sentences or not",
+                "type": "integer",
+                "enum": [0,1]
+              },
+              "textWrapSentences": {
+                "description": "0/1, binary switch to text wrap sentences or not",
+                "type": "integer",
+                "enum": [0,1]
+              },
+              "sentenceIndent": {
+                "description": "horizontal space representing indentation within sentences",
+                "type": "string"
+              },
+              "sentencesFollow":{
+                "description": "things that sentences can follow",
+                "properties": {
+                  "par": {
+                    "description": "0/1, binary switch to determine if sentences can follow \\par or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "blankLine": {
+                    "description": "0/1, binary switch to determine if sentences can follow blank lines or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "fullStop": {
+                    "description": "0/1, binary switch to determine if sentences can follow blank lines or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "exclamationMark": {
+                    "description": "0/1, binary switch to determine if sentences can follow ! or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "questionMark": {
+                    "description": "0/1, binary switch to determine if sentences can follow ? or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "rightBrace": {
+                    "description": "0/1, binary switch to determine if sentences can follow } or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "commentOnPreviousLine": {
+                    "description": "0/1, binary switch to determine if sentences can follow % on previous line or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "other": {
+                    "description": "regular expression detailing what else sentences can follow",
+                    "type": ["integer","string"]
+                  }
+                }
+              },
+              "sentencesBeginWith":{
+                "description": "things that sentences can begin with",
+                "properties": {
+                  "A-Z": {
+                    "description": "0/1, binary switch to determine if sentences can begin upper case letters or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "a-z": {
+                    "description": "0/1, binary switch to determine if sentences can begin lower case letters or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "other": {
+                    "description": "regular expression detailing what else sentences can begin with",
+                    "type": ["integer","string"]
+                  }
+                }
+              },
+              "sentencesEndWith":{
+                "description": "things that sentences can end with",
+                "properties": {
+                  "basicFullStop": {
+                    "description": "0/1, binary switch to determine if sentences can end with basic full stop (period) or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "betterFullStop": {
+                    "description": "0/1, binary switch to determine if sentences can end with better full stop (period) or not (RECOMMENDED)",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "exclamationMark": {
+                    "description": "0/1, binary switch to determine if sentences can end with ! or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "questionMark": {
+                    "description": "0/1, binary switch to determine if sentences can end with ? or not",
+                    "type": "integer",
+                    "enum": [0,1]
+                  },
+                  "other": {
+                    "description": "regular expression detailing what else sentences can end with",
+                    "type": ["integer","string"]
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
