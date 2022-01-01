@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "latexindent-yaml-schema.json",
+    "title": "latexindent.pl YAML schema",
+    "description": "latexindent.pl YAML schema helper, V3.14.4 2021-12-22",
+    "type": "object",
+    "properties": {
+      "defaultIndent": {
+        "description": "default indentation, needs to be specified as horizontal space",
+        "type": "string"
+      }
+    }
+  }
