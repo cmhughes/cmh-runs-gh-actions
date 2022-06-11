@@ -3,7 +3,7 @@ name: Release GHCR Package
 on:
   push:
     tags:
-      - 'V*'
+      - '*'
 
 jobs:
   ghcr:
