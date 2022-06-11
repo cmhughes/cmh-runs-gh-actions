@@ -3,7 +3,7 @@ name: Create and publish latexindent.exe and documentation latexindent.pdf to re
 on:
   push:
     tags:
-      - '*'
+      - 'V0*'
 
 jobs:
   build-latexindent-doc-pdf:
