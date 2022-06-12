@@ -29,6 +29,8 @@ RUN git clone --depth 1 https://github.com/cmhughes/latexindent.pl
 
 WORKDIR /latexindent.pl/helper-scripts
 
+RUN find . -print | sed -e 's;[^/]*/;|-- ;g;s;-- |; |;g'
+
 RUN git checkout "${LATEXINDENT_VERSION}" && echo "Y" | perl latexindent-module-installer.pl
 
 WORKDIR /latexindent.pl/build
