@@ -14,6 +14,9 @@ package LatexIndent::Arguments;
 #	Chris Hughes, 2017
 #
 #	For all communication, please visit: https://github.com/cmhughes/latexindent.pl
+#
+#	cmh
+#	cmh
 use strict;
 use warnings;
 use LatexIndent::Tokens qw/%tokens/;
