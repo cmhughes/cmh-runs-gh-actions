@@ -16,6 +16,7 @@
 #	Chris Hughes, 2017
 #
 #	For all communication, please visit: https://github.com/cmhughes/latexindent.pl
+#	cmh
 
 use strict;
 use warnings;
