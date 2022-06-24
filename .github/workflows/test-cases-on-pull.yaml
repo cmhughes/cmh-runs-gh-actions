@@ -44,10 +44,14 @@ jobs:
           fetch-depth: 2
       - name: Check for changed pm files, latexindent.pl, defaultSettings.yaml
         id: changed-files
+        env:
+          fileschanged: ${{ git diff --name-only main|grep -E 'LatexIndent|defaultSettings|latexindent.pl' }}
         run: |
-          fileschanged=$(git diff --name-only main|grep -E 'LatexIndent|defaultSettings|latexindent.pl')
-          echo ::set-output name=testcaseneeded::true
-          if [ "$fileschanged" == "" ]; then echo ::set-output name=testcaseneeded::false fi
+          if ${fileschanged} == ""; then
+             echo ::set-output name=testcaseneeded::false
+          else
+             echo ::set-output name=testcaseneeded::true
+          fi
       - if: ${{ steps.changed-files.outputs.testcaseneeded == 'true' }}
         name: List all relevant changed files
         run: |
