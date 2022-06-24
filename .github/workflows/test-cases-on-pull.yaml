@@ -53,6 +53,7 @@ jobs:
           fi
       - if: ${{ steps.changed-files.outputs.testcaseneeded == 'true' }}
         name: List all relevant changed files
+        shell: bash
         run: |
             echo "files changed since last commit"
             git diff --name-only origin/main|grep -E 'LatexIndent|defaultSettings|latexindent.pl'
