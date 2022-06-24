@@ -30,7 +30,9 @@ jobs:
     #
     # check if any key files have changed
     #
-    # reference: https://github.com/marketplace/actions/changed-files
+    # reference: 
+    #            https://github.com/jbranchaud/til/blob/master/github-actions/capture-an-output-value-for-use-in-a-later-step.md
+    #            https://stackoverflow.com/questions/67368005/check-whether-environment-variable-is-empty
     #            https://docs.github.com/en/actions/learn-github-actions/expressions
     #            https://www.integralist.co.uk/posts/github-actions/#terminology
     #
@@ -42,7 +44,7 @@ jobs:
           fetch-depth: 2
       - name: Check for changed pm files, latexindent.pl, defaultSettings.yaml
         id: changed-files
-        run: >-
+        run: |-
           fileschanged=$(git diff --name-only main|grep -E 'LatexIndent|defaultSettings|latexindent.pl')
           if [ "$fileschanged" == "" ]; then
             echo ::set-output name=testcaseneeded::false
