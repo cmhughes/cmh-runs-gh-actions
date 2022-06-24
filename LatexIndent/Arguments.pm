@@ -19,6 +19,7 @@ package LatexIndent::Arguments;
 #	cmh
 #
 #	more
+#	more
 use strict;
 use warnings;
 use LatexIndent::Tokens qw/%tokens/;
