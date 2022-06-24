@@ -30,33 +30,33 @@ jobs:
     #
     # check if any key files have changed
     #
-    # reference: https://github.com/marketplace/actions/changed-files
+    # reference: 
+    #            https://github.com/jbranchaud/til/blob/master/github-actions/capture-an-output-value-for-use-in-a-later-step.md
+    #            https://stackoverflow.com/questions/67368005/check-whether-environment-variable-is-empty
     #            https://docs.github.com/en/actions/learn-github-actions/expressions
     #            https://www.integralist.co.uk/posts/github-actions/#terminology
     #
     runs-on: ubuntu-latest
-    outputs:
-      anychanged: ${{ steps.changed-files.outputs.any_changed }}
     steps:
       - name: Loading the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
       - name: Check for changed pm files, latexindent.pl, defaultSettings.yaml
-        uses: tj-actions/changed-files@v23
         id: changed-files
-        with:
-          files: |
-             latexindent.pl
-             defaultSettings.yaml
-             LatexIndent/*.pm
-      - if: ${{ steps.changed-files.outputs.any_changed == 'true' }}
+        run: |-
+          fileschanged=$(git diff --name-only main|grep -E 'LatexIndent|defaultSettings|latexindent.pl')
+          if [ "$fileschanged" == "" ]; then
+            echo ::set-output name=testcaseneeded::false
+          else
+            echo ::set-output name=testcaseneeded::true
+          fi
+      - if: ${{ steps.changed-files.outputs.testcaseneeded == 'true' }}
         name: List all relevant changed files
         run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file has changed since last commit"
-          done
-      - if: ${{ steps.changed-files.outputs.any_changed == 'false' }}
+            echo "files changed since last commit"
+            git diff --name-only main|grep -E 'LatexIndent|defaultSettings|latexindent.pl'
+      - if: ${{ steps.changed-files.outputs.testcaseneeded == 'false' }}
         name: No perl based files have changed
         run: |
             echo ""
@@ -65,7 +65,7 @@ jobs:
             echo ""
   latexindent-test-cases:
     needs: check-test-cases-files-changed
-    if: ${{fromJSON(needs.check-test-cases-files-changed.outputs.anychanged)}}
+    if: ${{fromJSON(needs.check-test-cases-files-changed.steps.changed-files.outputs.testcaseneeded)}}
     runs-on: ubuntu-latest
     name: test-cases.sh check as perl related files changed
     steps:
