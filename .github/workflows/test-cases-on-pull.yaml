@@ -45,7 +45,7 @@ jobs:
       - name: Check for changed pm files, latexindent.pl, defaultSettings.yaml
         id: changed-files
         env:
-          fileschanged: ${{ git diff --name-only main|grep -E 'LatexIndent|defaultSettings|latexindent.pl' }}
+          fileschanged: $(git diff --name-only main|grep -E 'LatexIndent|defaultSettings|latexindent.pl')
         run: |
           if ${fileschanged} == ""; then
              echo ::set-output name=testcaseneeded::false
