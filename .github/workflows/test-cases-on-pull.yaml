@@ -1,9 +1,8 @@
 name: latexindent.pl run test-cases/test-cases.sh if key files changed
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
-
 
 jobs:
   build:
@@ -17,6 +16,8 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v23.1
         with:
+          since_last_remote_commit: "true"
+          use_fork_point: "true"
           files: |
             latexindent.pl
             defaultSettings.yaml
