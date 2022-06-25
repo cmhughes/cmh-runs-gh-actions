@@ -37,3 +37,53 @@ jobs:
             echo "none of latexindent.pl, defaultSettings.yaml, LatexIndent/*.pm have changed since last commit"
             echo "no need to run the rest of batch-check.yaml :)"
             echo ""
+  latexindent-test-cases:
+    needs: check-pm-files-changed
+    if: ${{fromJSON(needs.check-pm-files-changed.outputs.anychanged)}}
+    runs-on: ubuntu-latest
+    name: test-cases.sh check as perl related files changed
+    steps:
+      # install Perl
+      #
+      # https://github.com/marketplace/actions/setup-perl-environment
+      - name: installing Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: 5.34
+      - name: installing perl modules for latexindent.pl
+        run: |
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+      # checkout github.com/cmhughes/latexindent.pl
+      #
+      # https://github.com/actions/checkout
+      - name: Loading the "base actions/checkout" so as to access latexindent.pl
+        uses: actions/checkout@v3
+      - name: run test-cases/test-cases.sh
+        shell: bash
+        run: |
+          chmod +x latexindent.pl
+          cp latexindent.pl /usr/local/bin
+          cp -r LatexIndent /usr/local/bin
+          cp defaultSettings.yaml /usr/local/bin
+          cd test-cases/
+          ./test-cases.sh
+      - name: Check for changed files in test-cases
+        uses: tj-actions/changed-files@v23
+        id: changed-files
+        with:
+          files: |
+            test-cases/
+      - if: ${{ steps.changed-files.outputs.any_changed == 'true' }}
+        name: List all changed files from test-cases
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file has changed on this pull request"
+          done
+      - if: ${{ steps.changed-files.outputs.any_changed == 'false' }}
+        name: No test-cases files have changed
+        run: |
+            echo ""
+            echo "none of test-cases have changed on this pull request,"
+            echo "full review still needed, but this is a good sign :)"
+            echo ""
