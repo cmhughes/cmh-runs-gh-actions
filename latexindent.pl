@@ -17,6 +17,7 @@
 #
 #	For all communication, please visit: https://github.com/cmhughes/latexindent.pl
 #	cmh
+#	cmh
 
 use strict;
 use warnings;
