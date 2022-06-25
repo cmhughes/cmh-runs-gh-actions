@@ -5,9 +5,11 @@ on:
       - main
 
 jobs:
-  build:
+  check-pm-files-changed:
+    name: latexindent.pl check if latexindent.pl, defaultSettings.yaml, .pm files changed
     runs-on: ubuntu-latest
-    name: Test changed-files
+    outputs:
+      anychanged: ${{ steps.changed-files.outputs.any_changed }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -22,8 +24,16 @@ jobs:
             latexindent.pl
             defaultSettings.yaml
             LatexIndent/*.pm
-      - name: List all changed files
+      - if: ${{ steps.changed-files.outputs.any_changed == 'true' }}
+        name: List all relevant changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
+            echo "$file has changed compared to main branch"
           done
+      - if: ${{ steps.changed-files.outputs.any_changed == 'false' }}
+        name: No perl based files have changed
+        run: |
+            echo ""
+            echo "none of latexindent.pl, defaultSettings.yaml, LatexIndent/*.pm have changed since last commit"
+            echo "no need to run the rest of batch-check.yaml :)"
+            echo ""
