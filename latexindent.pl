@@ -25,7 +25,6 @@ use Getopt::Long;              # to get the switches/options/flags
 
 # use lib to make sure that @INC contains the latexindent directory
 use lib $FindBin::RealBin;
-use LatexIndent::Document;
 
 # get the options
 my %switches = (readLocalSettings=>0);
@@ -70,6 +69,5 @@ if($switches{readLocalSettings} and scalar(@ARGV) < 1) {
 # allow STDIN as input, if a filename is not present
 unshift( @ARGV, '-' ) unless @ARGV;
 
-my $document = bless ({name=>"mainDocument",modifyLineBreaksYamlName=>"mainDocument",fileName=>$ARGV[0],switches=>\%switches},"LatexIndent::Document");
-$document->latexindent;
+print("latexindent.pl on cmh-runs-actions, testing only! :)\n");
 exit(0);
