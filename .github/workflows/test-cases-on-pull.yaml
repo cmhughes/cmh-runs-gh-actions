@@ -66,6 +66,8 @@ jobs:
           cp -r LatexIndent /usr/local/bin
           cp defaultSettings.yaml /usr/local/bin
           cd test-cases/
+          sed -i.bak "s/function checkgitdiff/function checkgitdiffcmh/" test-cases.sh
+          sed -i.bak "s/checkgitdiff//" test-cases.sh
           ./test-cases.sh
       - name: Check for changed files in test-cases
         uses: tj-actions/changed-files@v23.1
