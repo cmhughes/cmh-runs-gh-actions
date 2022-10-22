@@ -83,8 +83,8 @@ sub yaml_read_settings {
         elsif ( -e "$FindBin::RealBin/LatexIndent/defaultSettings.yaml" ) {
             $defaultSettings = YAML::Tiny->read("$FindBin::RealBin/LatexIndent/defaultSettings.yaml");
         }
-        elsif ( -e "$dir/defaultSettings.yaml" ) {
-            $defaultSettings = YAML::Tiny->read("$dir/defaultSettings.yaml");
+        elsif ( -e "$dir/LatexIndent/defaultSettings.yaml" ) {
+            $defaultSettings = YAML::Tiny->read("$dir/LatexIndent/defaultSettings.yaml");
         }
         elsif ( -e "$myLibDir/defaultSettings.yaml" ) {
             +$defaultSettings = YAML::Tiny->read("$myLibDir/defaultSettings.yaml");
