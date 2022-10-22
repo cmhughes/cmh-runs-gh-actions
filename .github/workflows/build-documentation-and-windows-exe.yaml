@@ -26,7 +26,6 @@ jobs:
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
-            apk add openjdk11
             github_sha_short=$(echo $GITHUB_SHA | cut -c1-7)
             github_branch="main"
             github_release=$(echo ${{ github.ref }}|cut -d'/' -f 3)
@@ -35,7 +34,6 @@ jobs:
             sed -i.bak s/\\\\gitRel/$github_release/ documentation/*.tex
             sed -i.bak "s|\\\\gitAuthorDate|$(date +'%Y-%m-%d')|g" documentation/latexindent.tex
             cd documentation
-            #arara -v latexindent.tex
             pdflatex --interaction=batchmode latexindent
             makeindex -s latexindent.ist -t latexindent.ilg latexindent.idx -o latexindent.ind
             bibtex latexindent
@@ -92,7 +90,7 @@ jobs:
           mkdir -p target/release
           mv latexindent.exe target/release
           cd target/release 
-          latexindent.exe --help
+          ./latexindent.exe --help
       #
       # upload latexindent.exe to the artifact
       #
