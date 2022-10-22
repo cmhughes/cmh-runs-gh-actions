@@ -20,7 +20,7 @@ jobs:
     name: 'latexindent.pdf documentation creation using arara on texlive'
     runs-on: ubuntu-latest
     steps:
-      - name: Loading the "base actions/checkout" so as to access latexindent.pl
+      - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
       - name: installing texlive full
         uses: xu-cheng/texlive-action/full@v1
@@ -46,7 +46,7 @@ jobs:
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
-      - name: uploading latexindent.pdf
+      - name: upload latexindent.pdf as artifact for zipping
         uses: actions/upload-artifact@master
         with:
           name: latexindent.pdf
@@ -59,40 +59,40 @@ jobs:
       # checkout github.com/cmhughes/latexindent.pl
       # https://github.com/actions/checkout
       #
-      - name: loading the "base actions/checkout" so as to access latexindent.pl
+      - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
-      - name: preparations for PAR packer
-        run: |
-          sed -i'.bak' -r 's,eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\},use Unicode::GCString,' latexindent.pl
-          mv defaultSettings.yaml LatexIndent/
-          SET PAR_VERBATIM=1
       #
       # https://github.com/marketplace/actions/setup-perl-environment
       #
-      - name: installing Strawberry Perl
+      - name: install Strawberry Perl
         uses: shogo82148/actions-setup-perl@v1
         with:
           perl-version: '5.32'
           distribution: strawberry
-      - name: installing Perl modules using cpan
+      - name: install Perl modules using cpan
         run: |
           wmic os get osarchitecture
           cpanm -f PAR::Packer
           cpanm YAML::Tiny
           cpanm File::HomeDir
           cpanm Unicode::GCString
+      - name: preparations for PAR packer
+        run: |
+          sed -i'.bak' -r 's,eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\},use Unicode::GCString,' latexindent.pl
+          mv defaultSettings.yaml LatexIndent/
+          SET PAR_VERBATIM=1
       #
       # https://metacpan.org/pod/pp
       # https://github.com/plk/biber/blob/dev/dist/MSWIN64/build.bat
       #
-      - name: creating latexindent.exe using PAR Packer
+      - name: create latexindent.exe using PAR Packer
         run: >-
           pp 
           --addfile="LatexIndent/defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
           --cachedeps=scancache
           --output latexindent.exe
           latexindent.pl
-      - name: moving latexindent.exe to release directory
+      - name: move latexindent.exe to release directory
         run: |
           mkdir -p target/release
           mv latexindent.exe target/release
@@ -104,7 +104,7 @@ jobs:
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
-      - name: uploading latexindent.exe
+      - name: upload latexindent.exe as artifact for zipping
         uses: actions/upload-artifact@master
         with:
           name: latexindent.exe
@@ -112,7 +112,7 @@ jobs:
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
       #
-      - name: upload latexindent.exe to release
+      - name: upload latexindent.exe to release page
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -127,7 +127,7 @@ jobs:
     steps:
       - name: Loading the "base actions/checkout" so as to access the repository latexindent.pl
         uses: actions/checkout@v3
-      - name: copying source files from repository into temporary folder
+      - name: copy source files from repository into temporary folder
         run: |
           mkdir latexindent
           cp latexindent.pl latexindent/
@@ -135,24 +135,24 @@ jobs:
           mkdir latexindent/LatexIndent/
           cp LatexIndent/*.pm latexindent/LatexIndent/
           cp helper-scripts/latexindent-module-installer.pl latexindent/
-      - name: copying documentation files from repository into temporary folder
+      - name: copy documentation files from repository into temporary folder
         run: |
           mkdir latexindent/documentation/
           cp documentation/*.tex latexindent/documentation/
           cp documentation/*.png latexindent/documentation/
           cp documentation/readme.txt latexindent/README
           cp documentation/*.json latexindent/documentation/
-      - name: downloading latexindent.exe
+      - name: download latexindent.exe
         uses: actions/download-artifact@master
         with:
           name: latexindent.exe
           path: latexindent/
-      - name: downloading latexindent.pdf
+      - name: download latexindent.pdf
         uses: actions/download-artifact@master
         with:
           name: latexindent.pdf
           path: latexindent/documentation/
-      - name: creating latexindent.zip
+      - name: create latexindent.zip
         run: |
           zip -r latexindent.zip latexindent/
           echo ""
