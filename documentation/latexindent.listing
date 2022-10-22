@@ -1,2 +1,0 @@
-latexindent.pl bib2.bib -l bibsettings1.yaml,bibsettings2.yaml -o=+-mod2
-         
