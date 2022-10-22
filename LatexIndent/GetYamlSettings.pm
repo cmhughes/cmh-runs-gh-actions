@@ -69,7 +69,6 @@ sub yaml_read_settings {
 
     my ( $name, $dir, $ext ) = fileparse($INC{"LatexIndent/GetYamlSettings.pm"}, "pm" );
     $dir =~ s/\/$//;
-    print "$dir/defaultSettings.yaml\n";
 
     # if latexindent.exe is invoked from TeXLive, then defaultSettings.yaml won't be in
     # the same directory as it; we need to navigate to it
