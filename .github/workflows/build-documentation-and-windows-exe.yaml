@@ -43,7 +43,6 @@ jobs:
             cd ..
             mkdir -p target/release
             mv documentation/latexindent.pdf target/release
-      # upload latexindent.pdf to the artifact
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
@@ -58,40 +57,50 @@ jobs:
     steps:
       #
       # checkout github.com/cmhughes/latexindent.pl
-      #
       # https://github.com/actions/checkout
       #
-      - name: Loading the "base actions/checkout" so as to access latexindent.pl
+      - name: loading the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
-      #
-      # install Strawberry Perl
+      - name: preparations for PAR packer
+        run: |
+          sed -i.bak -r 's/eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\}/use Unicode::GCString/' latexindent.pl
+          mv defaultSettings.yaml LatexIndent/
+          SET PAR_VERBATIM=1
       #
       # https://github.com/marketplace/actions/setup-perl-environment
       #
-      - name: installing Perl
+      - name: installing Strawberry Perl
         uses: shogo82148/actions-setup-perl@v1
         with:
           perl-version: '5.32'
           distribution: strawberry
-      # create latexindent.exe using Par::Packer
-      #
-      - name: creating latexindent.exe
+      - name: installing Perl modules using cpan
         run: |
           wmic os get osarchitecture
           cpanm -f PAR::Packer
           cpanm YAML::Tiny
           cpanm File::HomeDir
           cpanm Unicode::GCString
-          sed -i.bak 's/eval "use Unicode::GCString" if $switches{GCString}/use Unicode::GCString/' latexindent.pl
-          mv defaultSettings.yaml LatexIndent/
-          SET PAR_VERBATIM=1
-          pp --addfile="LatexIndent/defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml" --cachedeps=scancache -o latexindent.exe latexindent.pl
+      #
+      # https://metacpan.org/pod/pp
+      # https://github.com/plk/biber/blob/dev/dist/MSWIN64/build.bat
+      #
+      - name: creating latexindent.exe using PAR Packer
+        run: >-
+          pp 
+          --addfile="LatexIndent/defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
+          --cachedeps=scancache
+          --output latexindent.exe
+          latexindent.pl
+      - name: moving latexindent.exe to release directory
+        run: |
           mkdir -p target/release
           mv latexindent.exe target/release
+      - name: tiny test of latexindent.exe from release directory
+        run: |
           cd target/release 
           ./latexindent.exe --help
           ./latexindent.exe ../../test-cases/environments/environments-simple-nested.tex
-      # upload latexindent.exe to the artifact
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
@@ -100,7 +109,6 @@ jobs:
         with:
           name: latexindent.exe
           path: target/release
-      # copy latexindent.exe to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
       #
@@ -119,7 +127,7 @@ jobs:
     steps:
       - name: Loading the "base actions/checkout" so as to access the repository latexindent.pl
         uses: actions/checkout@v3
-      - name: copying files from repository into temporary folder
+      - name: copying source files from repository into temporary folder
         run: |
           mkdir latexindent
           cp latexindent.pl latexindent/
@@ -127,6 +135,8 @@ jobs:
           mkdir latexindent/LatexIndent/
           cp LatexIndent/*.pm latexindent/LatexIndent/
           cp helper-scripts/latexindent-module-installer.pl latexindent/
+      - name: copying documentation files from repository into temporary folder
+        run: |
           mkdir latexindent/documentation/
           cp documentation/*.tex latexindent/documentation/
           cp documentation/*.png latexindent/documentation/
@@ -149,6 +159,7 @@ jobs:
           echo "graphical representation of latexindent directory:"
           echo ""
           find latexindent -print | sed -e 's;[^/]*/;|-- ;g;s;-- |; |;g'
+      #
       # copy latexindent.zip to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
