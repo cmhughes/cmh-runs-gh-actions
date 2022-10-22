@@ -68,6 +68,8 @@ sub yaml_read_settings {
     my $myLibDir = dirname(__FILE__);
 
     my ( $name, $dir, $ext ) = fileparse($INC{"LatexIndent/GetYamlSettings.pm"}, "pm" );
+    $dir =~ s/\/$//;
+    print "$dir/defaultSettings.yaml\n";
 
     # if latexindent.exe is invoked from TeXLive, then defaultSettings.yaml won't be in
     # the same directory as it; we need to navigate to it
@@ -83,8 +85,8 @@ sub yaml_read_settings {
         elsif ( -e "$FindBin::RealBin/LatexIndent/defaultSettings.yaml" ) {
             $defaultSettings = YAML::Tiny->read("$FindBin::RealBin/LatexIndent/defaultSettings.yaml");
         }
-        elsif ( -e "$dir/LatexIndent/defaultSettings.yaml" ) {
-            $defaultSettings = YAML::Tiny->read("$dir/LatexIndent/defaultSettings.yaml");
+        elsif ( -e "$dir/defaultSettings.yaml" ) {
+            $defaultSettings = YAML::Tiny->read("$dir/defaultSettings.yaml");
         }
         elsif ( -e "$myLibDir/defaultSettings.yaml" ) {
             +$defaultSettings = YAML::Tiny->read("$myLibDir/defaultSettings.yaml");
