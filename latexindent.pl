@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-#   latexindent.pl, version 3.11, 2021-07-31
+#   latexindent.pl, version 3.18, 2022-06-12
 #
 #	This program is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -16,41 +16,47 @@
 #	Chris Hughes, 2017
 #
 #	For all communication, please visit: https://github.com/cmhughes/latexindent.pl
-#	cmh
-#	cmh
 
 use strict;
 use warnings;
-use FindBin;                   # help find defaultSettings.yaml
-use Getopt::Long;              # to get the switches/options/flags
+use FindBin;         # help find defaultSettings.yaml
+use Getopt::Long;    # to get the switches/options/flags
 
 # use lib to make sure that @INC contains the latexindent directory
 use lib $FindBin::RealBin;
+use LatexIndent::Document;
 
 # get the options
-my %switches = (readLocalSettings=>0);
+my %switches = ( readLocalSettings => 0 );
 
-GetOptions (
-    "version|v"=>\$switches{version},
-    "silent|s"=>\$switches{silentMode},
-    "trace|t"=>\$switches{trace},
-    "ttrace|tt"=>\$switches{ttrace},
-    "local|l:s"=>\$switches{readLocalSettings},
-    "yaml|y=s"=>\$switches{yaml},
-    "onlydefault|d"=>\$switches{onlyDefault},
-    "overwrite|w"=>\$switches{overwrite},
-    "outputfile|o=s"=>\$switches{outputToFile},
-    "modifylinebreaks|m"=>\$switches{modifyLineBreaks},
-    "logfile|g=s"=>\$switches{logFileName},
-    "help|h"=>\$switches{showhelp},
-    "cruft|c=s"=>\$switches{cruftDirectory},
-    "screenlog|sl"=>\$switches{screenlog},
-    "replacement|r"=>\$switches{replacement},
-    "onlyreplacement|rr"=>\$switches{onlyreplacement},
-    "replacementrespectverb|rv"=>\$switches{replacementRespectVerb},
-    "check|k"=>\$switches{check},
-    "checkv|kv"=>\$switches{checkverbose},
+GetOptions(
+    "version|v"                 => \$switches{version},
+    "vversion|vv"               => \$switches{vversion},
+    "silent|s"                  => \$switches{silentMode},
+    "trace|t"                   => \$switches{trace},
+    "ttrace|tt"                 => \$switches{ttrace},
+    "local|l:s"                 => \$switches{readLocalSettings},
+    "yaml|y=s"                  => \$switches{yaml},
+    "onlydefault|d"             => \$switches{onlyDefault},
+    "overwrite|w"               => \$switches{overwrite},
+    "overwriteIfDifferent|wd"   => \$switches{overwriteIfDifferent},
+    "outputfile|o=s"            => \$switches{outputToFile},
+    "modifylinebreaks|m"        => \$switches{modifyLineBreaks},
+    "logfile|g=s"               => \$switches{logFileName},
+    "help|h"                    => \$switches{showhelp},
+    "cruft|c=s"                 => \$switches{cruftDirectory},
+    "screenlog|sl"              => \$switches{screenlog},
+    "replacement|r"             => \$switches{replacement},
+    "onlyreplacement|rr"        => \$switches{onlyreplacement},
+    "replacementrespectverb|rv" => \$switches{replacementRespectVerb},
+    "check|k"                   => \$switches{check},
+    "checkv|kv"                 => \$switches{checkverbose},
+    "lines|n=s"                 => \$switches{lines},
+    "GCString"                  => \$switches{GCString},
 );
+
+# conditionally load the GCString module
+eval "use Unicode::GCString" if $switches{GCString};
 
 # check local settings doesn't interfer with reading the file;
 # this can happen if the script is called as follows:
@@ -60,15 +66,23 @@ GetOptions (
 # in which case, the GetOptions routine mistakes myfile.tex
 # as the optional parameter to the l flag.
 #
-# In such circumstances, we correct the mistake by assuming that 
+# In such circumstances, we correct the mistake by assuming that
 # the only argument is the file to be indented, and place it in @ARGV
-if($switches{readLocalSettings} and scalar(@ARGV) < 1) {
-    push(@ARGV,$switches{readLocalSettings});
+if ( $switches{readLocalSettings} and scalar(@ARGV) < 1 ) {
+    push( @ARGV, $switches{readLocalSettings} );
     $switches{readLocalSettings} = '';
 }
 
 # allow STDIN as input, if a filename is not present
 unshift( @ARGV, '-' ) unless @ARGV;
 
-print("latexindent.pl on cmh-runs-actions, testing only! :)\n");
+my $document = bless(
+    {
+        name                     => "mainDocument",
+        modifyLineBreaksYamlName => "mainDocument",
+        switches                 => \%switches
+    },
+    "LatexIndent::Document"
+);
+$document->latexindent( \@ARGV );
 exit(0);
