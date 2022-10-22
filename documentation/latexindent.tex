@@ -1,7 +1,11 @@
 \documentclass{article}
 \usepackage{imakeidx}
+\usepackage[backend=bibtex,sorting=ynt]{biblatex}    % bibliography
+\addbibresource{latex-indent}
 \makeindex
 \begin{document}
 hello world\index{cmh}
 \printindex
+\nocite{*}
+\printbibliography
 \end{document}

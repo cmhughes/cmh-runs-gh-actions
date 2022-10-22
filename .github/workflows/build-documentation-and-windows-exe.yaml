@@ -83,8 +83,9 @@ jobs:
           cpanm File::HomeDir
           cpanm Unicode::GCString
           sed -i.bak 's/eval "use Unicode::GCString" if $switches{GCString}/use Unicode::GCString/' latexindent.pl
+          mv defaultSettings.yaml LatexIndent/
           SET PAR_VERBATIM=1
-          pp --addfile="defaultSettings.yaml" --cachedeps=scancache -o latexindent.exe latexindent.pl
+          pp --addfile="LatexIndent/defaultSettings.yaml" --cachedeps=scancache -o latexindent.exe latexindent.pl
           mkdir -p target/release
           mv latexindent.exe target/release
           cd target/release 
