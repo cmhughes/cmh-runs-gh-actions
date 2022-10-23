@@ -17,8 +17,7 @@ on:
 
 jobs:
   build-latexindent-doc-pdf:
-    name: 'latexindent.pdf documentation creation using arara on texlive'
-    needs: [build-windows-exe]
+    name: 'documentation latexindent.pdf creation'
     runs-on: ubuntu-latest
     steps:
       - name: load the "base actions/checkout" so as to access latexindent.pl
@@ -53,7 +52,7 @@ jobs:
           name: latexindent.pdf
           path: target/release
   build-windows-exe:
-    name: 'latexindent.exe creation using Strawberry Perl 5.32 on Windows'
+    name: 'create Windows executable latexindent.exe using Strawberry Perl 5.32 on Windows'
     runs-on: 'windows-latest'
     steps:
       #
@@ -121,7 +120,7 @@ jobs:
           overwrite: true
           body: "latexindent.pl release text"
   build-linux-executable:
-    name: 'create linux executable latexindent'
+    name: 'create Linux executable latexindent'
     runs-on: 'ubuntu-latest'
     steps:
       #
@@ -149,16 +148,16 @@ jobs:
           PAR_VERBATIM=1
       #
       # https://metacpan.org/pod/pp
-      # https://github.com/plk/biber/blob/dev/dist/MSWIN64/build.bat
+      # https://github.com/plk/biber/blob/dev/dist/linux-musl_x86_64/build.sh
       #
-      - name: create linux executable latexindent using PAR Packer
+      - name: create Linux executable latexindent using PAR Packer
         run: >-
           pp 
           --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
           --cachedeps=scancache
           --output latexindent-linux
           latexindent.pl
-      - name: move linux latexindent to release directory
+      - name: move Linux latexindent to release directory
         run: |
           mkdir -p target/release
           mv latexindent-linux target/release
@@ -176,7 +175,7 @@ jobs:
           name: latexindent-linux
           path: target/release
   zip-files:
-    name: 'Creating latexindent.zip and uploading to release'
+    name: 'create latexindent.zip and uploading to release'
     needs: [build-latexindent-doc-pdf, build-windows-exe, build-linux-executable]
     runs-on: ubuntu-latest
     steps:
