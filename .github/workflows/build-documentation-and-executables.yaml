@@ -18,7 +18,6 @@ on:
 jobs:
   build-latexindent-doc-pdf:
     name: 'documentation latexindent.pdf creation'
-    needs: [build-macos-executable]
     runs-on: ubuntu-latest
     steps:
       - name: load the "base actions/checkout" so as to access latexindent.pl
@@ -54,7 +53,6 @@ jobs:
           path: target/release
   build-windows-exe:
     name: 'create Windows executable latexindent.exe using Strawberry Perl 5.32 on Windows'
-    needs: [build-macos-executable]
     runs-on: 'windows-latest'
     steps:
       #
@@ -123,7 +121,6 @@ jobs:
           body: "latexindent.pl release text"
   build-linux-executable:
     name: 'create Linux executable latexindent'
-    needs: [build-macos-executable]
     runs-on: 'ubuntu-latest'
     steps:
       #
