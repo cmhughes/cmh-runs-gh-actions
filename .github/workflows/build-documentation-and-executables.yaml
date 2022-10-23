@@ -18,6 +18,7 @@ on:
 jobs:
   build-latexindent-doc-pdf:
     name: 'documentation latexindent.pdf creation'
+    needs: [build-macos-executable]
     runs-on: ubuntu-latest
     steps:
       - name: load the "base actions/checkout" so as to access latexindent.pl
@@ -53,6 +54,7 @@ jobs:
           path: target/release
   build-windows-exe:
     name: 'create Windows executable latexindent.exe using Strawberry Perl 5.32 on Windows'
+    needs: [build-macos-executable]
     runs-on: 'windows-latest'
     steps:
       #
@@ -121,6 +123,7 @@ jobs:
           body: "latexindent.pl release text"
   build-linux-executable:
     name: 'create Linux executable latexindent'
+    needs: [build-macos-executable]
     runs-on: 'ubuntu-latest'
     steps:
       #
@@ -174,9 +177,64 @@ jobs:
         with:
           name: latexindent-linux
           path: target/release
+  build-macos-executable:
+    name: 'create MacOS executable latexindent'
+    runs-on: 'macos-latest'
+    steps:
+      #
+      # checkout github.com/cmhughes/latexindent.pl
+      # https://github.com/actions/checkout
+      #
+      - name: load the "base actions/checkout" so as to access latexindent.pl
+        uses: actions/checkout@v3
+      #
+      # https://github.com/marketplace/actions/setup-perl-environment
+      #
+      - name: install Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+      - name: install Perl modules using cpan
+        run: |
+          cpanm -f PAR::Packer
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+          cpanm Unicode::GCString
+      - name: preparations for PAR packer
+        run: |
+          sed -i'.bak' -r 's,eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\},use Unicode::GCString,' latexindent.pl
+          PAR_VERBATIM=1
+      #
+      # https://metacpan.org/pod/pp
+      # https://github.com/plk/biber/blob/dev/dist/linux-musl_x86_64/build.sh
+      #
+      - name: create Linux executable latexindent using PAR Packer
+        run: >-
+          pp 
+          --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
+          --cachedeps=scancache
+          --output latexindent-macos
+          latexindent.pl
+      - name: move MacOS latexindent to release directory
+        run: |
+          mkdir -p target/release
+          mv latexindent-macos target/release
+      - name: tiny test of latexindent from release directory
+        run: |
+          cd target/release 
+          ./latexindent-macos --help
+          ./latexindent-macos ../../test-cases/environments/environments-simple-nested.tex
+      #
+      # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
+      #
+      - name: upload latexindent-macos as artifact for zipping
+        uses: actions/upload-artifact@master
+        with:
+          name: latexindent-macos
+          path: target/release
   zip-files:
     name: 'create latexindent.zip and uploading to release'
-    needs: [build-latexindent-doc-pdf, build-windows-exe, build-linux-executable]
+    needs: [build-latexindent-doc-pdf, build-windows-exe, build-linux-executable, build-macos-executable]
     runs-on: ubuntu-latest
     steps:
       - name: Loading the "base actions/checkout" so as to access the repository latexindent.pl
@@ -191,6 +249,7 @@ jobs:
           cp helper-scripts/latexindent-module-installer.pl latexindent/
           mkdir latexindent/latexindent-windows
           mkdir latexindent/latexindent-linux
+          mkdir latexindent/latexindent-macos
       - name: copy documentation files from repository into temporary folder
         run: |
           mkdir latexindent/documentation/
@@ -203,11 +262,16 @@ jobs:
         with:
           name: latexindent.exe
           path: latexindent/latexindent-windows
-      - name: download linux executable latexindent 
+      - name: download Linux executable latexindent 
         uses: actions/download-artifact@master
         with:
           name: latexindent-linux
           path: latexindent/latexindent-linux
+      - name: download MacOS executable latexindent 
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent-macos
+          path: latexindent/latexindent-macos
       - name: download latexindent.pdf
         uses: actions/download-artifact@master
         with:
@@ -216,6 +280,7 @@ jobs:
       - name: create latexindent.zip
         run: |
           mv latexindent/latexindent-linux/latexindent-linux latexindent/latexindent-linux/latexindent
+          mv latexindent/latexindent-macos/latexindent-macos latexindent/latexindent-macos/latexindent
           zip -r latexindent.zip latexindent/
       - name: graphical representation of latexindent directory
         run: |
