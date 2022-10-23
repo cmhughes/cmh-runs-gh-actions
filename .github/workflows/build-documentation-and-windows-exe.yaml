@@ -120,9 +120,64 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  build-linux-executable:
+    name: 'create linux executable latexindent'
+    runs-on: 'ubuntu-latest'
+    steps:
+      #
+      # checkout github.com/cmhughes/latexindent.pl
+      # https://github.com/actions/checkout
+      #
+      - name: load the "base actions/checkout" so as to access latexindent.pl
+        uses: actions/checkout@v3
+      #
+      # https://github.com/marketplace/actions/setup-perl-environment
+      #
+      - name: install Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+      - name: install Perl modules using cpan
+        run: |
+          cpanm -f PAR::Packer
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+          cpanm Unicode::GCString
+      - name: preparations for PAR packer
+        run: |
+          sed -i'.bak' -r 's,eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\},use Unicode::GCString,' latexindent.pl
+          PAR_VERBATIM=1
+      #
+      # https://metacpan.org/pod/pp
+      # https://github.com/plk/biber/blob/dev/dist/MSWIN64/build.bat
+      #
+      - name: create linux executable latexindent using PAR Packer
+        run: >-
+          pp 
+          --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
+          --cachedeps=scancache
+          --output latexindent-linux
+          latexindent.pl
+      - name: move linux latexindent to release directory
+        run: |
+          mkdir -p target/release
+          mv latexindent-linux target/release
+      - name: tiny test of latexindent from release directory
+        run: |
+          cd target/release 
+          ./latexindent-linux --help
+          ./latexindent-linux ../../test-cases/environments/environments-simple-nested.tex
+      #
+      # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
+      #
+      - name: upload latexindent-linux as artifact for zipping
+        uses: actions/upload-artifact@master
+        with:
+          name: latexindent-linux
+          path: target/release
   zip-files:
     name: 'Creating latexindent.zip and uploading to release'
-    needs: [build-latexindent-doc-pdf, build-windows-exe]
+    needs: [build-latexindent-doc-pdf, build-windows-exe, build-linux-executable]
     runs-on: ubuntu-latest
     steps:
       - name: Loading the "base actions/checkout" so as to access the repository latexindent.pl
@@ -135,6 +190,8 @@ jobs:
           mkdir latexindent/LatexIndent/
           cp LatexIndent/*.pm latexindent/LatexIndent/
           cp helper-scripts/latexindent-module-installer.pl latexindent/
+          mkdir latexindent/latexindent-windows
+          mkdir latexindent/latexindent-linux
       - name: copy documentation files from repository into temporary folder
         run: |
           mkdir latexindent/documentation/
@@ -146,7 +203,12 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: latexindent.exe
-          path: latexindent/
+          path: latexindent/latexindent-windows
+      - name: download linux executable latexindent 
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent-linux
+          path: latexindent/latexindent-linux
       - name: download latexindent.pdf
         uses: actions/download-artifact@master
         with:
@@ -154,12 +216,11 @@ jobs:
           path: latexindent/documentation/
       - name: create latexindent.zip
         run: |
+          mv latexindent/latexindent-linux/latexindent-linux latexindent/latexindent-linux/latexindent
           zip -r latexindent.zip latexindent/
       - name: graphical representation of latexindent directory
         run: |
           find latexindent -print | sed -e 's;[^/]*/;|-- ;g;s;-- |; |;g'
-      #
-      # copy latexindent.zip to the release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
       #
