@@ -18,6 +18,7 @@ on:
 jobs:
   build-latexindent-doc-pdf:
     name: 'latexindent.pdf documentation creation using arara on texlive'
+    needs: [build-windows-exe]
     runs-on: ubuntu-latest
     steps:
       - name: load the "base actions/checkout" so as to access latexindent.pl
@@ -79,7 +80,6 @@ jobs:
       - name: preparations for PAR packer
         run: |
           sed -i'.bak' -r 's,eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\},use Unicode::GCString,' latexindent.pl
-          mv defaultSettings.yaml LatexIndent/
           SET PAR_VERBATIM=1
       #
       # https://metacpan.org/pod/pp
@@ -88,7 +88,7 @@ jobs:
       - name: create latexindent.exe using PAR Packer
         run: >-
           pp 
-          --addfile="LatexIndent/defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
+          --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
           --cachedeps=scancache
           --output latexindent.exe
           latexindent.pl
@@ -155,9 +155,8 @@ jobs:
       - name: create latexindent.zip
         run: |
           zip -r latexindent.zip latexindent/
-          echo ""
-          echo "graphical representation of latexindent directory:"
-          echo ""
+      - name: graphical representation of latexindent directory
+        run: |
           find latexindent -print | sed -e 's;[^/]*/;|-- ;g;s;-- |; |;g'
       #
       # copy latexindent.zip to the release
