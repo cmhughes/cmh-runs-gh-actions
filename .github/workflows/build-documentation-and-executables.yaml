@@ -267,9 +267,9 @@ jobs:
           cp LatexIndent/*.pm latexindent/LatexIndent/
           cp helper-scripts/latexindent-module-installer.pl latexindent/
           mkdir latexindent/bin/
-          mkdir latexindent/bin/latexindent-windows
-          mkdir latexindent/bin/latexindent-linux
-          mkdir latexindent/bin/latexindent-macos
+          mkdir latexindent/bin/windows
+          mkdir latexindent/bin/linux
+          mkdir latexindent/bin/macos
       - name: copy documentation files from repository into temporary folder
         run: |
           mkdir latexindent/documentation/
@@ -281,17 +281,17 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: latexindent.exe
-          path: latexindent/bin/latexindent-windows
+          path: latexindent/bin/windows
       - name: download Linux executable latexindent 
         uses: actions/download-artifact@master
         with:
           name: latexindent-linux
-          path: latexindent/bin/latexindent-linux
+          path: latexindent/bin/linux
       - name: download MacOS executable latexindent 
         uses: actions/download-artifact@master
         with:
           name: latexindent-macos
-          path: latexindent/bin/latexindent-macos
+          path: latexindent/bin/macos
       - name: download documentation file latexindent.pdf
         uses: actions/download-artifact@master
         with:
@@ -299,8 +299,8 @@ jobs:
           path: latexindent/documentation/
       - name: create latexindent.zip
         run: |
-          mv latexindent/bin/latexindent-linux/latexindent-linux latexindent/bin/latexindent-linux/latexindent
-          mv latexindent/bin/latexindent-macos/latexindent-macos latexindent/bin/latexindent-macos/latexindent
+          mv latexindent/bin/linux/latexindent-linux latexindent/bin/linux/latexindent
+          mv latexindent/bin/macos/latexindent-macos latexindent/bin/macos/latexindent
           zip -r latexindent.zip latexindent/
       - name: graphical representation of latexindent directory
         run: |
