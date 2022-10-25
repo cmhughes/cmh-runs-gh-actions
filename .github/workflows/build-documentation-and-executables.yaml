@@ -205,7 +205,7 @@ jobs:
       # https://metacpan.org/pod/pp
       # https://github.com/plk/biber/blob/dev/dist/linux-musl_x86_64/build.sh
       #
-      - name: create Linux executable latexindent using PAR Packer
+      - name: create MacOS executable latexindent using PAR Packer
         run: >-
           pp 
           --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
@@ -244,9 +244,10 @@ jobs:
           mkdir latexindent/LatexIndent/
           cp LatexIndent/*.pm latexindent/LatexIndent/
           cp helper-scripts/latexindent-module-installer.pl latexindent/
-          mkdir latexindent/latexindent-windows
-          mkdir latexindent/latexindent-linux
-          mkdir latexindent/latexindent-macos
+          mkdir latexindent/bin/
+          mkdir latexindent/bin/latexindent-windows
+          mkdir latexindent/bin/latexindent-linux
+          mkdir latexindent/bin/latexindent-macos
       - name: copy documentation files from repository into temporary folder
         run: |
           mkdir latexindent/documentation/
@@ -258,17 +259,17 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: latexindent.exe
-          path: latexindent/latexindent-windows
+          path: latexindent/bin/latexindent-windows
       - name: download Linux executable latexindent 
         uses: actions/download-artifact@master
         with:
           name: latexindent-linux
-          path: latexindent/latexindent-linux
+          path: latexindent/bin/latexindent-linux
       - name: download MacOS executable latexindent 
         uses: actions/download-artifact@master
         with:
           name: latexindent-macos
-          path: latexindent/latexindent-macos
+          path: latexindent/bin/latexindent-macos
       - name: download latexindent.pdf
         uses: actions/download-artifact@master
         with:
