@@ -112,7 +112,7 @@ jobs:
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
       #
       - name: upload latexindent.exe to release page
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.3.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: target/release/latexindent.exe
@@ -178,7 +178,7 @@ jobs:
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
       #
       - name: upload latexindent-linux to release page
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.3.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: target/release/latexindent-linux
@@ -244,7 +244,7 @@ jobs:
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
       #
       - name: upload latexindent-macos to release page
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.3.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: target/release/latexindent-macos
@@ -309,7 +309,7 @@ jobs:
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
       #
       - name: upload latexindent.zip to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.3.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: latexindent.zip
