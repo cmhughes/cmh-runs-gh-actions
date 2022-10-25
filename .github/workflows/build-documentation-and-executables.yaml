@@ -1,4 +1,4 @@
-name: Create and publish latexindent.exe and documentation latexindent.pdf to releases
+name: Create and publish latexindent executables and documentation to releases
 # PURPOSE:
 #
 #  1. *create* latexindent.exe using PAR::Packer on Strawberry Perl
@@ -16,6 +16,9 @@ on:
       - '*'
 
 jobs:
+  #
+  # latexindent.pdf
+  #
   build-latexindent-doc-pdf:
     name: 'documentation latexindent.pdf creation'
     runs-on: ubuntu-latest
@@ -51,6 +54,9 @@ jobs:
         with:
           name: latexindent.pdf
           path: target/release
+  #
+  # latexindent.exe
+  #
   build-windows-exe:
     name: 'create Windows executable latexindent.exe using Strawberry Perl 5.32 on Windows'
     runs-on: 'windows-latest'
@@ -119,6 +125,9 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #
+  # Linux latexindent
+  #
   build-linux-executable:
     name: 'create Linux executable latexindent'
     runs-on: 'ubuntu-latest'
@@ -185,6 +194,9 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #
+  # MacOS latexindent
+  #
   build-macos-executable:
     name: 'create MacOS executable latexindent'
     runs-on: 'macos-latest'
@@ -251,6 +263,9 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #
+  # latexindent.zip
+  #
   zip-files:
     name: 'create latexindent.zip and uploading to release'
     needs: [build-latexindent-doc-pdf, build-windows-exe, build-linux-executable, build-macos-executable]
