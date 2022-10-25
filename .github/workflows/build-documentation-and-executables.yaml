@@ -277,7 +277,7 @@ jobs:
           cp documentation/*.png latexindent/documentation/
           cp documentation/readme.txt latexindent/README
           cp documentation/*.json latexindent/documentation/
-      - name: download latexindent.exe
+      - name: download Windows executable latexindent.exe
         uses: actions/download-artifact@master
         with:
           name: latexindent.exe
@@ -292,7 +292,7 @@ jobs:
         with:
           name: latexindent-macos
           path: latexindent/bin/latexindent-macos
-      - name: download latexindent.pdf
+      - name: download documentation file latexindent.pdf
         uses: actions/download-artifact@master
         with:
           name: latexindent.pdf
@@ -315,4 +315,4 @@ jobs:
           file: latexindent.zip
           tag: ${{ github.ref }}
           overwrite: true
-          body: "latexindent.pl release text"
+          body: "latexindent.pl release txt"
