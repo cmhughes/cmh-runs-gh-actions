@@ -1,11 +1,11 @@
-name: Create and publish latexindent executables and documentation to releases
+name: Build and publish latexindent executables and documentation to releases
 # PURPOSE:
 #
-#  1. *create* latexindent.exe using PAR::Packer on Strawberry Perl
-#  2. *publish* latexindent.exe to the most recent tag (release)
-#  3. *create* latexindent.pdf 
-#  4. *create* latexindent.zip
-#  5. *publish* latexindent.zip to the most recent tag (release)
+#  1. build documentation latexindent.pdf 
+#  2. build Windows latexindent.exe using PAR::Packer on Strawberry Perl, and publish to the most recent tag (release)
+#  3. build Linux latexindent executable using PAR::Packer, and publish to the most recent tag (release)
+#  4. build MacOS latexindent executable using PAR::Packer, and publish to the most recent tag (release)
+#  5. create latexindent.zip, and publish latexindent.zip to the most recent tag (release)
 #
 # Note: this action only runs on *each release*, i.e. when tags are pushed
 #
@@ -16,11 +16,12 @@ on:
       - '*'
 
 jobs:
+  #-------------------------------------------------------------------------------------
   #
   # latexindent.pdf
   #
   build-latexindent-doc-pdf:
-    name: 'documentation latexindent.pdf creation'
+    name: 'build documentation latexindent.pdf'
     runs-on: ubuntu-latest
     steps:
       - name: load the "base actions/checkout" so as to access latexindent.pl
@@ -54,11 +55,12 @@ jobs:
         with:
           name: latexindent.pdf
           path: target/release
+  #-------------------------------------------------------------------------------------
   #
   # latexindent.exe
   #
   build-windows-exe:
-    name: 'create Windows executable latexindent.exe using Strawberry Perl 5.32 on Windows'
+    name: 'build Windows executable latexindent.exe using Strawberry Perl 5.32 on Windows'
     runs-on: 'windows-latest'
     steps:
       #
@@ -90,7 +92,7 @@ jobs:
       # https://metacpan.org/pod/pp
       # https://github.com/plk/biber/blob/dev/dist/MSWIN64/build.bat
       #
-      - name: create latexindent.exe using PAR Packer
+      - name: build latexindent.exe using PAR Packer
         run: >-
           pp 
           --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
@@ -125,11 +127,12 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #-------------------------------------------------------------------------------------
   #
   # Linux latexindent
   #
   build-linux-executable:
-    name: 'create Linux executable latexindent'
+    name: 'build Linux executable latexindent'
     runs-on: 'ubuntu-latest'
     steps:
       #
@@ -159,7 +162,7 @@ jobs:
       # https://metacpan.org/pod/pp
       # https://github.com/plk/biber/blob/dev/dist/linux-musl_x86_64/build.sh
       #
-      - name: create Linux executable latexindent using PAR Packer
+      - name: build Linux executable latexindent using PAR Packer
         run: >-
           pp 
           --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
@@ -194,11 +197,12 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #-------------------------------------------------------------------------------------
   #
   # MacOS latexindent
   #
   build-macos-executable:
-    name: 'create MacOS executable latexindent'
+    name: 'build MacOS executable latexindent'
     runs-on: 'macos-latest'
     steps:
       #
@@ -228,7 +232,7 @@ jobs:
       # https://metacpan.org/pod/pp
       # https://github.com/plk/biber/blob/dev/dist/linux-musl_x86_64/build.sh
       #
-      - name: create MacOS executable latexindent using PAR Packer
+      - name: build MacOS executable latexindent using PAR Packer
         run: >-
           pp 
           --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
@@ -263,11 +267,12 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #=====================================================================================
   #
   # latexindent.zip
   #
   zip-files:
-    name: 'create latexindent.zip and uploading to release'
+    name: 'create latexindent.zip and upload to release'
     needs: [build-latexindent-doc-pdf, build-windows-exe, build-linux-executable, build-macos-executable]
     runs-on: ubuntu-latest
     steps:
