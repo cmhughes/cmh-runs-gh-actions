@@ -21,7 +21,7 @@ jobs:
   # latexindent.pdf
   #
   build-latexindent-doc-pdf:
-    name: 'build documentation latexindent.pdf'
+    name: 'latexindent.pdf documentation creation using arara on texlive'
     runs-on: ubuntu-latest
     steps:
       - name: load the "base actions/checkout" so as to access latexindent.pl
@@ -38,7 +38,7 @@ jobs:
             sed -i.bak s/\\\\gitRel/$github_release/ documentation/*.tex
             sed -i.bak "s|\\\\gitAuthorDate|$(date +'%Y-%m-%d')|g" documentation/latexindent.tex
             cd documentation
-            pdflatex --interaction=batchmode latexindent
+            pdflatex --interaction=batchmode latexindent.tex
             cd ..
             mkdir -p target/release
             mv documentation/latexindent.pdf target/release
