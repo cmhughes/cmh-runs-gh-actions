@@ -37,6 +37,8 @@ jobs:
             sed -i.bak s/\\\\gitBranch/main/ documentation/latexindent.tex
             sed -i.bak s/\\\\gitRel/$github_release/ documentation/*.tex
             sed -i.bak "s|\\\\gitAuthorDate|$(date +'%Y-%m-%d')|g" documentation/latexindent.tex
+      - name: pdflatex compilation
+        run: |
             cd documentation
             pdflatex --interaction=batchmode latexindent
             makeindex -s latexindent.ist -t latexindent.ilg latexindent.idx -o latexindent.ind
@@ -44,6 +46,8 @@ jobs:
             pdflatex --interaction=batchmode latexindent
             pdflatex --interaction=batchmode latexindent
             pdflatex --interaction=batchmode latexindent
+      - name: move latexindent.pdf to release directory
+        run: |
             cd ..
             mkdir -p target/release
             mv documentation/latexindent.pdf target/release
