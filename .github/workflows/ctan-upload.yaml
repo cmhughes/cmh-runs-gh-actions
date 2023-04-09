@@ -1,0 +1,49 @@
+name: ctan upload
+# PURPOSE:
+#
+#  1. *create* latexindent.exe using PAR::Packer on Strawberry Perl
+#  2. *publish* latexindent.exe to the most recent tag (release)
+#  3. *create* latexindent.pdf 
+#  4. *create* latexindent.zip
+#  5. *publish* latexindent.zip to the most recent tag (release)
+#
+# Note: this action only runs on *each release*, i.e. when tags are pushed
+#
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  #
+  # ctan latexindent.zip upload
+  #
+  ctan-upload:
+    name: 'upload latexindent.zip to ctan'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: create latexindent.zip
+        run: |
+          mkdir latexindent
+          mkdir latexindent/documentation
+          cp readme.md latexindent/README
+          cp readme.md latexindent/documentation/cmh-documentation.pdf
+          cp -r LatexIndent/*.pm latexindent/
+          zip -r latexindent.zip latexindent
+      - name: CTAN submit (validate only)
+        uses: paolobrasolin/ctan-submit-action@v1
+        with:
+          action: validate
+          # We use the file_path of a pre-built test fixture committed to the repo. You'd normally use the path of the archive resulting from your build steps.
+          file_path: latexindent.zip
+          fields: |
+            update: "true"
+            pkg: latexindent
+            version: 0.1.0
+            author: Chris Hughes
+            email: christopher.michael.hughes@gmail.com 
+            uploader: Chris Hughes
+            summary: This is a CI test
