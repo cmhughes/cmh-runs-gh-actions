@@ -38,12 +38,17 @@ jobs:
         run: |
           echo "version=$(echo ${{ github.ref }}|cut -d'/' -f 3)" >> $GITHUB_OUTPUT
           echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      - name: get latexindent announcement text
+        id: announcement
+        run: |
+          egrep -i --color=auto '<!-- announcement:' documentation/changelog.md > tmp.log
+          sed -i.bak s/\<\!\-\-\ announcement:\ // tmp.log
+          sed -i.bak s/-\-\>// tmp.log
+          echo "announcementtext=$(cat tmp.log)" >> $GITHUB_OUTPUT
       - name: CTAN submit (validate only)
         uses: paolobrasolin/ctan-submit-action@v1
         with:
           action: validate
-          # We use the file_path of a pre-built test fixture committed to the repo. 
-          # You'd normally use the path of the archive resulting from your build steps.
           file_path: latexindent.zip
           fields: |
             update: "true"
@@ -52,5 +57,4 @@ jobs:
             author: Chris Hughes
             email: christopher.michael.hughes@gmail.com 
             uploader: Chris Hughes
-            announcement: This is a CI test
-            cmh: this shouldn't be a field
+            announcement: "${{ steps.announcement.outputs.announcementtext}}"
