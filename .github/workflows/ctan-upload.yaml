@@ -40,6 +40,11 @@ jobs:
         with:
           name: latexindent.zip
           path: target/release
+      - name: get changelog.md information
+        id: changelog
+        run: |
+          csplit documentation/changelog.md '/^\#\#/' '{*}' -f cmh
+          sed -i.bak s/\#\#.*\// cmh01
       - name: upload latexindent.zip to release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -47,7 +52,7 @@ jobs:
           file: target/release/latexindent.zip
           tag: ${{ github.ref }}
           overwrite: true
-          body: "cmh-runs-actions test"
+          body: cat cmh01
   #
   # ctan latexindent.zip upload
   #
