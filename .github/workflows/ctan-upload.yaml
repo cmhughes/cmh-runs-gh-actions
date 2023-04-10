@@ -48,8 +48,8 @@ jobs:
           fields: |
             update: "true"
             pkg: latexindent
-            version: "${{ steps.labeller.outputs.version }}, ${{ steps.labeller.outputs.date }}"
+            version: "${{ steps.labeller.outputs.version }} ${{ steps.labeller.outputs.date }}"
             author: Chris Hughes
             email: christopher.michael.hughes@gmail.com 
             uploader: Chris Hughes
-            summary: This is a CI test
+            announcement: This is a CI test
