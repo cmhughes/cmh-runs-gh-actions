@@ -53,3 +53,4 @@ jobs:
             email: christopher.michael.hughes@gmail.com 
             uploader: Chris Hughes
             announcement: This is a CI test
+            cmh: this shouldn't be a field
