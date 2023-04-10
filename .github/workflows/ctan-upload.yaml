@@ -43,13 +43,13 @@ jobs:
       - name: get changelog.md information
         id: changelog
         run: |
-          csplit documentation/changelog.md '/^\#\#/' '{*}' -f cmh
-          sed -i.bak s/\#\#.*\// cmh01
-          r=$(cat cmh01)                            # <--- Read release.md (Provide correct path as per your repo)
-          r="${r//'%'/'%25'}"                       # Multiline escape sequences for %
-          r="${r//$'\n'/'%0A'}"                     # Multiline escape sequences for '\n'
-          r="${r//$'\r'/'%0D'}"                     # Multiline escape sequences for '\r'
-          echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT  # <--- Set environment var
+          csplit documentation/changelog.md '/^\#\#/' '{*}' -f cmh # split changelog at '##'
+          sed -i.bak s/\#\#.*\// cmh01                             # 
+          r=$(cat cmh01)                                           # <--- Read changelog.md 
+          r="${r//'%'/'%25'}"                                      # Multiline escape sequences for %
+          r="${r//$'\n'/'%0A'}"                                    # Multiline escape sequences for '\n'
+          r="${r//$'\r'/'%0D'}"                                    # Multiline escape sequences for '\r'
+          echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT                 # <--- Set environment var
       - name: upload latexindent.zip to release
         uses: svenstaro/upload-release-action@v2
         with:
