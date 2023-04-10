@@ -12,8 +12,8 @@ name: ctan upload
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '*'
 
 jobs:
   #
@@ -33,16 +33,21 @@ jobs:
           cp readme.md latexindent/documentation/cmh-documentation.pdf
           cp -r LatexIndent/*.pm latexindent/
           zip -r latexindent.zip latexindent
+      - name: get latexindent version number
+        id: labeller
+        run: |
+          echo "version=$(echo ${{ github.ref }}|cut -d'/' -f 3)" >> $GITHUB_OUTPUT
       - name: CTAN submit (validate only)
         uses: paolobrasolin/ctan-submit-action@v1
         with:
           action: validate
-          # We use the file_path of a pre-built test fixture committed to the repo. You'd normally use the path of the archive resulting from your build steps.
+          # We use the file_path of a pre-built test fixture committed to the repo. 
+          # You'd normally use the path of the archive resulting from your build steps.
           file_path: latexindent.zip
           fields: |
             update: "true"
             pkg: latexindent
-            version: 0.1.0
+            version: ${{ steps.labeller.outputs.version }}
             author: Chris Hughes
             email: christopher.michael.hughes@gmail.com 
             uploader: Chris Hughes
