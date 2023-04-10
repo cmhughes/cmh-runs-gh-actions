@@ -17,10 +17,10 @@ on:
 
 jobs:
   #
-  # ctan latexindent.zip upload
+  # dummy routine to simulate latexindent.zip
   #
-  ctan-upload:
-    name: 'upload latexindent.zip to ctan'
+  build-latexindent-zip:
+    name: 'build latexindent.zip'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -33,11 +33,36 @@ jobs:
           cp readme.md latexindent/documentation/cmh-documentation.pdf
           cp -r LatexIndent/*.pm latexindent/
           zip -r latexindent.zip latexindent
+          mkdir -p target/release
+          mv latexindent.zip target/release
+      - name: upload latexindent.zip as artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: latexindent.zip
+          path: target/release
+      - name: upload latexindent.zip to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/release/latexindent.zip
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "cmh-runs-actions test"
+  #
+  # ctan latexindent.zip upload
+  #
+  ctan-upload:
+    name: 'upload latexindent.zip to ctan'
+    runs-on: ubuntu-latest
+    needs: [build-latexindent-zip]
+    steps:
       - name: get latexindent version number
         id: labeller
         run: |
           echo "version=$(echo ${{ github.ref }}|cut -d'/' -f 3)" >> $GITHUB_OUTPUT
           echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      - name: Checkout repo
+        uses: actions/checkout@v2
       - name: get latexindent announcement text
         id: announcement
         run: |
@@ -45,11 +70,16 @@ jobs:
           sed -i.bak s/\<\!\-\-\ announcement:\ // tmp.log
           sed -i.bak s/-\-\>// tmp.log
           echo "announcementtext=$(cat tmp.log)" >> $GITHUB_OUTPUT
+      - name: download latexindent.zip
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent.zip
+          path: for-ctan
       - name: CTAN submit (validate only)
         uses: paolobrasolin/ctan-submit-action@v1
         with:
           action: validate
-          file_path: latexindent.zip
+          file_path: for-ctan/latexindent.zip
           fields: |
             update: "true"
             pkg: latexindent
