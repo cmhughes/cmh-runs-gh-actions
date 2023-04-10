@@ -37,6 +37,7 @@ jobs:
         id: labeller
         run: |
           echo "version=$(echo ${{ github.ref }}|cut -d'/' -f 3)" >> $GITHUB_OUTPUT
+          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
       - name: CTAN submit (validate only)
         uses: paolobrasolin/ctan-submit-action@v1
         with:
@@ -47,7 +48,7 @@ jobs:
           fields: |
             update: "true"
             pkg: latexindent
-            version: ${{ steps.labeller.outputs.version }}
+            version: "${{ steps.labeller.outputs.version }}, ${{ steps.labeller.outputs.date }}"
             author: Chris Hughes
             email: christopher.michael.hughes@gmail.com 
             uploader: Chris Hughes
