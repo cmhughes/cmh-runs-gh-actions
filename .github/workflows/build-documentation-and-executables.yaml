@@ -1,11 +1,11 @@
-name: Create and publish latexindent executables and documentation to releases
+name: build latexindent executables and documentation and upload to release page
 # PURPOSE:
 #
-#  1. *create* latexindent.exe using PAR::Packer on Strawberry Perl
-#  2. *publish* latexindent.exe to the most recent tag (release)
-#  3. *create* latexindent.pdf 
-#  4. *create* latexindent.zip
-#  5. *publish* latexindent.zip to the most recent tag (release)
+#  1. build latexindent.pdf 
+#  2. build latexindent.exe using PAR::Packer on Strawberry Perl
+#  3. build latexindent-linux using PAR::Packer on Ubuntu
+#  4. build latexindent-macos using PAR::Packer on macOS
+#  5. create and release latexindent.zip
 #
 # Note: this action only runs on *each release*, i.e. when tags are pushed
 #
@@ -16,6 +16,7 @@ on:
       - '*'
 
 jobs:
+  #-------------------------------------------------------------------------
   #
   # latexindent.pdf
   #
@@ -37,7 +38,7 @@ jobs:
             sed -i.bak s/\\\\gitRel/$github_release/ documentation/*.tex
             sed -i.bak "s|\\\\gitAuthorDate|$(date +'%Y-%m-%d')|g" documentation/latexindent.tex
             cd documentation
-            pdflatex --interaction=batchmode latexindent
+            pdflatex latexindent
             makeindex -s latexindent.ist -t latexindent.ilg latexindent.idx -o latexindent.ind
             bibtex latexindent
             pdflatex --interaction=batchmode latexindent
@@ -54,6 +55,7 @@ jobs:
         with:
           name: latexindent.pdf
           path: target/release
+  #-------------------------------------------------------------------------
   #
   # latexindent.exe
   #
@@ -125,6 +127,7 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #-------------------------------------------------------------------------
   #
   # Linux latexindent
   #
@@ -194,6 +197,7 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #-------------------------------------------------------------------------
   #
   # MacOS latexindent
   #
@@ -263,6 +267,7 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "latexindent.pl release text"
+  #=========================================================================
   #
   # latexindent.zip
   #
@@ -288,10 +293,22 @@ jobs:
       - name: copy documentation files from repository into temporary folder
         run: |
           mkdir latexindent/documentation/
-          cp documentation/*.tex latexindent/documentation/
           cp documentation/*.png latexindent/documentation/
           cp documentation/readme.txt latexindent/README
           cp documentation/*.json latexindent/documentation/
+          cp documentation/*.bib latexindent/documentation/
+          cd documentation
+          egrep -i --color=auto '\\input' latexindent.tex > tmp.log
+          sed -i'.bak' -e 's/\\input{//' tmp.log
+          sed -i'.bak' -e 's/}//' tmp.log
+          awk '/sec-introduction/,EOF' tmp.log> tmp1.log
+          mapfile -t filesToUpdate < tmp1.log
+          sed -i.bak '/\\begin{document}/,$d' latexindent.tex
+          echo '\begin{document}' >> latexindent.tex
+          for file in "${filesToUpdate[@]}"; do cat ${file}.tex>>latexindent.tex; done
+          echo '\end{document}' >> latexindent.tex
+          cd ..
+          cp documentation/latexindent.tex latexindent/documentation/
       - name: download Windows executable latexindent.exe
         uses: actions/download-artifact@master
         with:
@@ -317,9 +334,26 @@ jobs:
           mv latexindent/bin/linux/latexindent-linux latexindent/bin/linux/latexindent
           mv latexindent/bin/macos/latexindent-macos latexindent/bin/macos/latexindent
           zip -r latexindent.zip latexindent/
+          mkdir -p target/release
+          cp latexindent.zip target/release
       - name: graphical representation of latexindent directory
         run: |
           find latexindent -print | sed -e 's;[^/]*/;|-- ;g;s;-- |; |;g'
+      - name: get changelog.md information
+        id: changelog
+        run: |
+          csplit documentation/changelog.md '/^\#\#/' '{*}' -f cmh # split changelog at '##'
+          sed -i.bak s/\#\#.*\// cmh01                             # 
+          r=$(cat cmh01)                                           # <--- Read changelog.md 
+          r="${r//'%'/'%25'}"                                      # Multiline escape sequences for %
+          r="${r//$'\n'/'%0A'}"                                    # Multiline escape sequences for '\n'
+          r="${r//$'\r'/'%0D'}"                                    # Multiline escape sequences for '\r'
+          echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT                 # <--- Set environment var
+      - name: upload latexindent.zip as artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: latexindent.zip
+          path: target/release
       #
       # https://github.com/marketplace/actions/upload-files-to-a-github-release
       #
@@ -330,4 +364,44 @@ jobs:
           file: latexindent.zip
           tag: ${{ github.ref }}
           overwrite: true
-          body: "latexindent.pl release txt"
+          body: ${{ steps.changelog.outputs.RELEASE_BODY }}
+  #
+  # ctan latexindent.zip upload
+  #
+  ctan-upload:
+    name: 'upload latexindent.zip to ctan'
+    runs-on: ubuntu-latest
+    needs: [zip-files]
+    steps:
+      - name: get latexindent version number
+        id: labeller
+        run: |
+          echo "version=$(echo ${{ github.ref }}|cut -d'/' -f 3)" >> $GITHUB_OUTPUT
+          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: get latexindent announcement text
+        id: announcement
+        run: |
+          egrep -i --color=auto '<!-- announcement:' documentation/changelog.md > tmp.log
+          sed -i.bak s/\<\!\-\-\ announcement:\ // tmp.log
+          sed -i.bak s/-\-\>// tmp.log
+          echo "announcementtext=$(cat tmp.log)" >> $GITHUB_OUTPUT
+      - name: download latexindent.zip
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent.zip
+          path: for-ctan
+      - name: CTAN submit (validate only)
+        uses: paolobrasolin/ctan-submit-action@v1
+        with:
+          action: validate
+          file_path: for-ctan/latexindent.zip
+          fields: |
+            update: "true"
+            pkg: latexindent
+            version: "${{ steps.labeller.outputs.version }} ${{ steps.labeller.outputs.date }}"
+            author: Chris Hughes
+            email: christopher.michael.hughes@gmail.com 
+            uploader: Chris Hughes
+            announcement: "${{ steps.announcement.outputs.announcementtext}}, full details at https://github.com/cmhughes/latexindent.pl/releases/tag/${{ steps.labeller.outputs.version }}"
