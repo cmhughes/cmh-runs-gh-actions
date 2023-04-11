@@ -1,5 +1,18 @@
-<!-- announcement: we've updated the text routine -->
+<!-- announcement: Updates to the diacrtics in filenames-->
 # changelog.md
+
+## V5.67
+a plan to upload to ctan using github actions
+* one
+* two
+* three
+
+and here's an example of a code block
+```tex
+\begin{document}
+    one, two, three
+\end{document}
+```
 
 ## V4.61.98
 * text wrap upgrade: new option: `when: before/after`, full details at [issue-359](https://github.com/cmhughes/latexindent.pl/issues/359)
