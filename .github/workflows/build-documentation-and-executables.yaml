@@ -175,17 +175,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: download all artifacts
+      - name: download Windows executable latexindent.exe
         uses: actions/download-artifact@master
+        with:
+          name: latexindent.exe
+          path: for-release
+      - name: download Linux executable latexindent 
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent-linux
+          path: for-release
+      - name: download MacOS executable latexindent 
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent-macos
+          path: for-release
+      - name: download documentation file latexindent.zip
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent.zip
+          path: for-release
+      - name: download release text file
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent-release.md
+          path: for-release
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body_path: latexindent-release.md
+          body_path: for-release/latexindent-release.md
           files: |
-            latexindent.zip/latexindent.zip
-            latexindent.exe/latexindent.exe
-            latexindent-linux/latexindent-linux
-            latexindent-macos/latexindent-macos
+            for-release/latexindent.zip
+            for-release/latexindent.exe
+            for-release/latexindent-linux
+            for-release/latexindent-macos
   #=========================================================================
   #
   # ctan latexindent.zip upload
