@@ -1,6 +1,12 @@
 <!-- announcement: Updates to the diacrtics in filenames-->
 # changelog.md
 
+## V22222
+testing a new way of releasing
+- first
+- second
+and more stuff here
+
 ## V5.67
 a plan to upload to ctan using github actions
 * one
