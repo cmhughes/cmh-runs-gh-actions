@@ -177,17 +177,15 @@ jobs:
         uses: actions/checkout@v3
       - name: download all artifacts
         uses: actions/download-artifact@master
-        with:
-          path: for-release
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body_path: for-release/latexindent-release.md
+          body_path: latexindent-release.md
           files: |
-            for-release/latexindent.zip
-            for-release/latexindent.exe
-            for-release/latexindent-linux
-            for-release/latexindent-macos
+            latexindent.zip
+            latexindent.exe
+            latexindent-linux
+            latexindent-macos
   #=========================================================================
   #
   # ctan latexindent.zip upload
