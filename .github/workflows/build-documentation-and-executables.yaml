@@ -177,8 +177,16 @@ jobs:
         uses: actions/checkout@v3
       - name: download all artifacts
         uses: actions/download-artifact@master
-      - name: which files have been downloaded?
-        run: ls -l
+        with:
+          run: |-
+             echo "before"
+             ls -l
+             mv latexindent.zip/latexindent.zip latexindent.zip
+             mv latexindent.exe/latexindent.exe latexindent.exe
+             mv latexindent-linux/latexindent-linux latexindent-linux
+             mv latexindent-macos/latexindent-macos latexindent-macos
+             echo "after"
+             ls -l
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
