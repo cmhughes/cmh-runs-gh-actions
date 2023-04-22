@@ -28,9 +28,8 @@ jobs:
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
       - name: DUMMY create latexindent.pdf
-        with:
-          run: |
-            cp documentation/latexindent.tex target/release/latexindent.pdf
+        run: |
+          cp documentation/latexindent.tex target/release/latexindent.pdf
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
@@ -50,9 +49,8 @@ jobs:
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
       - name: DUMMY create latexindent.pdf
-        with:
-          run: |
-            cp documentation/latexindent.tex target/release/latexindent.exe
+        run: |
+          cp documentation/latexindent.tex target/release/latexindent.exe
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
@@ -72,9 +70,8 @@ jobs:
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
       - name: DUMMY create latexindent.pdf
-        with:
-          run: |
-            cp documentation/latexindent.tex target/release/latexindent-linux
+        run: |
+          cp documentation/latexindent.tex target/release/latexindent-linux
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
