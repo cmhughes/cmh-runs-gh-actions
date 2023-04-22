@@ -28,7 +28,6 @@ jobs:
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
       - name: DUMMY create latexindent.pdf
-        uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
             cp documentation/latexindent.tex target/release/latexindent.pdf
@@ -51,7 +50,6 @@ jobs:
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
       - name: DUMMY create latexindent.pdf
-        uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
             cp documentation/latexindent.tex target/release/latexindent.exe
@@ -74,7 +72,6 @@ jobs:
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
       - name: DUMMY create latexindent.pdf
-        uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
             cp documentation/latexindent.tex target/release/latexindent-linux
@@ -97,7 +94,6 @@ jobs:
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
       - name: DUMMY create latexindent.pdf
-        uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
             cp documentation/latexindent.tex target/release/latexindent-macos
@@ -136,30 +132,16 @@ jobs:
         run: |
           mkdir latexindent/documentation/
           cp documentation/latexindent.tex latexindent/documentation/
-      - name: download Windows executable latexindent.exe
+      - name: download all artifacts
         uses: actions/download-artifact@master
         with:
-          name: latexindent.exe
-          path: latexindent/bin/windows
-      - name: download Linux executable latexindent 
-        uses: actions/download-artifact@master
-        with:
-          name: latexindent-linux
-          path: latexindent/bin/linux
-      - name: download MacOS executable latexindent 
-        uses: actions/download-artifact@master
-        with:
-          name: latexindent-macos
-          path: latexindent/bin/macos
-      - name: download documentation file latexindent.pdf
-        uses: actions/download-artifact@master
-        with:
-          name: latexindent.pdf
-          path: latexindent/documentation/
+          path: latexindent-binaries
       - name: create latexindent.zip
         run: |
-          mv latexindent/bin/linux/latexindent-linux latexindent/bin/linux/latexindent
-          mv latexindent/bin/macos/latexindent-macos latexindent/bin/macos/latexindent
+          mv latexindent-binaries/latexindent.exe latexindent/bin/windows
+          mv latexindent-binaries/latexindent-linux latexindent/bin/linux/latexindent
+          mv latexindent-binaries/latexindent-macos latexindent/bin/macos/latexindent
+          mv latexindent-binaries/latexindent.pdf latexindent/documentation/
           zip -r latexindent.zip latexindent/
           mkdir -p target/release
           cp latexindent.zip target/release
