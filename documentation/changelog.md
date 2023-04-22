@@ -1,6 +1,14 @@
 <!-- announcement: Updates to the diacrtics in filenames-->
 # changelog.md
 
+## v cmh
+more release here:
+* updates to feature X
+* bug fix for featuer Y
+and some items:
+- one
+- two
+and then three
 ## V22222
 testing a new way of releasing
 - first

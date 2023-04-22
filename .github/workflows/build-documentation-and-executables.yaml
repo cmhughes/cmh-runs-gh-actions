@@ -328,17 +328,13 @@ jobs:
         with:
           name: latexindent.zip
           path: for-release
-      - name: download release text file
-        uses: actions/download-artifact@master
-        with:
-          name: latexindent-release.md
-          path: for-release
       - name: get changelog.md information
         run: |
           csplit documentation/changelog.md '/^\#\#/' '{*}' -f cmh # split changelog at '##'
           sed -i.bak s/\#\#.*\// cmh01                             # 
           mv cmh01 latexindent-release.md
-      - name: Release
+          cat latexindent-release.md
+      - name: latexindent.pl release
         uses: softprops/action-gh-release@v1
         with:
           body_path: latexindent-release.md
