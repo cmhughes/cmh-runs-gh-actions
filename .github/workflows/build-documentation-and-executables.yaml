@@ -192,10 +192,10 @@ jobs:
         with:
           body_path: latexindent-release.md
           files: |
-            latexindent.zip
-            latexindent.exe
-            latexindent-linux
-            latexindent-macos
+            latexindent.zip/latexindent.zip
+            latexindent.exe/latexindent.exe
+            latexindent-linux/latexindent-linux
+            latexindent-macos/latexindent-macos
   #=========================================================================
   #
   # ctan latexindent.zip upload
