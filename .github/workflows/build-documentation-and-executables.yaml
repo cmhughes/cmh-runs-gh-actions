@@ -6,7 +6,7 @@ name: build latexindent executables and documentation and upload to release page
 #  3. build latexindent-linux using PAR::Packer on Ubuntu
 #  4. build latexindent-macos using PAR::Packer on macOS
 #  5. create and release latexindent.zip
-#  6. upload latexindent.zip to ctan
+#  6. upload latexindent.zip to ctan   
 #
 # Note: this action only runs on *each release*, i.e. when tags are pushed
 #
