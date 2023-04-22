@@ -27,10 +27,27 @@ jobs:
     steps:
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
-      - name: DUMMY create latexindent.pdf
-        run: |
-          mkdir -p target/release
-          cp documentation/latexindent.tex target/release/latexindent.pdf
+      - name: installing texlive full
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            github_sha_short=$(echo $GITHUB_SHA | cut -c1-7)
+            github_branch="main"
+            github_release=$(echo ${{ github.ref }}|cut -d'/' -f 3)
+            sed -i.bak s/\\\\gitAbbrevHash/$github_sha_short/ documentation/latexindent.tex
+            sed -i.bak s/\\\\gitBranch/main/ documentation/latexindent.tex
+            sed -i.bak s/\\\\gitRel/$github_release/ documentation/*.tex
+            sed -i.bak "s|\\\\gitAuthorDate|$(date +'%Y-%m-%d')|g" documentation/latexindent.tex
+            cd documentation
+            pdflatex latexindent
+            makeindex -s latexindent.ist -t latexindent.ilg latexindent.idx -o latexindent.ind
+            bibtex latexindent
+            pdflatex --interaction=batchmode latexindent
+            pdflatex --interaction=batchmode latexindent
+            pdflatex --interaction=batchmode latexindent
+            cd ..
+            mkdir -p target/release
+            mv documentation/latexindent.pdf target/release
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
@@ -45,18 +62,57 @@ jobs:
   #
   build-windows-exe:
     name: 'create Windows executable latexindent.exe using Strawberry Perl 5.32 on Windows'
-    runs-on: ubuntu-latest
+    runs-on: 'windows-latest'
     steps:
+      #
+      # checkout github.com/cmhughes/latexindent.pl
+      # https://github.com/actions/checkout
+      #
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
-      - name: DUMMY create latexindent.pdf
+      #
+      # https://github.com/marketplace/actions/setup-perl-environment
+      #
+      - name: install Strawberry Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+          distribution: strawberry
+      - name: install Perl modules using cpan
+        run: |
+          wmic os get osarchitecture
+          cpanm -f PAR::Packer
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+          cpanm Unicode::GCString
+      - name: preparations for PAR packer
+        run: |
+          sed -i'.bak' -r 's,eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\},use Unicode::GCString,' latexindent.pl
+          SET PAR_VERBATIM=1
+      #
+      # https://metacpan.org/pod/pp
+      # https://github.com/plk/biber/blob/dev/dist/MSWIN64/build.bat
+      #
+      - name: create latexindent.exe using PAR Packer
+        run: >-
+          pp 
+          --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
+          --cachedeps=scancache
+          --output latexindent.exe
+          latexindent.pl
+      - name: move latexindent.exe to release directory
         run: |
           mkdir -p target/release
-          cp documentation/latexindent.tex target/release/latexindent.exe
+          mv latexindent.exe target/release
+      - name: tiny test of latexindent.exe from release directory
+        run: |
+          cd target/release 
+          ./latexindent.exe --help
+          ./latexindent.exe ../../test-cases/environments/environments-simple-nested.tex
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
-      - name: upload latexindent.pdf as artifact for zipping
+      - name: upload latexindent.exe as artifact for zipping
         uses: actions/upload-artifact@master
         with:
           name: latexindent.exe
@@ -67,14 +123,51 @@ jobs:
   #
   build-linux-executable:
     name: 'create Linux executable latexindent'
-    runs-on: ubuntu-latest
+    runs-on: 'ubuntu-latest'
     steps:
+      #
+      # checkout github.com/cmhughes/latexindent.pl
+      # https://github.com/actions/checkout
+      #
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
-      - name: DUMMY create latexindent.pdf
+      #
+      # https://github.com/marketplace/actions/setup-perl-environment
+      #
+      - name: install Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+      - name: install Perl modules using cpan
+        run: |
+          cpanm -f PAR::Packer
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+          cpanm Unicode::GCString
+      - name: preparations for PAR packer
+        run: |
+          sed -i'.bak' -r 's,eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\},use Unicode::GCString,' latexindent.pl
+          PAR_VERBATIM=1
+      #
+      # https://metacpan.org/pod/pp
+      # https://github.com/plk/biber/blob/dev/dist/linux-musl_x86_64/build.sh
+      #
+      - name: create Linux executable latexindent using PAR Packer
+        run: >-
+          pp 
+          --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
+          --cachedeps=scancache
+          --output latexindent-linux
+          latexindent.pl
+      - name: move Linux latexindent to release directory
         run: |
           mkdir -p target/release
-          cp documentation/latexindent.tex target/release/latexindent-linux
+          mv latexindent-linux target/release
+      - name: tiny test of latexindent from release directory
+        run: |
+          cd target/release 
+          ./latexindent-linux --help
+          ./latexindent-linux ../../test-cases/environments/environments-simple-nested.tex
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
@@ -89,18 +182,55 @@ jobs:
   #
   build-macos-executable:
     name: 'create MacOS executable latexindent'
-    runs-on: ubuntu-latest
+    runs-on: 'macos-latest'
     steps:
+      #
+      # checkout github.com/cmhughes/latexindent.pl
+      # https://github.com/actions/checkout
+      #
       - name: load the "base actions/checkout" so as to access latexindent.pl
         uses: actions/checkout@v3
-      - name: DUMMY create latexindent.pdf
+      #
+      # https://github.com/marketplace/actions/setup-perl-environment
+      #
+      - name: install Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+      - name: install Perl modules using cpan
+        run: |
+          cpanm -f PAR::Packer
+          cpanm YAML::Tiny
+          cpanm File::HomeDir
+          cpanm Unicode::GCString
+      - name: preparations for PAR packer
+        run: |
+          sed -i'.bak' -r 's,eval\s\"use\sUnicode::GCString\"\sif\s\$switches\{GCString\},use Unicode::GCString,' latexindent.pl
+          PAR_VERBATIM=1
+      #
+      # https://metacpan.org/pod/pp
+      # https://github.com/plk/biber/blob/dev/dist/linux-musl_x86_64/build.sh
+      #
+      - name: create MacOS executable latexindent using PAR Packer
+        run: >-
+          pp 
+          --addfile="defaultSettings.yaml;lib/LatexIndent/defaultSettings.yaml"
+          --cachedeps=scancache
+          --output latexindent-macos
+          latexindent.pl
+      - name: move MacOS latexindent to release directory
         run: |
           mkdir -p target/release
-          cp documentation/latexindent.tex target/release/latexindent-macos
+          mv latexindent-macos target/release
+      - name: tiny test of latexindent from release directory
+        run: |
+          cd target/release 
+          ./latexindent-macos --help
+          ./latexindent-macos ../../test-cases/environments/environments-simple-nested.tex
       #
       # https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
       #
-      - name: upload latexindent-linux as artifact for zipping
+      - name: upload latexindent-macos as artifact for zipping
         uses: actions/upload-artifact@master
         with:
           name: latexindent-macos
@@ -131,38 +261,56 @@ jobs:
       - name: copy documentation files from repository into temporary folder
         run: |
           mkdir latexindent/documentation/
+          cp documentation/*.png latexindent/documentation/
+          cp documentation/readme.txt latexindent/README
+          cp documentation/*.json latexindent/documentation/
+          cp documentation/*.bib latexindent/documentation/
+          cd documentation
+          egrep -i --color=auto '\\input' latexindent.tex > tmp.log
+          sed -i'.bak' -e 's/\\input{//' tmp.log
+          sed -i'.bak' -e 's/}//' tmp.log
+          awk '/sec-introduction/,EOF' tmp.log> tmp1.log
+          mapfile -t filesToUpdate < tmp1.log
+          sed -i.bak '/\\begin{document}/,$d' latexindent.tex
+          echo '\begin{document}' >> latexindent.tex
+          for file in "${filesToUpdate[@]}"; do cat ${file}.tex>>latexindent.tex; done
+          echo '\end{document}' >> latexindent.tex
+          cd ..
           cp documentation/latexindent.tex latexindent/documentation/
-      - name: download all artifacts
+      - name: download Windows executable latexindent.exe
         uses: actions/download-artifact@master
         with:
-          path: latexindent-binaries
+          name: latexindent.exe
+          path: latexindent/bin/windows
+      - name: download Linux executable latexindent 
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent-linux
+          path: latexindent/bin/linux
+      - name: download MacOS executable latexindent 
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent-macos
+          path: latexindent/bin/macos
+      - name: download documentation file latexindent.pdf
+        uses: actions/download-artifact@master
+        with:
+          name: latexindent.pdf
+          path: latexindent/documentation/
       - name: create latexindent.zip
         run: |
-          mv latexindent-binaries/latexindent.exe latexindent/bin/windows
-          mv latexindent-binaries/latexindent-linux latexindent/bin/linux/latexindent
-          mv latexindent-binaries/latexindent-macos latexindent/bin/macos/latexindent
-          mv latexindent-binaries/latexindent.pdf latexindent/documentation/
+          mv latexindent/bin/linux/latexindent-linux latexindent/bin/linux/latexindent
+          mv latexindent/bin/macos/latexindent-macos latexindent/bin/macos/latexindent
           zip -r latexindent.zip latexindent/
           mkdir -p target/release
           cp latexindent.zip target/release
+      - name: graphical representation of latexindent directory
+        run: |
+          find latexindent -print | sed -e 's;[^/]*/;|-- ;g;s;-- |; |;g'
       - name: upload latexindent.zip as artifact
         uses: actions/upload-artifact@master
         with:
           name: latexindent.zip
-          path: target/release
-      - name: graphical representation of latexindent directory
-        run: |
-          find latexindent -print | sed -e 's;[^/]*/;|-- ;g;s;-- |; |;g'
-      - name: get changelog.md information
-        id: changelog
-        run: |
-          csplit documentation/changelog.md '/^\#\#/' '{*}' -f cmh # split changelog at '##'
-          sed -i.bak s/\#\#.*\// cmh01                             # 
-          mv cmh01 target/release/latexindent-release.md
-      - name: upload latexindent-release.md as artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: latexindent-release.md
           path: target/release
   #=========================================================================
   #
@@ -200,10 +348,15 @@ jobs:
         with:
           name: latexindent-release.md
           path: for-release
+      - name: get changelog.md information
+        run: |
+          csplit documentation/changelog.md '/^\#\#/' '{*}' -f cmh # split changelog at '##'
+          sed -i.bak s/\#\#.*\// cmh01                             # 
+          mv cmh01 latexindent-release.md
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body_path: for-release/latexindent-release.md
+          body_path: latexindent-release.md
           files: |
             for-release/latexindent.zip
             for-release/latexindent.exe
