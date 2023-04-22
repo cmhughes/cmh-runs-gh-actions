@@ -240,7 +240,7 @@ jobs:
   # latexindent.zip
   #
   zip-files:
-    name: 'create latexindent.zip and uploading to release'
+    name: 'create latexindent.zip'
     needs: [build-latexindent-doc-pdf, build-windows-exe, build-linux-executable, build-macos-executable]
     runs-on: ubuntu-latest
     steps:
@@ -261,21 +261,6 @@ jobs:
       - name: copy documentation files from repository into temporary folder
         run: |
           mkdir latexindent/documentation/
-          cp documentation/*.png latexindent/documentation/
-          cp documentation/readme.txt latexindent/README
-          cp documentation/*.json latexindent/documentation/
-          cp documentation/*.bib latexindent/documentation/
-          cd documentation
-          egrep -i --color=auto '\\input' latexindent.tex > tmp.log
-          sed -i'.bak' -e 's/\\input{//' tmp.log
-          sed -i'.bak' -e 's/}//' tmp.log
-          awk '/sec-introduction/,EOF' tmp.log> tmp1.log
-          mapfile -t filesToUpdate < tmp1.log
-          sed -i.bak '/\\begin{document}/,$d' latexindent.tex
-          echo '\begin{document}' >> latexindent.tex
-          for file in "${filesToUpdate[@]}"; do cat ${file}.tex>>latexindent.tex; done
-          echo '\end{document}' >> latexindent.tex
-          cd ..
           cp documentation/latexindent.tex latexindent/documentation/
       - name: download Windows executable latexindent.exe
         uses: actions/download-artifact@master
